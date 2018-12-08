@@ -1,10 +1,7 @@
 ---
 title: JS - 04. 반복문
 date: 2018-10-13 19:00:04
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 04. 반복문

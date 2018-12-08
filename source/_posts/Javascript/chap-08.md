@@ -1,10 +1,7 @@
 ---
 title: JS - 08. 배열 (Array)
 date: 2018-10-13 19:00:08
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 배열 \(Array\)

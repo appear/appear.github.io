@@ -1,10 +1,7 @@
 ---
 title: JS - 01. 자료형과 변수
 date: 2018-10-13 19:00:01
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 ![](https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png)

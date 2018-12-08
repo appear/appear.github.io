@@ -1,10 +1,7 @@
 ---
 title: JS - 06. 객체 (Object)
 date: 2018-10-13 19:00:06
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 06. 객체 \(Object\)

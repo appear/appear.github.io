@@ -1,10 +1,7 @@
 ---
 title: Simple JS
 date: 2018-10-13 19:33:00
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # Simple JS 

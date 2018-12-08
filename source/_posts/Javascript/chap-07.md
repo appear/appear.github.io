@@ -1,10 +1,7 @@
 ---
 title: JS - 실습. 과일가게와 장난감가게
 date: 2018-10-13 19:00:07
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 과일가게와 장난감가게

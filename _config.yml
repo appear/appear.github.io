@@ -70,6 +70,12 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+plugins:
+  google_analytics: UA-105634384-2
+
+sitemap:
+    path: sitemap.xml
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

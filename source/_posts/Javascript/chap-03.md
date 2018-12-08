@@ -1,10 +1,7 @@
 ---
 title: JS - 03. 조건문
 date: 2018-10-13 19:00:03
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 03. 조건문

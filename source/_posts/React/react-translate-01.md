@@ -1,8 +1,7 @@
 ---
 title: React Interview (리액트 면접 질문) [1 ~ 10]
 date: 2018-10-20 15:51:20
-tags: [react]
-categories: [react]
+tags: React
 ---
 
 # React Interview (리액트 면접질문)

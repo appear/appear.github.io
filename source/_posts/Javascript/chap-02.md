@@ -1,10 +1,7 @@
 ---
 title: JS - 02. 연산자
 date: 2018-10-13 19:00:02
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 # 02. 연산자

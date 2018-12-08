@@ -1,8 +1,7 @@
 ---
 title: JS - 00. JS의 역사와 브라우저 동작원리
 date: 2018-10-13 19:00:00
-tags:
-- Javascript
+tags: Javascript
 ---
 
 # 01. 자바스크립트의 역사와 브라우저 동작원리 ? 

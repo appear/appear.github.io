@@ -1,10 +1,7 @@
 ---
 title: JS - 05. 함수 (Function)
 date: 2018-10-13 19:00:05
-tags:
-- Javascript
-categories: 
-- Javascript
+tags: Javascript
 ---
 
 

@@ -1,10 +1,7 @@
 ---
 title: 글또를 시작하며
 date: 2018-11-10 22:36:17
-tags:
-- etc
-categories: 
-- etc
+tags: Etc
 ---
 
 ![intro](https://raw.githubusercontent.com/appear/appear.github.io/build/source/img/g_intro.png)
