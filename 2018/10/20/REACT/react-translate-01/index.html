@@ -203,7 +203,7 @@
 <ol start="3">
 <li><h3 id="What-is-JSX"><a href="#What-is-JSX" class="headerlink" title="What is JSX?"></a>What is JSX?</h3><h4 id="JSX란-무엇인가요"><a href="#JSX란-무엇인가요" class="headerlink" title="(JSX란 무엇인가요?)"></a>(JSX란 무엇인가요?)</h4><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">JSX</a> 는 JS XML (ECMAScript로 XML 유사 구문 확장) 의 구문 표기법입니다. JSX 는 JS XML의 약자입니다.<br><a href="https://ko.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>과 같은 문법과 함께 JS를 표현할 수 있습니다.<br>예를 들면 아래의 h1 태그안에 text 는 render 함수에 의해 JS 함수로 반환됩니다. </li>
 </ol>
-<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt; Welcome to React world!!&lt;/h1&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt; Welcome to React world!!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li><h3 id="What-is-the-difference-between-Element-and-Component"><a href="#What-is-the-difference-between-Element-and-Component" class="headerlink" title="What is the difference between Element and Component?"></a>What is the difference between Element and Component?</h3><h4 id="element와-component의-차이점은-무엇인가요"><a href="#element와-component의-차이점은-무엇인가요" class="headerlink" title="(element와 component의 차이점은 무엇인가요?)"></a>(element와 component의 차이점은 무엇인가요?)</h4><a href="https://ko.wikipedia.org/wiki/HTML_%EC%9A%94%EC%86%8C" target="_blank" rel="noopener">element</a>는 DOM 노드 또는 다른 <a href="https://reactjs.org/docs/react-component.html" target="_blank" rel="noopener">component</a>들과 관련하여 화면에 표시 할 내용을 표현하는 일반 객체입니다. elements는 다른 elements 들을 포함할 수 있습니다.<br><a href="https://reactjs.org/docs/rendering-elements.html" target="_blank" rel="noopener">React element</a>를 만드는 비용은 저렴합니다. element 는 생성되면 변형되지 않습니다. 리액트 element 의 표현은 아래와 같습니다.</li>
 </ol>
@@ -220,11 +220,11 @@
 <li><p><strong>Functional components</strong><br>ReactJS 에서 component를 생성하는 가장 간단한 방법입니다. props 를 받을 수 있고 React elements 를 리턴할 수 있습니다.<br>이런 방법을 pure 한 JS의 function 이기 때문에 functional한 생성법이라고 부릅니다.</p>
 </li>
 </ol>
-<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params">props</span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt; Hello, &#123;props.message&#125;&lt;/h1&gt; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params">props</span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello, &#123;props.message&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><strong>Class components</strong><br>ES6 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">Class</a>를 사용하여 component 를 정의할 수 있습니다. 위에서 본 functional 선언법을 아래와 같이 적용할 수 있습니다.</li>
 </ol>
-<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;this.props.message&#125;&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;this.props.message&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="6">
 <li><h3 id="When-to-use-a-Class-Component-over-a-Functional-Component"><a href="#When-to-use-a-Class-Component-over-a-Functional-Component" class="headerlink" title="When to use a Class Component over a Functional Component?"></a>When to use a Class Component over a Functional Component?</h3><h4 id="언제-클래스-컴포넌트를-사용하고-언제-Functional-컴포넌트를-사용할까요"><a href="#언제-클래스-컴포넌트를-사용하고-언제-Functional-컴포넌트를-사용할까요" class="headerlink" title="(언제 클래스 컴포넌트를 사용하고 언제 Functional 컴포넌트를 사용할까요?)"></a>(언제 클래스 컴포넌트를 사용하고 언제 Functional 컴포넌트를 사용할까요?)</h4><p>Component 에서 state 또는 <a href="https://reactjs.org/docs/react-component.html#the-component-lifecycle" target="_blank" rel="noopener">life cycle methods</a> 를 필요로 한다면 Class component를 사용하고 그렇지 않다면 Functional component를 사용할 수 있습니다.</p>
 </li>
@@ -303,6 +303,12 @@
   <!-- Catalog START -->
   
   <!-- Catalog END -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </main>
 
 <script>
@@ -402,12 +408,6 @@
   })();
 </script>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 티스토리 -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
