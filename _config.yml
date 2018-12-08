@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
+title: Olaf's blog
+subtitle: FrontEnd Blog
+description: JS에 대한 전반적인 이야기를 나눠요 :)
+keywords: javascript
+author: Olaf
+language: ko
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://appear.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
