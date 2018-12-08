@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [51 ~ 60] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [51 ~ 60]</h2>
+  <p class="post-date">2018-11-03</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>51</td>
+<td><a href="#how-to-apply-validation-on-props-in-react">How to apply validation on props in React?</a></td>
+</tr>
+<tr>
+<td>52</td>
+<td><a href="#what-are-the-advantages-of-react">What are the advantages of React?</a></td>
+</tr>
+<tr>
+<td>53</td>
+<td><a href="#what-are-the-limitations-of-react">What are the limitations of React?</a></td>
+</tr>
+<tr>
+<td>54</td>
+<td><a href="#what-are-error-boundaries-in-react-v16">What are error boundaries in React v16</a></td>
+</tr>
+<tr>
+<td>55</td>
+<td><a href="#how-error-boundaries-handled-in-react-v15">How error boundaries handled in React v15?</a></td>
+</tr>
+<tr>
+<td>56</td>
+<td><a href="#what-are-the-recommended-ways-for-static-type-checking">What are the recommended ways for static type checking?</a></td>
+</tr>
+<tr>
+<td>57</td>
+<td><a href="#what-is-the-use-of-react-dom-package">What is the use of react-dom package?</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td><a href="#what-is-the-purpose-of-render-method-of-react-dom">What is the purpose of render method of react-dom?</a></td>
+</tr>
+<tr>
+<td>59</td>
+<td><a href="#what-is-reactdomserver">What is ReactDOMServer?</a></td>
+</tr>
+<tr>
+<td>60</td>
+<td><a href="#how-to-use-innerhtml-in-react">How to use InnerHtml in React?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="51">
+<li><h3 id="How-to-apply-validation-on-props-in-React"><a href="#How-to-apply-validation-on-props-in-React" class="headerlink" title="How to apply validation on props in React?"></a>How to apply validation on props in React?</h3><h4 id="React에서-Props의-유효성검사를-적용하나요"><a href="#React에서-Props의-유효성검사를-적용하나요" class="headerlink" title="(React에서 Props의 유효성검사를 적용하나요 ?)"></a>(React에서 Props의 유효성검사를 적용하나요 ?)</h4>Application 이 개발 모드에서 실행될 때 React는 자동으로 component에 설정된 모든 props 들의 유효성을 체크합니다. 타입이 올바르지 않다면 React는 console에 경고 메세지를 생성할 것 입니다.<br>성능에 영향이 가기 때문에 production 모드에서는 사용하지 않습니다. 필수 props는 isRequired로 정의됩니다.</li>
+</ol>
+<p>정의 된 props 타입</p>
+<ul>
+<li>PropTypes.number</li>
+<li>PropTypes.string</li>
+<li>PropTypes.array</li>
+<li>PropTypes.object</li>
+<li>PropTypes.func</li>
+<li>PropTypes.node</li>
+<li>PropTypes.element</li>
+<li>PropTypes.bool</li>
+<li>PropTypes.symbol</li>
+<li>PropTypes.any</li>
+</ul>
+<p>User component 에 대한 PropTypes 를 아래와 같이 정의할 수 있습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    name: PropTypes.string.isRequired,</span><br><span class="line">    age: PropTypes.number.isRequired</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;h1&gt;&#123;<span class="string">`Welcome, <span class="subst">$&#123;<span class="keyword">this</span>.props.name&#125;</span>`</span>&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h2&gt;&#123;`Age, $&#123;this.props.age&#125;`&#125;&lt;/</span>h2&gt;</span><br><span class="line">      &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Note: React v15.5 에서 PropType은 React.PropTypes 에서 prop-types 라이브러리로 옮겨졌습니다.</p>
+<ol start="52">
+<li><h3 id="What-are-the-advantages-of-React"><a href="#What-are-the-advantages-of-React" class="headerlink" title="What are the advantages of React?"></a>What are the advantages of React?</h3><h4 id="React의-장점은-무엇인가요"><a href="#React의-장점은-무엇인가요" class="headerlink" title="(React의 장점은 무엇인가요?)"></a>(React의 장점은 무엇인가요?)</h4></li>
+<li>가상 DOM을 이용하여 application 의 성능을 향상시킵니다.</li>
+<li>JSX는 코드를 읽고 쓰는 것을 쉽게 만들어줍니다.</li>
+<li>클라이언트와 서버측 (SSR) 모두 render 됩니다.</li>
+<li>오직 view library 이기 때문에 다른 프레임워크들 (Angular, Backbone)과 손쉽게 통합 할 수 있습니다.</li>
+<li><p>Jest 와 같은 도구를 사용하여 단위 및 통합테스트를 쉽게 작성할 수 있습니다.</p>
+</li>
+<li><h3 id="What-are-the-limitations-of-React"><a href="#What-are-the-limitations-of-React" class="headerlink" title="What are the limitations of React?"></a>What are the limitations of React?</h3><h4 id="React의-한계는-무엇인가요"><a href="#React의-한계는-무엇인가요" class="headerlink" title="(React의 한계는 무엇인가요?)"></a>(React의 한계는 무엇인가요?)</h4></li>
+<li>React 전체 framework 가 아닌 view를 위한 library 일 뿐입니다.</li>
+<li>웹 개발을 처음 접하는 초심자들에게는 학습 곡선이 있습니다.</li>
+<li>기존의 MVC framework 에 React 를 합치기 위해서는 몇 가지 추가 구성이 필요합니다.</li>
+<li>인라인 템플릿 및 JSX를 사용하면 코드가 복잡해집니다.</li>
+<li><p>과도한 엔지니어링 또는 boilerplate 로 이어지는 작은 components 들이 너무 많습니다.</p>
+</li>
+<li><h3 id="What-are-error-boundaries-in-React-v16"><a href="#What-are-error-boundaries-in-React-v16" class="headerlink" title="What are error boundaries in React v16?"></a>What are error boundaries in React v16?</h3><h4 id="React-v16-에서-error-boundaries는-무엇인가요"><a href="#React-v16-에서-error-boundaries는-무엇인가요" class="headerlink" title="(React v16 에서 error boundaries는 무엇인가요?)"></a>(React v16 에서 error boundaries는 무엇인가요?)</h4><p>Error boundaries 는 하위 component tree 에서 Javascript error 를 catch 하고, 에러를 기록하고, 오류가 발생한 component tree가 아닌 대체 UI를 표현해 주는 component 입니다.</p>
+</li>
+</ol>
+<p>class component 는 componentDidCatch 라는 새로운 lifecycle 메서드를 정의하면 Error boundaries 됩니다</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">hasError</span>: <span class="literal">false</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidCatch(error, info) &#123;</span><br><span class="line">    <span class="comment">// Display fallback UI</span></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">hasError</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    <span class="comment">// You can also log the error to an error reporting service</span></span><br><span class="line">    logErrorToMyService(error, info)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.hasError) &#123;</span><br><span class="line">      <span class="comment">// You can render any custom fallback UI</span></span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;'Something went wrong.'&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.props.children</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>그 다음 일반 component 로 사용합니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ErrorBoundary&gt;</span><br><span class="line">  &lt;MyWidget /&gt;</span><br><span class="line">&lt;<span class="regexp">/ErrorBoundary&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="55">
+<li><h3 id="How-error-boundaries-handled-in-React-v15"><a href="#How-error-boundaries-handled-in-React-v15" class="headerlink" title="How error boundaries handled in React v15?"></a>How error boundaries handled in React v15?</h3><h4 id="React-v15-에서는-어떻게-error-boundaries-처리하나요"><a href="#React-v15-에서는-어떻게-error-boundaries-처리하나요" class="headerlink" title="(React v15 에서는 어떻게 error boundaries 처리하나요?)"></a>(React v15 에서는 어떻게 error boundaries 처리하나요?)</h4><p>React v15 에서는 unstable_handleError 메서드를 사용하여 error boundaries 에 대한 기본적인 지원을 했습니다. React v16에서 componentDidCatch로 이름이 변경되었습니다.</p>
+</li>
+<li><h3 id="What-are-the-recommended-ways-for-static-type-checking"><a href="#What-are-the-recommended-ways-for-static-type-checking" class="headerlink" title="What are the recommended ways for static type checking?"></a>What are the recommended ways for static type checking?</h3><h4 id="권장되는-static-한-타입-체크방법은-무엇인가요"><a href="#권장되는-static-한-타입-체크방법은-무엇인가요" class="headerlink" title="(권장되는 static 한 타입 체크방법은 무엇인가요?)"></a>(권장되는 static 한 타입 체크방법은 무엇인가요?)</h4><p>일반적으로 우리는 React application 에서 타입 검사를 하기 위해 PropTypes library (React.PropTypes를 React v15.5 부터는 prop-types package 로 옮겼습니다)를 사용합니다.<br>대규모의 코드 베이스에서는 compile time 에서 타입 체크를 하고 자동 완성 기능을 제공해주는 Flow 나 TypeScript 와 같은 static type checkers 를 이용하는 것이 좋습니다. </p>
+</li>
+<li><h3 id="What-is-the-use-of-react-dom-package"><a href="#What-is-the-use-of-react-dom-package" class="headerlink" title="What is the use of react-dom package?"></a>What is the use of react-dom package?</h3><h4 id="react-dom-패키지의-사용법은-무엇인가요"><a href="#react-dom-패키지의-사용법은-무엇인가요" class="headerlink" title="(react-dom 패키지의 사용법은 무엇인가요?)"></a>(react-dom 패키지의 사용법은 무엇인가요?)</h4><p>React-dom 패키지는 App의 최상위 레벨에서 사용할 수 있는 DOM-specific 메서드를 제공합니다. 대부분의 Component 들은 이 모듈을 사용할 필요가 없습니다.<br>패키지의 일부 메서드는 다음과 같습니다. </p>
+</li>
+</ol>
+<ul>
+<li>render()</li>
+<li>hydrate()</li>
+<li>unmountComponentAtNode()</li>
+<li>findDOMNode()</li>
+<li>createPortal()</li>
+</ul>
+<ol start="58">
+<li><h3 id="What-is-the-purpose-of-render-method-of-react-dom"><a href="#What-is-the-purpose-of-render-method-of-react-dom" class="headerlink" title="What is the purpose of render method of react-dom?"></a>What is the purpose of render method of react-dom?</h3><h4 id="React-dom의-render-메서드의-목적은-무엇인가요"><a href="#React-dom의-render-메서드의-목적은-무엇인가요" class="headerlink" title="(React dom의 render 메서드의 목적은 무엇인가요?)"></a>(React dom의 render 메서드의 목적은 무엇인가요?)</h4></li>
+</ol>
+<p>render 메서드는 제공된 컨테이너의 DOM에 React element를 render 하고 Component에 대한 참조를 반환하는데 사용됩니다.<br>React element가 이전에 렌더링 되었다면 update 를 수행하고 최근의 변경사항을 반영하기 위해 필요에 따라 DOM을 변경합니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(element, container[, callback])</span><br></pre></td></tr></table></figure>
+<p>만약 optional callback 이 제공된다면, callback은 component 가 렌더링되거나 업데이트 된 후에 실행됩니다.</p>
+<ol start="59">
+<li><h3 id="What-is-ReactDOMServer"><a href="#What-is-ReactDOMServer" class="headerlink" title="What is ReactDOMServer?"></a>What is ReactDOMServer?</h3><h4 id="ReactDOMServer-란-무엇인가요"><a href="#ReactDOMServer-란-무엇인가요" class="headerlink" title="(ReactDOMServer 란 무엇인가요?)"></a>(ReactDOMServer 란 무엇인가요?)</h4>ReactDOMServer 객체를 사용하면 component를 static markup(일반적으로 노드 서버에서 사용됩니다.) 으로 렌더링 할 수 있습니다.<br>이 객체는 주로 서버사이드 렌더링(SSR) 에서 사용됩니다. 다음의 메서드는 서버 및 브라우저 환경 모두 사용할 수 있습니다.</li>
+</ol>
+<ul>
+<li>renderToString()</li>
+<li>renderToStaticMarkup()</li>
+</ul>
+<p>예를들어 Express, Hapi, Koa 같은 노드 기반의 웹서버를 실행할때 renderToString을 호출하여 root component 를 문자열로 렌더링 한 다음 response를 보낼 수 있습니다</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// using Express</span></span><br><span class="line"><span class="keyword">import</span> &#123; renderToString &#125; <span class="keyword">from</span> <span class="string">'react-dom/server'</span></span><br><span class="line"><span class="keyword">import</span> MyPage <span class="keyword">from</span> <span class="string">'./MyPage'</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.write(<span class="string">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;&lt;body&gt;'</span>)</span><br><span class="line">  res.write(<span class="string">'&lt;div id="content"&gt;'</span>)</span><br><span class="line">  res.write(renderToString(<span class="xml"><span class="tag">&lt;<span class="name">MyPage</span>/&gt;</span></span>))</span><br><span class="line">  res.write(<span class="string">'&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span>)</span><br><span class="line">  res.end()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="60">
+<li><h3 id="How-to-use-innerHTML-in-React"><a href="#How-to-use-innerHTML-in-React" class="headerlink" title="How to use innerHTML in React?"></a>How to use innerHTML in React?</h3><h4 id="React에서-innerHTML을-어떻게-사용하나요"><a href="#React에서-innerHTML을-어떻게-사용하나요" class="headerlink" title="(React에서 innerHTML을 어떻게 사용하나요?)"></a>(React에서 innerHTML을 어떻게 사용하나요?)</h4>dangerouslySetInnerHTML 속성은 브라우저 DOM 에서 innerHTML 을 사용하기 위한 React 의 대체 속성입니다.<br>innerHTML과 마찬가지로 XXS (Cross-Site Scripting) 공격을 고려했을때 브라우저 DOM 에서 이 속성을 사용하는 것은 위험합니다.<br>__html 객체를 키로 HTML 텍스트를 값으로 전달하면됩니다. </li>
+</ol>
+<p>예제에서 MyComponent는 HTML 마크업을 설정하기 위해 dangerouslySetInnerHTML 속성을 사용하고 있습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMarkup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">__html</span>: <span class="string">'First &amp;middot; Second'</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyComponent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">dangerouslySetInnerHTML</span>=<span class="string">&#123;createMarkup()&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>영어 원본: <a href="https://github.com/sudheerj/reactjs-interview-questions#what-is-reactjs" target="_blank" rel="noopener">Git Hub</a><br>블로그 번역: <a href="https://github.com/appear/reactjs-interview-questions-ko" target="_blank" rel="noopener">Git Hub</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/02/REACT/react-translate-05/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [41 ~ 50]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/09/REACT/react-translate-07/">
+        
+          React Interview (리액트 면접 질문) [61 ~ 70]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/03/REACT/react-translate-06/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [51 ~ 60]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/03/REACT/react-translate-06/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

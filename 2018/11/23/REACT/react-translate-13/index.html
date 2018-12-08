@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [121 ~ 130] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [121 ~ 130]</h2>
+  <p class="post-date">2018-11-23</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>121</td>
+<td><a href="#how-to-programmatically-trigger-click-event-in-react">How to programmatically trigger click event in React?</a></td>
+</tr>
+<tr>
+<td>122</td>
+<td><a href="#is-it-possible-to-use-asyncawait-in-plain-react">Is it possible to use async/await in plain React?</a></td>
+</tr>
+<tr>
+<td>123</td>
+<td><a href="#what-are-the-common-folder-structures-for-react">What are the common folder structures for React?</a></td>
+</tr>
+<tr>
+<td>124</td>
+<td><a href="#what-are-the-popular-packages-for-animation">What are the popular packages for animation?</a></td>
+</tr>
+<tr>
+<td>125</td>
+<td><a href="#what-is-the-benefit-of-styles-modules">What is the benefit of styles modules?</a></td>
+</tr>
+<tr>
+<td>126</td>
+<td><a href="#what-are-the-popular-react-specific-linters">What are the popular React-specific linters?</a></td>
+</tr>
+<tr>
+<td>127</td>
+<td><a href="#how-to-make-ajax-call-and-in-which-component-lifecycle-methods-should-i-make-an-ajax-call">How to make AJAX call and In which component lifecycle methods should I make an AJAX call?</a></td>
+</tr>
+<tr>
+<td>128</td>
+<td><a href="#what-are-render-props">What are render props?</a></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>React Router</strong></td>
+</tr>
+<tr>
+<td>129</td>
+<td><a href="#what-is-react-router">What is React Router?</a></td>
+</tr>
+<tr>
+<td>130</td>
+<td><a href="#how-react-router-is-different-from-history-library">How React Router is different from history library?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="121">
+<li><h3 id="How-to-programmatically-trigger-click-event-in-React"><a href="#How-to-programmatically-trigger-click-event-in-React" class="headerlink" title="How to programmatically trigger click event in React?"></a>How to programmatically trigger click event in React?</h3><h4 id="React-에서-어떻게-프로그래밍-방식으로-클릭-이벤트를-트리거-할-수-있나요"><a href="#React-에서-어떻게-프로그래밍-방식으로-클릭-이벤트를-트리거-할-수-있나요" class="headerlink" title="(React 에서 어떻게 프로그래밍 방식으로 클릭 이벤트를 트리거 할 수 있나요?)"></a>(React 에서 어떻게 프로그래밍 방식으로 클릭 이벤트를 트리거 할 수 있나요?)</h4>callback 을 통한 ref prop 를 사용하여 <code>HTMLInputElement</code> 객체에 대한 참조를 가져와 class property 로 저장하고,<br>나중에 저장된 참조를 사용를 이용하여 <code>HTMLElement.click</code> 메서드를 사용해 이벤트 핸들러에서 클릭 이벤트를 트리거 할 수 있습니다.  </li>
+</ol>
+<p>이 작업은 두 단계로 나눌 수 있습니다.</p>
+<ol>
+<li>render 메서드 안에서 ref 생성</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ref=&#123;input =&gt; <span class="keyword">this</span>.inputElement = input&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>이벤트 핸들러에서 클릭 이벤트 제공:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.inputElement.click()</span><br></pre></td></tr></table></figure>
+<ol start="122">
+<li><p>###(Is it possible to use async/await in plain React?</p>
+<h4 id="기본-React-에서-async-await-를-사용할-수-있나요"><a href="#기본-React-에서-async-await-를-사용할-수-있나요" class="headerlink" title="(기본 React 에서 async/await 를 사용할 수 있나요?)"></a>(기본 React 에서 async/await 를 사용할 수 있나요?)</h4><p>React 에서 async/await 을 사용하고 싶다면 Babel 과 transform-async-to-generator 플러그인이 필요합니다.</p>
+</li>
+<li><h3 id="What-are-the-common-folder-structures-for-React"><a href="#What-are-the-common-folder-structures-for-React" class="headerlink" title="What are the common folder structures for React?"></a>What are the common folder structures for React?</h3><h4 id="React-의-일반-폴더-구조는-무엇인가요"><a href="#React-의-일반-폴더-구조는-무엇인가요" class="headerlink" title="(React 의 일반 폴더 구조는 무엇인가요?)"></a>(React 의 일반 폴더 구조는 무엇인가요?)</h4></li>
+</ol>
+<p>여기 React project 의 파일 구조에 대한 두 가지의 사례가 있습니다.</p>
+<ol>
+<li>기능 또는 경로별로의 그룹:<br>프로젝트를 구조화하는 하나의 일반적인 방법으로는 기능이나 경로별로 그룹화된 CSS, JS, test 들을 함께 구성하는 것입니다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">common/</span><br><span class="line">├─ Avatar.js</span><br><span class="line">├─ Avatar.css</span><br><span class="line">├─ APIUtils.js</span><br><span class="line">└─ APIUtils.test.js</span><br><span class="line">feed/</span><br><span class="line">├─ index.js</span><br><span class="line">├─ Feed.js</span><br><span class="line">├─ Feed.css</span><br><span class="line">├─ FeedStory.js</span><br><span class="line">├─ FeedStory.test.js</span><br><span class="line">└─ FeedAPI.js</span><br><span class="line">profile/</span><br><span class="line">├─ index.js</span><br><span class="line">├─ Profile.js</span><br><span class="line">├─ ProfileHeader.js</span><br><span class="line">├─ ProfileHeader.css</span><br><span class="line">└─ ProfileAPI.js</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>파일 형식의 그룹화<br>프로젝트를 구조화하는 다른 인기있는 방법으로는 유사한 파일들을 그룹화하는 것입니다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">api/</span><br><span class="line">├─ APIUtils.js</span><br><span class="line">├─ APIUtils.test.js</span><br><span class="line">├─ ProfileAPI.js</span><br><span class="line">└─ UserAPI.js</span><br><span class="line">components/</span><br><span class="line">├─ Avatar.js</span><br><span class="line">├─ Avatar.css</span><br><span class="line">├─ Feed.js</span><br><span class="line">├─ Feed.css</span><br><span class="line">├─ FeedStory.js</span><br><span class="line">├─ FeedStory.test.js</span><br><span class="line">├─ Profile.js</span><br><span class="line">├─ ProfileHeader.js</span><br><span class="line">└─ ProfileHeader.css</span><br></pre></td></tr></table></figure>
+<ol start="124">
+<li><h3 id="What-are-the-popular-packages-for-animation"><a href="#What-are-the-popular-packages-for-animation" class="headerlink" title="What are the popular packages for animation?"></a>What are the popular packages for animation?</h3><h4 id="애니메이션을-위한-인기있는-패키지는-무엇인가요"><a href="#애니메이션을-위한-인기있는-패키지는-무엇인가요" class="headerlink" title="(애니메이션을 위한 인기있는 패키지는 무엇인가요?)"></a>(애니메이션을 위한 인기있는 패키지는 무엇인가요?)</h4><p>React 생태계에서 인기있는 애니메이션 패키지는 React Transition Group과 React Motion 입니다.</p>
+</li>
+<li><h3 id="What-is-the-benefit-of-styles-modules"><a href="#What-is-the-benefit-of-styles-modules" class="headerlink" title="What is the benefit of styles modules?"></a>What is the benefit of styles modules?</h3><h4 id="styles-modules-의-이점은-무엇인가요"><a href="#styles-modules-의-이점은-무엇인가요" class="headerlink" title="(styles modules 의 이점은 무엇인가요?)"></a>(styles modules 의 이점은 무엇인가요?)</h4><p>styles modules 은 component 에서 style 의 값을 하드 코딩하는 것을 피하기 위해 추천됩니다.<br>서로 다른 UI component 에서 사용될 수 있는 값들은 자체 모듈에서 받아와야 합니다.</p>
+</li>
+</ol>
+<p>예를 들어, 이런 style 들은 별도의 component 로 받아낼 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> colors = &#123;</span><br><span class="line">  white,</span><br><span class="line">  black,</span><br><span class="line">  blue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> space = [</span><br><span class="line">  <span class="number">0</span>,</span><br><span class="line">  <span class="number">8</span>,</span><br><span class="line">  <span class="number">16</span>,</span><br><span class="line">  <span class="number">32</span>,</span><br><span class="line">  <span class="number">64</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>다른 component 들에서 개별적으로 가져올 수 있습니다.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; space, colors &#125; from &apos;./styles&apos;</span><br></pre></td></tr></table></figure>
+<ol start="126">
+<li><h3 id="What-are-the-popular-React-specific-linters"><a href="#What-are-the-popular-React-specific-linters" class="headerlink" title="What are the popular React-specific linters?"></a>What are the popular React-specific linters?</h3><h4 id="인기있는-React-linters-는-무엇인가요"><a href="#인기있는-React-linters-는-무엇인가요" class="headerlink" title="(인기있는 React linters 는 무엇인가요?)"></a>(인기있는 React linters 는 무엇인가요?)</h4><p>ESLint 는 인기있는 Javascript linters 입니다. ESLint 는 코드 스타일을 분석할 수 있는 플러그인입니다.<br>React 에서 대부분 사용하는 npm 패키지 중 하나는 <code>eslint-plugin-react</code> 입니다.<br>기본적으로 몇가지의 best practices 를 확인하여 규칙을 바탕으로 iterators 의 key 에서 전체 prop type 까지 확인합니다.<br>다른 인기있는 플러그인은 <code>eslint-plugin-jsx-a11y</code> 이며, 접근성을 통해 문제를 해결하는데 도움을 줍니다.<br>JSX 는 일반적인 HTML 문법과 약간 다르게 제공하므로, <code>alt</code> text 그리고 <code>tabindex</code> 같은 문제는 플러그인으로 선택되지 않습니다.</p>
+</li>
+<li><h3 id="How-to-make-AJAX-call-and-in-which-component-lifecycle-methods-should-I-make-an-AJAX-call"><a href="#How-to-make-AJAX-call-and-in-which-component-lifecycle-methods-should-I-make-an-AJAX-call" class="headerlink" title="How to make AJAX call and in which component lifecycle methods should I make an AJAX call?"></a>How to make AJAX call and in which component lifecycle methods should I make an AJAX call?</h3><h4 id="어떻게-AJAX-를-호출하고-어떤-lifecycle-에서-메서드를-호출해야하나요"><a href="#어떻게-AJAX-를-호출하고-어떤-lifecycle-에서-메서드를-호출해야하나요" class="headerlink" title="(어떻게 AJAX 를 호출하고 어떤 lifecycle 에서 메서드를 호출해야하나요?)"></a>(어떻게 AJAX 를 호출하고 어떤 lifecycle 에서 메서드를 호출해야하나요?)</h4><p>AJAX 라이브러리인 Axios, jQuery AJAX, 그리고 브라우저에 내장된 fetch 를 사용할 수 있습니다.<br><code>componentDidMount()</code> lifecycle 메서드에서 데이터를 불러와야합니다.<br>setStaet() 를 사용하여 데이터를 검색할때 component 를 update 할 수 있습니다.</p>
+</li>
+</ol>
+<p>예를 들어, API 에서 직원목록을 가져와 local state 를 설정합니다:</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      employees: [],</span><br><span class="line">      error: <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    fetch(<span class="string">'https://api.example.com/items'</span>)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> res.json())</span><br><span class="line">      .then(</span><br><span class="line">        (result) =&gt; &#123;</span><br><span class="line">          <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            employees: result.employees</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        (error) =&gt; &#123;</span><br><span class="line">          <span class="keyword">this</span>.setState(&#123; error &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; error, employees &#125; = <span class="keyword">this</span>.state</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">      <span class="keyword">return</span> &lt;div&gt;Error: &#123;error.message&#125;&lt;/div&gt;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;employees.map(<span class="function"><span class="params">item</span> =&gt;</span> (</span><br><span class="line">            &lt;li key=&#123;employee.name&#125;&gt;</span><br><span class="line">              &#123;employee.name&#125;-&#123;employees.experience&#125;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          ))&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="128">
+<li><h3 id="What-are-render-props"><a href="#What-are-render-props" class="headerlink" title="What are render props?"></a>What are render props?</h3><h4 id="Render-Props-란-무엇인가요"><a href="#Render-Props-란-무엇인가요" class="headerlink" title="(Render Props 란 무엇인가요?)"></a>(Render Props 란 무엇인가요?)</h4>Render Props 는 값이 함수인 prop 를 이용하여 component 간에 코드를 공유하는 기술입니다.<br>아래 component 는 render prop 을 사용하여 React element 를 반환합니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;DataProvider render=&#123;data =&gt; (</span><br><span class="line">  &lt;h1&gt;&#123;<span class="string">`Hello <span class="subst">$&#123;data.target&#125;</span>`</span>&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">)&#125;/</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>React Router 와 DownShift 라이브러리는 이 패턴을 사용합니다.</p>
+<h2 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a>React Router</h2><ol start="129">
+<li><h3 id="What-is-React-Router"><a href="#What-is-React-Router" class="headerlink" title="What is React Router?"></a>What is React Router?</h3><h4 id="React-Router-가-무엇인가요"><a href="#React-Router-가-무엇인가요" class="headerlink" title="(React Router 가 무엇인가요?)"></a>(React Router 가 무엇인가요?)</h4><p>React Router 는 React 에 구현된 강력한 routing 라이브러리 입니다.<br>페이지에 보여지는 내용과 URL 을 동기화된 상태로 유지해주고, 애플리케이션에 새로운 화면과 흐름을 추가할 수 있게 도와줍니다.</p>
+</li>
+<li><h3 id="How-React-Router-is-different-from-history-library"><a href="#How-React-Router-is-different-from-history-library" class="headerlink" title="How React Router is different from history library?"></a>How React Router is different from history library?</h3><h4 id="React-router-와-history-라이브러리의-다른점은-무엇인가요"><a href="#React-router-와-history-라이브러리의-다른점은-무엇인가요" class="headerlink" title="(React router 와 history 라이브러리의 다른점은 무엇인가요?)"></a>(React router 와 history 라이브러리의 다른점은 무엇인가요?)</h4><p>React router 는 history 라이브러리를 감싼 래퍼입니다. React router는 브라우저의 <code>window.history</code> 과 상호작용을 하고, 브라우저 및 hash history 을 다룹니다.<br>또 모바일 앱 개발 (React Native) 및 Node 의 unit testing 처럼 global history 가 없는 환경에 유용한 memory 히스토리를 제공합니다.</p>
+</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/22/REACT/react-translate-12/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [111 ~ 120]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/01/REACT/react-translate-14/">
+        
+          React Interview (리액트 면접 질문) [130 ~ 139]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/23/REACT/react-translate-13/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [121 ~ 130]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/23/REACT/react-translate-13/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [130 ~ 139] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [130 ~ 139]</h2>
+  <p class="post-date">2018-12-01</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>131</td>
+<td><a href="#what-are-the-router-components-of-react-router-v4">What are the \<router> components of React Router v4?</router></a></td>
+</tr>
+<tr>
+<td>132</td>
+<td><a href="#what-is-the-purpose-of-push-and-replace-methods-of-history">What is the purpose of push and replace methods of history?</a></td>
+</tr>
+<tr>
+<td>133</td>
+<td><a href="#how-do-you-programmatically-navigate-using-react-router-v4">How do you programmatically navigate using React router v4?</a></td>
+</tr>
+<tr>
+<td>134</td>
+<td><a href="#how-to-get-query-parameters-in-react-router-v4">How to get query parameters in React Router v4</a></td>
+</tr>
+<tr>
+<td>135</td>
+<td><a href="#why-you-get-router-may-have-only-one-child-element-warning">Why you get “Router may have only one child element” warning?</a></td>
+</tr>
+<tr>
+<td>136</td>
+<td><a href="#how-to-pass-params-to-historypush-method-in-react-router-v4">How to pass params to history.push method in React Router v4?</a></td>
+</tr>
+<tr>
+<td>137</td>
+<td><a href="#how-to-implement-default-or-notfound-page">How to implement default or NotFound page?</a></td>
+</tr>
+<tr>
+<td>138</td>
+<td><a href="#how-to-get-history-on-react-router-v4">How to get history on React Router v4?</a></td>
+</tr>
+<tr>
+<td>139</td>
+<td><a href="#how-to-perform-automatic-redirect-after-login">How to perform automatic redirect after login?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="131">
+<li><h3 id="What-are-the-components-of-React-Router-v4"><a href="#What-are-the-components-of-React-Router-v4" class="headerlink" title="What are the  components of React Router v4?"></a>What are the <router> components of React Router v4?</router></h3><h4 id="React-router-v4-의-component-는-무엇이-있나요"><a href="#React-router-v4-의-component-는-무엇이-있나요" class="headerlink" title="(React router v4 의  component 는 무엇이 있나요?)"></a>(React router v4 의 <router> component 는 무엇이 있나요?)</router></h4></li>
+</ol>
+<p>React router v4는 아래와 같은 3가지 component 를 제공합니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;MemoryRouter&gt;</span><br></pre></td></tr></table></figure>
+<p>위의 components 들은 browser, hash, 그리고 memory history 인스턴스를 만듭니다.<br>React Router v4 는 Router Object 의 context 를 통해 history 인스턴스의 속성과 메서드를 이용할 수 있게 해줍니다.</p>
+<ol start="132">
+<li><h3 id="What-is-the-purpose-of-push-and-replace-methods-of-history"><a href="#What-is-the-purpose-of-push-and-replace-methods-of-history" class="headerlink" title="What is the purpose of push() and replace() methods of history?"></a>What is the purpose of push() and replace() methods of history?</h3><h4 id="history의-push-와-replace-메서드의-목적은-무엇인가요"><a href="#history의-push-와-replace-메서드의-목적은-무엇인가요" class="headerlink" title="(history의 push() 와 replace()  메서드의 목적은 무엇인가요?)"></a>(history의 push() 와 replace()  메서드의 목적은 무엇인가요?)</h4>history 인스턴스에는 navigation 을 위한 두 가지 메서드가 있습니다.</li>
+</ol>
+<ul>
+<li>push()</li>
+<li>replace()</li>
+</ul>
+<p>방문한 위치의 history 를 배열로 생각한다면, push() 는 배열에 새 위치를 추가하는 것이고 replace() 는 현재의 위치를 새 위치로 변경하는 것입니다.</p>
+<ol start="133">
+<li><h3 id="How-do-you-programmatically-navigate-using-React-Router-v4"><a href="#How-do-you-programmatically-navigate-using-React-Router-v4" class="headerlink" title="How do you programmatically navigate using React Router v4?"></a>How do you programmatically navigate using React Router v4?</h3><h4 id="어떻게-프로그래밍-방식으로-React-Router-v4-의-navigate-를-사용하나요"><a href="#어떻게-프로그래밍-방식으로-React-Router-v4-의-navigate-를-사용하나요" class="headerlink" title="(어떻게 프로그래밍 방식으로 React Router v4 의 navigate  를 사용하나요?)"></a>(어떻게 프로그래밍 방식으로 React Router v4 의 navigate  를 사용하나요?)</h4></li>
+</ol>
+<p>component 안에서 프로그래밍 방식으로 routing/navigation 을 수행하는 세가지의 다른 방법이 있습니다.</p>
+<ul>
+<li>withRouter() higher-order function 을 사용하기:<br>withRouter () higher-order function 은 history object 를 component 의 prop 로 삽입합니다.<br>이 객체는 context 의 사용을 피하기 위해 push() 그리고 replace() 메서드를 제공합니다.</li>
+</ul>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span> <span class="comment">// this also works with 'react-router-native'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Button = withRouter(<span class="function">(<span class="params">&#123; history &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;button</span><br><span class="line">    type=<span class="string">'button'</span></span><br><span class="line">    onClick=&#123;() =&gt; &#123; history.push(<span class="string">'/new-location'</span>) &#125;&#125;</span><br><span class="line">  &gt;</span><br><span class="line">    &#123;<span class="string">'Click Me!'</span>&#125;</span><br><span class="line">  &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">))</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><route> component 그리고 render props 패턴 사용하기:<br><router> component 는 withRouter() 와 같은 prop 를 전달하므로, history prop 를 통해 history 메서드에 접근할 수 있습니다.</router></route></li>
+</ul>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Button = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Route render=&#123;(&#123; history &#125;) =&gt; (</span><br><span class="line">    &lt;button</span><br><span class="line">      type=<span class="string">'button'</span></span><br><span class="line">      onClick=&#123;() =&gt; &#123; history.push(<span class="string">'/new-location'</span>) &#125;&#125;</span><br><span class="line">    &gt;</span><br><span class="line">      &#123;<span class="string">'Click Me!'</span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  )&#125; /</span>&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>context 사용<br>이 옵션은 추천되지 않으며 불안정한 API 로 처리됩니다.</li>
+</ul>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Button = <span class="function">(<span class="params">props, context</span>) =&gt;</span> (</span><br><span class="line">  &lt;button</span><br><span class="line">    type=<span class="string">'button'</span></span><br><span class="line">    onClick=&#123;() =&gt; &#123;</span><br><span class="line">      context.history.push(<span class="string">'/new-location'</span>)</span><br><span class="line">    &#125;&#125;</span><br><span class="line">  &gt;</span><br><span class="line">    &#123;<span class="string">'Click Me!'</span>&#125;</span><br><span class="line">  &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Button.contextTypes = &#123;</span></span><br><span class="line"><span class="regexp">  history: React.PropTypes.shape(&#123;</span></span><br><span class="line"><span class="regexp">    push: React.PropTypes.func.isRequired</span></span><br><span class="line"><span class="regexp">  &#125;)</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="134">
+<li><h3 id="How-to-get-query-parameters-in-React-Router-v4"><a href="#How-to-get-query-parameters-in-React-Router-v4" class="headerlink" title="How to get query parameters in React Router v4?"></a>How to get query parameters in React Router v4?</h3><h4 id="React-Router-v4-에서-어떻게-query-parameters-가져오나요"><a href="#React-Router-v4-에서-어떻게-query-parameters-가져오나요" class="headerlink" title="(React Router v4 에서 어떻게 query parameters 가져오나요?)"></a>(React Router v4 에서 어떻게 query parameters 가져오나요?)</h4>수년동안 다른 구현 지원에 대한 사용자들의 요청이 있었기 때문에 React Router v4의 query strings 을 parse 하는 기능이 제거되었습니다.<br>그래서 사용자들이 선호하는 구현방식을 선택하도록 결정되었습니다.<br>추천 방법은 query strings 라이브러리를 사용하는것 입니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> queryString = <span class="built_in">require</span>(<span class="string">'query-string'</span>);</span><br><span class="line"><span class="keyword">const</span> parsed = queryString.parse(props.location.search);</span><br></pre></td></tr></table></figure>
+<p>native 방식을 원한다면 URLSearchParams 을 사용할 수 있습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> params = <span class="keyword">new</span> URLSearchParams(props.location.search)</span><br><span class="line"><span class="keyword">const</span> foo = params.get(<span class="string">'name'</span>)</span><br></pre></td></tr></table></figure>
+<p>IE11에는 polyfill을 사용해야합니다.</p>
+<ol start="135">
+<li><h3 id="Why-you-get-“Router-may-have-only-one-child-element”-warning"><a href="#Why-you-get-“Router-may-have-only-one-child-element”-warning" class="headerlink" title="Why you get “Router may have only one child element” warning?"></a>Why you get “Router may have only one child element” warning?</h3><h4 id="왜-“Router-는-오직-하나의-자식-element-만-있을-수-있습니다”-라는-경고를-받나요"><a href="#왜-“Router-는-오직-하나의-자식-element-만-있을-수-있습니다”-라는-경고를-받나요" class="headerlink" title="(왜 “Router 는 오직 하나의 자식 element 만 있을 수 있습니다” 라는 경고를 받나요?)"></a>(왜 “Router 는 오직 하나의 자식 element 만 있을 수 있습니다” 라는 경고를 받나요?)</h4><switch> 는 route 를 독점적으로 렌더링하기 때문에 <switch> 으로 Route 들을 감싸야합니다.</switch></switch></li>
+</ol>
+<p>먼저 Switch 를 가져와야 추가해야 합니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Switch, Router, Route &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br></pre></td></tr></table></figure>
+<p><switch> 블록안에 routes 를 정의해아합니다.</switch></p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Switch&gt;</span><br><span class="line">    &lt;Route &#123;<span class="comment">/* ... */</span>&#125; /&gt;</span><br><span class="line">    &lt;Route &#123;<span class="comment">/* ... */</span>&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+<ol start="136">
+<li><h3 id="How-to-pass-params-to-history-push-method-in-React-Router-v4"><a href="#How-to-pass-params-to-history-push-method-in-React-Router-v4" class="headerlink" title="How to pass params to history.push method in React Router v4?"></a>How to pass params to history.push method in React Router v4?</h3><h4 id="React-Router-v4-에서-어떻게-history-push-메서드에-파라미터를-전달하나요"><a href="#React-Router-v4-에서-어떻게-history-push-메서드에-파라미터를-전달하나요" class="headerlink" title="(React Router v4 에서 어떻게 history.push 메서드에 파라미터를 전달하나요?)"></a>(React Router v4 에서 어떻게 history.push 메서드에 파라미터를 전달하나요?)</h4></li>
+</ol>
+<p>navigating 하는 동안 history object 에 props 를 전달할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.props.history.push(&#123;</span><br><span class="line">  pathname: <span class="string">'/template'</span>,</span><br><span class="line">  search: <span class="string">'?name=sudheer'</span>,</span><br><span class="line">  state: &#123; <span class="attr">detail</span>: response.data &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>search</code> 속성은 push() 메서드에 query params 을 전달하는데 사용됩니다.</p>
+<ol start="137">
+<li><h3 id="How-to-implement-default-or-NotFound-page"><a href="#How-to-implement-default-or-NotFound-page" class="headerlink" title="How to implement default or NotFound page?"></a>How to implement default or NotFound page?</h3><h4 id="기본-페이지-또는-NotFound-를-어떻게-구현하나요"><a href="#기본-페이지-또는-NotFound-를-어떻게-구현하나요" class="headerlink" title="(기본 페이지 또는 NotFound 를 어떻게 구현하나요?)"></a>(기본 페이지 또는 NotFound 를 어떻게 구현하나요?)</h4></li>
+</ol>
+<p><code>&lt;Switch&gt;</code> 는 일치하는 첫번째 자식 <code>&lt;Route&gt;</code> 를 렌더링합니다. 경로가 없는 <code>&lt;Route&gt;</code> 는 항상 일치합니다.<br>아래와 같이 경로를 속성을 제거해주면됩니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/user"</span> component=&#123;User&#125;/&gt;</span><br><span class="line">  &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="138">
+<li><h3 id="How-to-get-history-on-React-Router-v4"><a href="#How-to-get-history-on-React-Router-v4" class="headerlink" title="How to get history on React Router v4?"></a>How to get history on React Router v4?</h3><h4 id="어떻게-React-Router-v4에서-history를-얻나요"><a href="#어떻게-React-Router-v4에서-history를-얻나요" class="headerlink" title="(어떻게 React Router v4에서 history를 얻나요?)"></a>(어떻게 React Router v4에서 history를 얻나요?)</h4></li>
+</ol>
+<ul>
+<li>history object 를 내보내고 이 모듈을 전체 프로젝트에 가져오는 모듈을 만드세요.</li>
+</ul>
+<p>예를 들면, history.js 파일을 만듭니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createBrowserHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createBrowserHistory(&#123;</span><br><span class="line">  <span class="comment">/* pass a configuration object here if needed */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>기본 구현된 routers 대신 <code>&lt;Router&gt;</code> component 를 사용해야합니다. index.js 에서 위의 history.js 를 가져왔습니다.</li>
+</ul>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Router &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> history <span class="keyword">from</span> <span class="string">'./history'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></span><br><span class="line"></span><br><span class="line">ReactDOM.render((</span><br><span class="line">  &lt;Router history=&#123;history&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), holder)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>기본 구현된 history object 와 유사하 history object 의 push 메서드를 사용할 수 있습니다.</li>
+</ul>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// some-other-file.js</span></span><br><span class="line"><span class="keyword">import</span> history <span class="keyword">from</span> <span class="string">'./history'</span></span><br><span class="line"></span><br><span class="line">history.push(<span class="string">'/go-here'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="139">
+<li><h3 id="How-to-perform-automatic-redirect-after-login"><a href="#How-to-perform-automatic-redirect-after-login" class="headerlink" title="How to perform automatic redirect after login?"></a>How to perform automatic redirect after login?</h3><h4 id="어떻게-로그인후에-자동으로-redirect-를-시키나요"><a href="#어떻게-로그인후에-자동으로-redirect-를-시키나요" class="headerlink" title="(어떻게 로그인후에 자동으로 redirect 를 시키나요?)"></a>(어떻게 로그인후에 자동으로 redirect 를 시키나요?)</h4></li>
+</ol>
+<p><code>react-router</code> 패키지는 React Router 에 <code>&lt;Redirect&gt;</code> component 를 제공합니다. <code>&lt;Redirect&gt;</code> 을 렌더링하면 새로운 위치로 이동합니다.<br>server-side redirect 와 같이, history stack 의 현재 위치를 새로운 위치로 덮어씌웁니다. </p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Redirect &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.isLoggedIn === <span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Redirect</span> <span class="attr">to</span>=<span class="string">"/your/redirect/page"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125; else &#123;</span></span><br><span class="line"><span class="xml">      return <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;'Login Please'&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure></section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/23/REACT/react-translate-13/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [121 ~ 130]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/08/hello-world/">
+        
+          Hello World
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/12/01/REACT/react-translate-14/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [130 ~ 139]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/12/01/REACT/react-translate-14/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

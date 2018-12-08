@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS - 실습. 과일가게와 장난감가게 | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>JS - 실습. 과일가게와 장난감가게</h2>
+  <p class="post-date">2018-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="과일가게와-장난감가게"><a href="#과일가게와-장난감가게" class="headerlink" title="과일가게와 장난감가게"></a>과일가게와 장난감가게</h1><p><img src="https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png" alt=""></p>
+<h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>한 마을에는 <strong>과일 가게</strong>와 <strong>장난감 가게</strong>가 있습니다.<br><strong>과일 가게</strong>에는 사과와 파인애플을 팔며 <strong>사과</strong>는 <strong>200원</strong>, <strong>파인애플</strong>은 <strong>500원</strong>에 판매되고 있습니다.<br>과일의 <strong>재고는 10개씩</strong>으로 동일합니다.</p>
+<p><strong>장난감 가게</strong>에는 미니언즈 피규어와 머리띠를 판매합니다.<br>미니언즈 피규어는 <strong>1000원</strong> 머리띠는 <strong>500원</strong>에 판매가되고 있고 각각 <strong>재고는 각각 10개</strong>로 동일합니다.</p>
+<p><strong>짱구</strong>는 마을 주민입니다. 짱구는 <strong>3000원의 용돈</strong>이 있습니다.<br>과일 가게에서 사과를 2개 구매하고 파인애플을 1개 구매한 후<br>장난감 가게에서 미니언즈 피규어 1개 머리띠 1 개를 구매하려고 합니다.</p>
+<p>물건을 다 산 후 짱구가 구매한 물품들을 나열하여 출력해주세요.<br>또 남은 용돈을 얼마인지 계산하여 출력해주세요</p>
+<h3 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h3><p>먼저 가게를 만들 데이터들을 준비합니다.<br>데이터에 따라 만들어지는 가게의 물건들이 달라지게 됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = &#123; <span class="comment">// 과일가게를 만들 데이터</span></span><br><span class="line">  apple: &#123;</span><br><span class="line">    price: <span class="number">200</span>,</span><br><span class="line">    stock: <span class="number">10</span></span><br><span class="line">  &#125;,</span><br><span class="line">  pineapple: &#123;</span><br><span class="line">    price: <span class="number">500</span>,</span><br><span class="line">    stock: <span class="number">10</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> toys = &#123; <span class="comment">// 장난감 가게를 만든 ㅔ이터</span></span><br><span class="line">  minions: &#123;</span><br><span class="line">    price: <span class="number">1000</span>,</span><br><span class="line">    stock: <span class="number">10</span></span><br><span class="line">  &#125;,</span><br><span class="line">  teddyBear: &#123;</span><br><span class="line">    price: <span class="number">500</span>,</span><br><span class="line">    stock: <span class="number">10</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>가게를 만들 생성자 함수를 정의합니다.<br>생성자 함수는 가게의 이름과 판매할 아이템 데이터를 받습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Shop</span>(<span class="params">name, items</span>) </span>&#123; <span class="comment">// 가게이름, 아이템 데이터</span></span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.items = items;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위에서 만들어둔 fruits 데이터를 넣어 과일 가게를 생성합니다.</span></span><br><span class="line"><span class="keyword">new</span> Shop(<span class="string">'과일 가게'</span>, fruits)</span><br></pre></td></tr></table></figure>
+<p>계속해서 생성자함수에 과일을 판매하는 함수를 만들겠습니다.<br><strong>sellItem( )</strong> 이라는 함수는 과일의 이름과 구매 수량을 매개변수로 받습니다.<br>판매하고있는 items 에서 넘겨받은 이름을 가진 객체를 가져와 재고에서 구매한 수량만큼 뺴줍니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Shop</span>(<span class="params">name, items</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.items = items;</span><br><span class="line">  <span class="comment">/* 판매될 아이템이름과, 수량을 받는다 */</span></span><br><span class="line">  <span class="keyword">this</span>.sellItem = <span class="function"><span class="keyword">function</span>(<span class="params">name, qauntity</span>) </span>&#123; <span class="comment">// 이름, 구매수량</span></span><br><span class="line">    <span class="keyword">var</span> item = <span class="keyword">this</span>.items[name] <span class="comment">// name 이라는 이름을 가진 객체를 가져옵니다.</span></span><br><span class="line">    item.stock -= qauntity <span class="comment">// 재고에서 구매수량만큼 빼줍니다.</span></span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="comment">// 구매자가 지불해야될 가격과 구매한 아이템을 리턴해줍니다.</span></span><br><span class="line">      itemName: item.name,</span><br><span class="line">      price: item.price * qauntit</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이제 구매자를 만들어 보려고 합니다 :)<br>유저를 만들 수 있는 생성자 함수를 만듭니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, money</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.money = money;</span><br><span class="line">  <span class="keyword">this</span>.receipt = [];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> User(<span class="string">'olaf'</span>, <span class="number">3000</span>); <span class="comment">// olaf 에게 3000원의 용돈을 줍니다.</span></span><br></pre></td></tr></table></figure>
+<p>User 는 과일을 구매할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, money</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.money = money;</span><br><span class="line">  <span class="keyword">this</span>.receipt = [];</span><br><span class="line">  <span class="keyword">this</span>.buyItem = <span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123; <span class="comment">// buyItem 은 아이템 이름과, 구매한 가격을 받습니다.</span></span><br><span class="line">    <span class="keyword">this</span>.receipt.push(item.itemName); <span class="comment">// 구매한 아이템은 영수증에 기록하고</span></span><br><span class="line">    <span class="keyword">this</span>.money -= item.price; <span class="comment">// 구매를 위해 지불한 돈만큼 자신의 돈에서 차감합니다.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이제 위에서 만든 것들을 잘 조합해서 사용하기만 하면됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruitShop = <span class="keyword">new</span> Shop(<span class="string">'과일 가게'</span>, fruits); <span class="comment">// 과일 가게 생성</span></span><br><span class="line"><span class="keyword">var</span> toyShop = <span class="keyword">new</span> Shop(<span class="string">'장난감 가게'</span>); <span class="comment">// 장난감 가게 생성</span></span><br><span class="line"><span class="keyword">var</span> user = <span class="keyword">new</span> User(<span class="string">'olaf'</span>, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buyApple = fruitShop.sellItem(<span class="string">'apple'</span>, <span class="number">3</span>) <span class="comment">// 사과 3개를 구매하였습니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'구매한 아이템'</span>, buyApple.itemName); <span class="comment">// apple</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'지불해야되는 돈'</span>, buyApple.price); <span class="comment">// 600</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'user가 사과를 구매했습니다.'</span>)</span><br><span class="line"></span><br><span class="line">user.buyItem(buyApple); <span class="comment">// olaf 가 가격을 지불합니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'사과 구매 후 user 정보'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'남은 용돈'</span>, user.money); <span class="comment">// 남은 용돈 4400</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'영수증'</span>, user.receipt); <span class="comment">// [ 'apple' ]</span></span><br><span class="line"></span><br><span class="line">toyShop.sellItem(<span class="string">'minions'</span>,  <span class="number">5</span>); <span class="comment">// 똑같이 장난감도 구매하면 되겠죠 :)</span></span><br></pre></td></tr></table></figure>
+<p>User 는 구매자의 역할이고 Shop 들은 판매하는 입장입니다.<br>처음에는 이해하기 조금 어려울 수 있어요. 큰 흐름을 보려고하면 조금 더 이해가 수월할거에요</p>
+<h3 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h3><p>프로그램을 만들보면 우리의 의도대로 동작하지 않는 경우가 분명히 발생합니다.</p>
+<p>위의 코드에서 Shop 의 sellItem 을 예로 들어보겠습니다.<br>sellItem 은 아이템의 이름과 수량을 받아서 판매를 하는 함수입니다. 그런데 가게의 아이템 재고보다 더 많은 수량을 구매자가 구매하길 원한다면 어떻게 될까요?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.sellItem = <span class="function"><span class="keyword">function</span>(<span class="params">name, qauntity</span>) </span>&#123; <span class="comment">// 이름, 구매수량</span></span><br><span class="line">    <span class="keyword">var</span> item = <span class="keyword">this</span>.items[name] <span class="comment">// name 이라는 이름을 가진 객체를 가져옵니다.</span></span><br><span class="line">    item.stock -= qauntity <span class="comment">// 재고에서 구매수량만큼 빼줍니다.</span></span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="comment">// 구매자가 지불해야될 가격과 구매한 아이템을 리턴해줍니다.</span></span><br><span class="line">      itemName: item.name,</span><br><span class="line">      price: item.price * qauntit</span><br><span class="line">    &#125;;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>가게의 stock 은 - 가 되고 구매자는 수량대로 가격을 지불 하게됩니다. 그래서 우리는 재고보다 많은 수를 구매하고자 하면 구매를 막거나 현재 재고만큼 판매할 수 있도록 예외처리를 해줘야합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.sellItem = <span class="function"><span class="keyword">function</span>(<span class="params">name, qauntity</span>) </span>&#123; <span class="comment">// 이름, 구매수량</span></span><br><span class="line">    <span class="keyword">var</span> item = <span class="keyword">this</span>.items[name] <span class="comment">// name 이라는 이름을 가진 객체를 가져옵니다.</span></span><br><span class="line">    <span class="keyword">if</span> (qauntity &gt; item.stock) &#123; <span class="comment">// 구매하고자 하는 수량이 재고보다 많다면 </span></span><br><span class="line">      item.stock = <span class="number">0</span>; <span class="comment">// 재고를 0 으로 바꿔줘야겠죠 ?</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        itemName: name,</span><br><span class="line">        price: item.price * qauntity</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 구매하고자 하는 수량이 재고보다 작을 때 </span></span><br><span class="line">      item.stock -= qauntity <span class="comment">// 재고에서 구매수량만큼 빼줍니다.</span></span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="comment">// 구매자가 지불해야될 가격과 구매한 아이템을 리턴해줍니다.</span></span><br><span class="line">        itemName: name,</span><br><span class="line">        price: item.price * qauntity</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>User 의 buyItem 도 예외처리가 필요합니다.<br>가진 용돈보다 과일의 구매 가격이 클 때 구매하지 못 하도록 예외처리를 해줘야합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.buyItem = <span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123; <span class="comment">// buyItem 은 아이템 이름과, 구매한 가격을 받습니다.</span></span><br><span class="line">    <span class="keyword">if</span> (item.price &gt; <span class="keyword">this</span>.money) &#123; <span class="comment">// 과일 가격이 용돈보다 클 경우 </span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'용돈이 부족합니다.'</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.receipt.push(item.itemName); <span class="comment">// 구매한 아이템은 영수증에 기록하고    </span></span><br><span class="line">    <span class="keyword">this</span>.money -= item.price; <span class="comment">// 구매를 위해 지불한 돈만큼 자신의 돈에서 차감합니다.  </span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h3><p>우리는 예제를 통해서 생성자 함수를 이용해 모듈화를 하는 방법과 모듈을 조합하여 사용하는 객체지향적방식 또 함수를 이용하는 방법을 알아보았습니다.</p>
+<p>위의 예제를 이해했다면 뒤에서 배울 prototype, module pettern 등의 학습에도 무리 없을거라고 생각합니다.</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Javascript">
+    <span class="tag-code">Javascript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/13/JS/chap-06/">
+        <span class="nav-arrow">← </span>
+        
+          JS - 06. 객체 (Object)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/JS/chap-08/">
+        
+          JS - 08. 배열 (Array)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/13/JS/chap-07/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "JS - 실습. 과일가게와 장난감가게",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/13/JS/chap-07/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

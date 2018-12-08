@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS - 04. 반복문 | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>JS - 04. 반복문</h2>
+  <p class="post-date">2018-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="04-반복문"><a href="#04-반복문" class="headerlink" title="04. 반복문"></a>04. 반복문</h1><p><img src="https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png" alt=""></p>
+<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>이번 시간에는 반복문을 살펴보겠습니다. 반복문 말그대로 코드를 반복해주는 친구들입니다. 반복문은 아래와 같이 3가지의 종류가 있습니다.</p>
+<ul>
+<li>for</li>
+<li>while</li>
+<li>do_while</li>
+<li>continue (보조)</li>
+</ul>
+<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>일정 횟수만큼 조건에 따라 반복 실행하여야 할 때 사용합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(초기값; 조건; 증감식)&#123;</span><br><span class="line">  <span class="comment">// 반복 구문</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>간단한 문제<br> 1 - 10까지 출력하시오</p>
+</blockquote>
+<p>반복문을 쓰지 않고 위의 문제를 해결하려 한다면 코드는 아래와 같을 거에요</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// .... console.log(4 ~ 10);</span></span><br></pre></td></tr></table></figure>
+<p>10이면 console.log 가 10개 100 이면 100개의 코드가 반복됩니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i += <span class="number">1</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 이렇게 한줄로 끝낼수 있어요</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>반복문을 이용한다면 간단하게 해결됩니다. 위 코드의 실행 순서는 아래와 같습니다.</p>
+<ol>
+<li>초기값은 1입니다. </li>
+<li>조건을 비교합니다. 1 &lt;= 10 은 true 이기 때문에 console.log(i) 를 실행합니다.</li>
+<li>증감식으로 이동합니다. i = i + 1 가 실행되고 1이 증가하여 i는 2가 됩니다.</li>
+<li>1 ~ 3번을 반복합니다. 조건식이 false가 될때 반복문은 종료됩니다. </li>
+</ol>
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><p>while 은 조건이 false 가 될 때 까지 반복합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(조건)&#123;</span><br><span class="line">  <span class="comment">// 반복구문</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>만약에 조건값이 true로 떨어진다면 <strong>while</strong> 은 끝나지 않고 계속 실행됩니다.<br>이것을 <strong>무한루프</strong>라고 부릅니다. while을 쓰실때는 종료시점을 잘 맞춰주셔야 됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 궁금하시다면 이 구문을 개발자 도구에서 실행시켜보세요 </span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="do-while"><a href="#do-while" class="headerlink" title="do-while"></a>do-while</h3><p><strong>do-while</strong> 도 <strong>while</strong>문 입니다. 왜 do가 붙었냐면 do-while은 <strong>무조건 1번은 실행</strong>하고 조건을 비교해 while문을 실행할지 말지 판단하기 때문입니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 무조건 한번은 실행이 됩니다</span></span><br><span class="line">  i += <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">5</span>); <span class="comment">// 종료 조건을 걸어줍니다.</span></span><br></pre></td></tr></table></figure>
+<p>위의 경우 i 가 10 이기 때문에 10 &lt; 5 는 성립하지 않습니다.<br>하지만 do 영역은  무조건 한번은 실행되기 때문에 console 에 10이 찍힙니다.</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>continue를 만나면 이후 구문 실행을 생략하고 조건검사 위치로 이동합니다.</p>
+<blockquote>
+<p>간단한 문제<br> 2를 제외한 0 ~ 4 까지 수를 출력 하세요</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span>(i === <span class="number">2</span>)&#123; <span class="comment">// 2일 때는 건너뜁니다.</span></span><br><span class="line">    <span class="keyword">continue</span>; <span class="comment">// continue를 만나면 아래 console 은 실행되지 않습니다.</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="For-vs-While"><a href="#For-vs-While" class="headerlink" title="For vs While"></a>For vs While</h3><p>for와 while은 둘다 반복문 입니다. for 로 만들어진걸 while 로 변경할 수 있고 while 만들어진걸 for로 변경하는 것도 가능합니다.<br>그렇다면 차이점은 무엇일까요 ?</p>
+<h4 id="실행의-순서"><a href="#실행의-순서" class="headerlink" title="실행의 순서"></a>실행의 순서</h4><p>for 는 초기값 =&gt; 조건 =&gt; 실행 =&gt; 증감식의 순서로 실행이 됩니다.<br>while 의 경우 조건만 비교를 한 후 실행을 시키기 때문에 for 보다 while 의 속도가 빠릅니다.</p>
+<h4 id="범위에-대한-처리"><a href="#범위에-대한-처리" class="headerlink" title="범위에 대한 처리"></a>범위에 대한 처리</h4><p>for 문 같은 경우 for문 자체에서 범위에 대한 처리가 가능합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>범위에 대한 처리 ( ex. 1 ~ 10 ) 이라는 처리를 while 문 조건에서 처리할 수 없습니다.<br>밖에서 처리를 해줘야합니다. while 은 조건을 비교한 후 while 영역 안에서 후처리를 합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>; <span class="comment">// 범위에 대한 설정을 위해 while 문 밖에 변수를 선언</span></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">    i += <span class="number">1</span>; <span class="comment">// while 영역 안에서 i 에 대한 후처리를 한다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><blockquote>
+<p>간단한 문제1<br>라이언은 카카오중학교 학생이다. 라이언은 국어 78점을 맞았다. 라이언의 등급을 출력하시오 (80이상 A, 70이상 B, 69이상 C)</p>
+<p>간단한 문제2<br>라이언은 1~30 사이의 숫자중 짝수들의 숫자만 더하는 프로그램을 만들고싶다. 1 ~ 30 사이의 수들중 짝수만 골라내어 합산하는 프로그램을 만들어봅시다.</p>
+</blockquote>
+<p> <strong>정답</strong>: <a href="https://jsfiddle.net/gaffd2k6/" target="_blank" rel="noopener">https://jsfiddle.net/gaffd2k6/</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Javascript">
+    <span class="tag-code">Javascript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/13/JS/chap-03/">
+        <span class="nav-arrow">← </span>
+        
+          JS - 03. 조건문
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/JS/chap-05/">
+        
+          JS - 05. 함수 (Function)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/13/JS/chap-04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "JS - 04. 반복문",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/13/JS/chap-04/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

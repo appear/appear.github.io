@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS - 02. 연산자 | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>JS - 02. 연산자</h2>
+  <p class="post-date">2018-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="02-연산자"><a href="#02-연산자" class="headerlink" title="02. 연산자"></a>02. 연산자</h1><p><img src="https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png" alt=""></p>
+<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><p>자바스크립트 연산자에는 여러 종류가있는데요 자주쓰이는 것들을 우선적으로 보겠습니다. 처음 배우시는 분들은 한번씩 타이핑 해보시길 추천드려요.</p>
+<blockquote>
+<p>console.log()안에 내용은 개발자 도구에서 확인해볼 수 있도록 도와주는 디버깅용 함수입니다</p>
+</blockquote>
+<h3 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산 + - * / %"></a><strong>사칙연산 + - * / %</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span> + <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">45</span> - <span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span> * <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">12</span> / <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">12</span> % <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>또는 <strong>변수</strong>를 이용해도 됩니다.  <strong>=</strong> 은 <strong>대입 연산자</strong> 입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">15</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num + num2);</span><br><span class="line"><span class="built_in">console</span>.log(num - num2);</span><br><span class="line"><span class="built_in">console</span>.log(num * num2);</span><br><span class="line"><span class="built_in">console</span>.log(num / num2);</span><br><span class="line"><span class="built_in">console</span>.log(num % num2);</span><br></pre></td></tr></table></figure>
+<h3 id="을-이용한-연산"><a href="#을-이용한-연산" class="headerlink" title="+=, -=, *=, /= 을 이용한 연산"></a>+=, -=, *=, /= 을 이용한 연산</h3><p>유용하게 사용할 수 있으니 꼭 기억해주세요 :) </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>; <span class="comment">// num에 기존값에 새로운 값을 연산해주고싶을때  </span></span><br><span class="line">num = num + <span class="number">5</span>; <span class="comment">// 방법 1</span></span><br><span class="line">num += <span class="number">5</span>; <span class="comment">// 방법 2 '+=' 이런식으로 줄여줄 수 있어요</span></span><br></pre></td></tr></table></figure>
+<p> 더하기 연산자는 문자열을 합칠수도 있어요 ( 하지만 String 의 + 연산은 비싼 값을 요구한다니 좋은 방법은 아닌거 같아요 )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'안녕'</span> + <span class="string">'하세요'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="비교연산자"><a href="#비교연산자" class="headerlink" title="비교연산자"></a><strong>비교연산자</strong></h3><p>비교연산자는 <strong>== (Equal Operator) 느슨한 비교</strong> 연산자와 <strong>=== 엄격한(Strict Equal Operator) 비교</strong> 연산자가 존재합니다.<br>자바스크립트에서는 될 수 있으면 === 을 써야합니다. 이유를 알려드릴게요</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'5'</span>;</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str == num); </span><br><span class="line"><span class="comment">// 결과값이 어떻게 나올까요 ? </span></span><br><span class="line"><span class="comment">// 저는 처음에 당연히 false 인줄 알았는데요 이상하게도 결과값은 true 로 떨어집니다.</span></span><br></pre></td></tr></table></figure>
+<p>위에 경우 ‘5’와 5가 들어왔을때 자바스크립트는 영리하게도 …?<br>같은 5 라는 데이터로 인식을 한다고합니다. 그렇기 때문에 예상치도 못한 결과를 가져올 수 가 있어요.<br><strong>===</strong> 의 경우 값의 타입 / 형식을 체크해줘서 비교하기 때문에 정확한 결과를 가져올 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str === num); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>= 대입, == 느슨한 체크, === 엄격한체크 꼭 기억해 주세요 :)</p>
+<h3 id="크기-비교-연산자"><a href="#크기-비교-연산자" class="headerlink" title="크기 비교 연산자"></a>크<strong>기 비교 연산자</strong></h3><p>&lt;, &gt; (크다작다), &lt;= , &gt;= ( 작거나 같고, 크거나 같다) 는 알고계실 것이라 생각하고 넘어가겠습니다.</p>
+<h3 id="AND-OR-연산자"><a href="#AND-OR-연산자" class="headerlink" title="AND OR 연산자"></a><strong>AND OR 연산자</strong></h3><p> 저는 처음에 &amp;&amp; (and)<strong>,</strong> || (or) 연산자가 너무 헛갈렸습니다. &amp;&amp;은 모두가 참일때 성립,  ||은 하나라도 참이면 성립됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> bool2 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실행됨 console.log()의 값이 찍힘</span></span><br><span class="line"><span class="keyword">if</span>(bool)&#123; <span class="built_in">console</span>.log(<span class="string">'if문은 아직 신경쓰지마세요 true 라는 값을 봐주세요 !'</span>) &#125;</span><br><span class="line"><span class="comment">// 실행안됨 </span></span><br><span class="line"><span class="keyword">if</span>(bool2)&#123; <span class="built_in">console</span>.log(<span class="string">'if문은 아직 신경쓰지마세요 false 라는 값을 봐주세요 !'</span>) &#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 이렇게 연속해서도 사용할 수 있어요 이때 &amp;&amp;와 || 가 등장합니다. </span></span><br><span class="line"><span class="comment">// &amp;&amp; 연산이기때문에 모두가 참이어야하는데 bool2가 거짓이니 실행되지않습니다. </span></span><br><span class="line"><span class="keyword">if</span>(bool &amp;&amp; bool2)&#123; <span class="built_in">console</span>.log(<span class="string">'if문은 아직 신경쓰지마세요 bool 값을 봐주세요 !'</span>) &#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 이렇게 연속해서도 사용할 수 있어요 이때 &amp;&amp;와 || 가 등장합니다. </span></span><br><span class="line"><span class="comment">// || 연산이기때문에 하나라도 참이라면 실행이됩니다.  </span></span><br><span class="line"><span class="keyword">if</span>(bool || bool2)&#123; <span class="built_in">console</span>.log(<span class="string">'if문은 아직 신경쓰지마세요 bool 값을 봐주세요 !'</span>) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="증감연산자"><a href="#증감연산자" class="headerlink" title="증감연산자"></a><strong>증감연산자</strong></h3><p> – 와 ++ 는 증감 연산자라고 부릅니다 (증가, 감소) 위치에 따라서 동작하는 방식이 약간 달라집니다. ( ++, – 보다는 +=, -= 을 이용하는게 더 좋다고 합니다. 어떤 책에서는 ++, – 를 겉멋이라는 용어를 사용하기도 합니다)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// 복잡한 로직(과정)이 있다고 가정하겠습니다.</span></span><br><span class="line"><span class="comment">// 상황 1 : —num (연산전 num을 1감소 시키고 시작하겠다는 의미입나다) =&gt; 로직실행(이때의 num은 9이겠죠?);</span></span><br><span class="line"><span class="comment">// 상황 2 : num— (연산후에 num을 1감소 시키겠다는 의미입나다) =&gt; 로직실행(이때의 num은 10이겠죠) =&gt; 이후에 num 1감소</span></span><br><span class="line"><span class="comment">// ++num , num++ 도 마찬가지입니다.</span></span><br></pre></td></tr></table></figure>
+<h3 id="과"><a href="#과" class="headerlink" title="!과 !!"></a><strong>!과 !!</strong></h3><p> <strong>!</strong>는 ture, false를 반대로 <strong>!!</strong>는 값들 (배열, 객체또는 String, Number 등등..) 을 <strong>boolean</strong> 값으로 변경해줘요</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> check = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(!check); <span class="comment">// !는 boolean 값을 뒤집어줍니다. false</span></span><br><span class="line"><span class="keyword">var</span> string = <span class="string">'olaf'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(!!string); <span class="comment">// true </span></span><br><span class="line"><span class="comment">// 아래에서도 설명드리겠지만 빈 문자열 "" 은 false로 판별됩니다.</span></span><br><span class="line"><span class="keyword">var</span> empty = <span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(!!empty); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="Truthy-와-Falsy-values"><a href="#Truthy-와-Falsy-values" class="headerlink" title="Truthy 와 Falsy values"></a>Truthy 와 Falsy values</h3><p>기본적인 true, false 말고 조건문에서 false로 판단되는 값들이 몇가지 더 있습니다.<br>중요한 개념이니 꼭 숙지해주세요 !</p>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>0</li>
+<li>NaN (Not a Number)</li>
+<li>“” (빈문자열)</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Javascript">
+    <span class="tag-code">Javascript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/13/JS/chap-01/">
+        <span class="nav-arrow">← </span>
+        
+          JS - 01. 자료형과 변수
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/JS/chap-03/">
+        
+          JS - 03. 조건문
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/13/JS/chap-02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "JS - 02. 연산자",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/13/JS/chap-02/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS - 06. 객체 (Object) | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>JS - 06. 객체 (Object)</h2>
+  <p class="post-date">2018-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="06-객체-Object"><a href="#06-객체-Object" class="headerlink" title="06. 객체 (Object)"></a>06. 객체 (Object)</h1><p><img src="https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png" alt=""></p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>자바스크립트에서 기본 데이터타입 (boolean, number, string, null, undefined)을 제외한 모든것은 객체입니다.  </p>
+<p>객체는 이름 (key)과 값(value)의 쌍인 속성들을 포함하는 컨테이너라고도 할 수 있습니다.<br>또 데이터를 한 곳에 <strong>모으고 구조화 (중요합니다!!)</strong> 하는데 유용합니다.<br>기본 데이터 타입중에 null, undefined을 제외한 boolean, number, string 도 객체처럼 다룰 수 있습니다.</p>
+<p>객체는 아래와 같이 생겼습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    key: value</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.key) <span class="comment">// value =&gt; key값을 통해 value를 불러올 수 있습니다.</span></span><br></pre></td></tr></table></figure>
+<h3 id="속성-Property-과-메서드"><a href="#속성-Property-과-메서드" class="headerlink" title="속성 (Property) 과 메서드"></a>속성 (Property) 과 메서드</h3><p><strong>속성</strong>은 key(속성명), value(속성값) 로 표현할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// shop 에는 name 이라는 Property 가 있습니다.</span></span><br><span class="line"><span class="keyword">var</span> shop = &#123;</span><br><span class="line">    name: <span class="string">'과일 가게'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(shop.name) <span class="comment">// 과일 가게</span></span><br></pre></td></tr></table></figure>
+<p>메서<strong>드</strong>는 객체의 속성값으로 포함된 <strong>함수</strong>를 의미합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shop = &#123;</span><br><span class="line">    sell: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'사과 사세요~~'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">shop.sell() <span class="comment">// 사과 사세요</span></span><br></pre></td></tr></table></figure>
+<h3 id="객체-생성법"><a href="#객체-생성법" class="headerlink" title="객체 생성법"></a>객체 생성법</h3><p>객체를 생성하는 방법으로는 크게 세가지가 있습니다. </p>
+<ul>
+<li>new Object()를 이용한 생성자방법 </li>
+<li>{}로 생성하는 리터럴 방식 </li>
+<li>생성자 함수</li>
+</ul>
+<p>하나씩 비교해가면서 알아보겠습니다.</p>
+<h4 id="new-Object"><a href="#new-Object" class="headerlink" title="new Object"></a>new Object</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">// new Object 를 통해 Object 를 선언합니다.</span></span><br><span class="line"><span class="comment">// true =&gt; 생성된 Object 타입을 체크합니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Object</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// obj.key = value 의 형식으로 값을 추가할 수 있습니다.</span></span><br><span class="line">obj.name = <span class="string">'olaf'</span>;  </span><br><span class="line">obj.age = <span class="number">26</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>constructor는 해당 Object가 어떤 Object를 상속 받았는지를 판단할 수 있게 알려주는 속성입니다.</p>
+</blockquote>
+<p>new Object( 매개변수 ) 를 넣어서 객체를 생성할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(number.constructor === <span class="built_in">Number</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(number.constructor === <span class="built_in">Object</span>); <span class="comment">// false </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> string = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="string">"I am a string"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(string.constructor === <span class="built_in">String</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(string.constructor === <span class="built_in">Object</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boolean = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="built_in">console</span>.log(boolean.constructor === <span class="built_in">Boolean</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(boolean.constructor === <span class="built_in">Object</span>);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>혹시 눈치채셨나요 ? 위의 코드가 <strong>new Objec</strong>t 의 문제점입니다.<br>기본 자료형 number, string, boolean 도 Object 로 이용할 수 있다고 말씀드렸습니다.   </p>
+<p>new Object( number, string, boolean ) 을 인자로 넣어 만들어진 객체는 다른 내장 생성자에게 객체 생성을 위임하여 우리가 기대했던 결과와 다른 객체를 생성해버립니다.</p>
+<p>new Object 를 이용한 객체 생성법의 문제점을 정리해보면 아래와 같습니다.</p>
+<ul>
+<li>number, string, bool등 new Object로 생성시 우리가 의도했던 결과와는 다른 결과가 나옵니다.</li>
+<li>값을 하나하나 추가해줘야하니 가독성이 떨어집니다.</li>
+</ul>
+<h4 id="리터럴-방식"><a href="#리터럴-방식" class="headerlink" title="리터럴 방식"></a>리터럴 방식</h4><p>가장 많이 이용하는 객체 생성법입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 리터럴 방식으로 빈객체 생성</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> obj); <span class="comment">// object</span></span><br><span class="line"><span class="comment">// 이렇게 속성들을 추가 할 수 있어요, 그럼 new Object랑 같은거 아니에요 ? </span></span><br><span class="line">obj.name = <span class="string">'olaf'</span>;</span><br><span class="line">obj.age = <span class="number">26</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 리터럴 방식을 이용하면 아래와 같은 표현도 가능합니다.</span></span><br><span class="line"><span class="comment">// 이렇게 한번에 넣어줄 수 있어요. 속성들이 한눈에 보이죠 ?</span></span><br><span class="line"><span class="keyword">var</span> person = &#123; </span><br><span class="line">  name : <span class="string">'olaf'</span>,</span><br><span class="line">  age : <span class="number">26</span>,</span><br><span class="line">  getName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 메서드도 표현할 수 있어요</span></span><br><span class="line">    <span class="comment">// this 는 아직 모르셔도되요 자기 자신이라고만 알아주세요</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// olaf</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123; name: 'olaf', age: 26&#125;</span></span><br><span class="line"><span class="comment">// 속성 사용법</span></span><br><span class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// olaf key 값으로 접근할 수 있습니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.age); <span class="comment">// 26 </span></span><br><span class="line"><span class="built_in">console</span>.log(person.getName()); <span class="comment">// 메서드 실행</span></span><br></pre></td></tr></table></figure>
+<p>리터럴 생성 방식을 정리해보면 </p>
+<ul>
+<li>한번에 값들을 넣어줄 수 있기 때문에 가독성이 좋다. </li>
+<li>new Object 같이 엉뚱한 값을 리턴할 일이없다.</li>
+</ul>
+<h4 id="사용자-정의함수-생성자함수"><a href="#사용자-정의함수-생성자함수" class="headerlink" title="사용자 정의함수 (생성자함수)"></a>사용자 정의함수 (생성자함수)</h4><p>모듈화에 많이 쓰이는 방식입니다. 여러 모듈화 방법에 대해서는 뒤에서 알아보겠습니다 :) </p>
+<p>new 키워드로 객체를 생성하는 방법을 생성자 방식이라고 합니다.<br>생성자 함수를 만드는데는 몇가지 알아야할 사항이있습니다.</p>
+<p>첫번째로 생성자 함수 이름은 일반적으로 대문자로 시작합니다. 이것은 생성자 함수임을 인식하도록 도움을 줍니다.</p>
+<p>두번째 속성 또는 메서드명 앞에 기술한 this는 생성자 함수로 생성될 인스턴스(자기자신)를 가리킨다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// name 매개변수를 받는 Person 생성자 함수입니다.</span></span><br><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// 생성시 최초로 실행될 영역이에요 </span></span><br><span class="line">  <span class="comment">// this가 자기자신이라고했죠? this 는 Person 입니다. </span></span><br><span class="line">  <span class="comment">// Person.name을 넘겨받은 name 으로 하겠다는 의미입니다.</span></span><br><span class="line">  <span class="keyword">this</span>.name = name; </span><br><span class="line">  <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 함수도 추가할 수 있어요</span></span><br><span class="line">    <span class="comment">// this.name은 생성시 넘겨받은 이름입니다. </span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"I am"</span> + <span class="keyword">this</span>.name); </span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 생성자함수를 이용해 객체를 만들어 보겠습니다.</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">'olaf'</span>); <span class="comment">// name을 받기로했으니 olaf 라는 값을 넣어줬어요</span></span><br><span class="line"><span class="comment">// Person &#123;name: "olaf", say: ƒ&#125; </span></span><br><span class="line"><span class="comment">// 우리가 넣어준 olaf 가 person의 name 으로 들어갔습니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(p);</span><br><span class="line">p.say(); <span class="comment">// I am olaf 가 찍히겠죠 ?</span></span><br></pre></td></tr></table></figure>
+<p>좀 더 자세한 사용법은 뒤의 JS의 모듈화를 알아보는 챕터에서 다뤄보겠습니다.</p>
+<h4 id="TIP-생성자-함수를-강제화-하는-방법"><a href="#TIP-생성자-함수를-강제화-하는-방법" class="headerlink" title="TIP) 생성자 함수를 강제화 하는 방법"></a>TIP) 생성자 함수를 강제화 하는 방법</h4><p>생성자함수를 사용하려면 new를 써줘야된다고 배웟습니다.<br>만약에 실수를 해서 생성자 함수를 실행할때 new가 빠진다면 우리가 원하는대로 생성자함수가 안만들어지겠죠?  </p>
+<p>new를 강제로 하는 패턴을 알려드리겠습니다. ( 지금 이해 못 하셔도 괜찮습니다 )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// instanceof는 우변 피연산자의 프로토타입이 좌변 피연산자의 프로토타입 체인에 있는지 찾아주는 연산자입니다. </span></span><br><span class="line">  <span class="comment">// 쉽게말하면 this가 Person을 통해서 만들어진건지 판단해줍니다.</span></span><br><span class="line">  <span class="comment">// 그게 아니라면 new를 통해서 만들어서 return 해줍니다.</span></span><br><span class="line">	<span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Person))&#123; </span><br><span class="line">	  <span class="comment">// this 가 Person 을 통해서 만들어진 것이 아니라면</span></span><br><span class="line">	  <span class="keyword">return</span> <span class="keyword">new</span> Person(name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 만들어진것이 맞다면 원래대로 실행한다.</span></span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="객체-속성을-다루는-방법-추가-삭제-탐색-갱신"><a href="#객체-속성을-다루는-방법-추가-삭제-탐색-갱신" class="headerlink" title="객체 속성을 다루는 방법 (추가, 삭제, 탐색, 갱신)"></a>객체 속성을 다루는 방법 (추가, 삭제, 탐색, 갱신)</h3><h4 id="추가"><a href="#추가" class="headerlink" title="추가"></a>추가</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 빈객체</span></span><br><span class="line">obj.name = <span class="string">"olaf"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;name: "olaf"&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="삭제"><a href="#삭제" class="headerlink" title="삭제"></a>삭제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 빈객체</span></span><br><span class="line">obj.name = <span class="string">"olaf"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;name: "olaf"&#125;</span></span><br><span class="line"><span class="keyword">delete</span> obj.name; <span class="comment">// delete 를 사용해서 삭제</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="갱신"><a href="#갱신" class="headerlink" title="갱신"></a>갱신</h4><p> 이미 존재하는 속성명 (key) 이라면 값을 갱신합니다. 값이 없다면 새로 속성명과 값을 추가합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 빈객체</span></span><br><span class="line">obj.name = <span class="string">"olaf"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;name: "olaf"&#125;</span></span><br><span class="line"><span class="comment">// 갱신</span></span><br><span class="line">obj.name = <span class="string">"modify olaf"</span>; <span class="comment">// 속성값 변경</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;name: "modify olaf"&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="탐색"><a href="#탐색" class="headerlink" title="탐색"></a>탐색</h4><p>객체명 [속성명] 으로 접근하면 속성명에 해당하는 속성값을 뺴올 수 있어요. 이때 주의 하실점이있습니다.  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="string">"name-first"</span> : <span class="string">'olaf'</span> <span class="comment">// 처럼 속성명에 - 이 들어간경우</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 로 가져오게되면 -을 연산처리해버리기 때문에 원하는 결과를 얻을 수 없어요 </span></span><br><span class="line"><span class="built_in">console</span>.log(obj.name-first); </span><br><span class="line"><span class="comment">// 이런식으로 해주시면됩니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="string">'name-first'</span>]);</span><br></pre></td></tr></table></figure>
+<h4 id="for-in-을-이용한-탐색"><a href="#for-in-을-이용한-탐색" class="headerlink" title="for in 을 이용한 탐색"></a>for in 을 이용한 탐색</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name : <span class="string">'olaf'</span>,</span><br><span class="line">  age : <span class="number">26</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> key;</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">': '</span> + person[key]); <span class="comment">// key에 속성명이 들어갑니다. </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  name : olaf,</span></span><br><span class="line"><span class="comment">  age : 26</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="어떻게-사용하는거에요"><a href="#어떻게-사용하는거에요" class="headerlink" title="어떻게 사용하는거에요 ?"></a>어떻게 사용하는거에요 ?</h3><p>객체를 만드는 방법들과 값의 추가 삭제등 객체를 다루는 방법에 대해 알아봤습니다.<br>저는 처음에 공부할때 이 배운것들을 도대체 어디에 어떻게 사용을 해야되는지 잘 모르겠더라고요. 저와 같은 고민을 가지고 있으실 분들을 위해 간단하게 자주 이용되는 경우를 알아볼게요  </p>
+<p>{ } 를 통한 리터럴 방식의 객체 선언은 보통 데이터를 정의할 때 많이 이용합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 박스를 만들기 위한 데이터 정의</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">    width: <span class="number">200</span>,</span><br><span class="line">    height: <span class="number">150</span></span><br><span class="line">    color: <span class="string">'red'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>사용자 정의 함수의 경우 모듈화에 많이 이용합니다.<br>리터럴 방식과 사용자정의 함수를 이용해서 간단한 모듈을 만들어 사용해보겠습니다.</p>
+<blockquote>
+<p><strong>간단한 예제</strong><br>옵션 값에 따라 박스를 만들 수 있는 사용자 정의 함수를 구현하세요</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 옵션 값 정의</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">    width: <span class="number">200</span>,</span><br><span class="line">    height: <span class="number">150</span></span><br><span class="line">    color: <span class="string">'red'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 옵션 값을 받는 사용자 정의 함수</span></span><br><span class="line"><span class="comment">// 옵션 값에 따라 박스가 다르게 만들어진다.</span></span><br><span class="line"><span class="keyword">var</span> boxMaker = <span class="function"><span class="keyword">function</span>(<span class="params">option</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.width = option.width;</span><br><span class="line">    <span class="keyword">this</span>.height = option.height;</span><br><span class="line">    <span class="keyword">this</span>.color = option.color;</span><br><span class="line">    <span class="keyword">this</span>.getColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">boxMaker(option); <span class="comment">// 박스 만들기</span></span><br></pre></td></tr></table></figure>
+<p>위처럼 같은 객체지만 만드는 방식에 따라 역할이 조금씩 달라집니다 :) </p>
+<blockquote>
+<p><strong>간단한 예제</strong> </p>
+<p>객체 생성방식은 { } 와 생성자 함수를 둘다 이용해서 만들어보시면 좋습니다.</p>
+<ol>
+<li>빈 사람 객체를 하나 만든다.</li>
+<li>객체에 name,age 속성을 추가한다.</li>
+<li>객체에 getName이라는 메서드를 만든다. getName은 자기 자신의 이름을 console에 찍어준다.</li>
+<li>name 속성의 값을 변경한다.</li>
+<li>다시 getName을 이용해서 name 속성의 값을 찍어본다.</li>
+<li>name속성을 삭제한다.</li>
+<li>조건문을 사용해서 name속성이 없다면 다시 name 속성을 추가해준다.</li>
+<li>최종 Object를 탐색하여 console에 찍는다.</li>
+</ol>
+</blockquote>
+<p> 정답 : <a href="https://jsfiddle.net/xbmjL2vc/" target="_blank" rel="noopener">https://jsfiddle.net/xbmjL2vc/</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Javascript">
+    <span class="tag-code">Javascript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/13/JS/chap-05/">
+        <span class="nav-arrow">← </span>
+        
+          JS - 05. 함수 (Function)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/JS/chap-07/">
+        
+          JS - 실습. 과일가게와 장난감가게
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/13/JS/chap-06/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "JS - 06. 객체 (Object)",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/13/JS/chap-06/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

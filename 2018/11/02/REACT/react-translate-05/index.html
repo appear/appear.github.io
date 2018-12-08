@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [41 ~ 50] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [41 ~ 50]</h2>
+  <p class="post-date">2018-11-02</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>41</td>
+<td><a href="#what-is-reconciliation">What is reconciliation?</a></td>
+</tr>
+<tr>
+<td>42</td>
+<td><a href="#how-to-set-state-with-a-dynamic-key-name">How to set state with a dynamic key name?</a></td>
+</tr>
+<tr>
+<td>43</td>
+<td><a href="#what-would-be-the-common-mistake-of-function-being-called-every-time-the-component-renders">What would be the common mistake of function being called every time the component renders?</a></td>
+</tr>
+<tr>
+<td>44</td>
+<td><a href="#why-is-it-necessary-to-capitalize-component-names">Why is it necessary to capitalize component names?</a></td>
+</tr>
+<tr>
+<td>45</td>
+<td><a href="#why-react-uses-classname-over-class-attribute">Why React uses className over class attribute?</a></td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="#what-are-fragments">What are fragments?</a></td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="#why-fragments-are-better-than-container-divs">Why fragments are better than container divs?</a></td>
+</tr>
+<tr>
+<td>48</td>
+<td><a href="#what-are-portals-in-react">What are portals in React?</a></td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="#what-are-stateless-components">What are stateless components?</a></td>
+</tr>
+<tr>
+<td>50</td>
+<td><a href="#what-are-stateful-components">What are stateful components?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="41">
+<li><h3 id="What-is-reconciliation"><a href="#What-is-reconciliation" class="headerlink" title="What is reconciliation?"></a>What is reconciliation?</h3><h4 id="reconciliation란-무엇인가요"><a href="#reconciliation란-무엇인가요" class="headerlink" title="(reconciliation란 무엇인가요?)"></a>(<a href="https://reactjs.org/docs/reconciliation.html" target="_blank" rel="noopener">reconciliation</a>란 무엇인가요?)</h4><p>Component 의 props 또는 state가 변경될 때 React는 새로 반환된 component를 이전에 rendered 된 component와 비교하여 DOM update가 필요한지 결정합니다. 두개의 component가 같지 않을때 React는 DOM을 update합니다. 이를 프로세스 reconciliation 라고합니다.</p>
+</li>
+<li><h3 id="How-to-set-state-with-a-dynamic-key-name"><a href="#How-to-set-state-with-a-dynamic-key-name" class="headerlink" title="How to set state with a dynamic key name?"></a>How to set state with a dynamic key name?</h3><h4 id="동적-key-name-으로-어떻게-set-State를-하나요"><a href="#동적-key-name-으로-어떻게-set-State를-하나요" class="headerlink" title="(동적 key name 으로 어떻게 set State를 하나요?)"></a>(동적 key name 으로 어떻게 set State를 하나요?)</h4><p>만약 ES6 나 babel transpiler 사용하여 JSX 코드를 변환하는 경우 computed property names 으로 작업을 할 수 있습니다. </p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleInputChange(event) &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; [event.target.id]: event.target.value &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="43">
+<li><h3 id="What-would-be-the-common-mistake-of-function-being-called-every-time-the-component-renders"><a href="#What-would-be-the-common-mistake-of-function-being-called-every-time-the-component-renders" class="headerlink" title="What would be the common mistake of function being called every time the component renders?"></a>What would be the common mistake of function being called every time the component renders?</h3><h4 id="render가-될-때마다-호출되는-function-의-일반적인-실수는-무엇인가요"><a href="#render가-될-때마다-호출되는-function-의-일반적인-실수는-무엇인가요" class="headerlink" title="(render가 될 때마다 호출되는 function 의 일반적인 실수는 무엇인가요?)"></a>(render가 될 때마다 호출되는 function 의 일반적인 실수는 무엇인가요?)</h4></li>
+</ol>
+<p>function을 parameter로 전달하는 동안 function 이 호출되지 않았는지 확인해야합니다. </p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="comment">// Wrong: handleClick is called instead of passed as a reference!</span></span><br><span class="line">  <span class="keyword">return</span> &lt;button onClick=&#123;this.handleClick()&#125;&gt;&#123;'Click Me'&#125;&lt;/button&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>괄호 없이 function 을 전달하세요</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="comment">// Correct: handleClick is passed as a reference!</span></span><br><span class="line">  <span class="keyword">return</span> &lt;button onClick=&#123;this.handleClick&#125;&gt;&#123;'Click Me'&#125;&lt;/button&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="44">
+<li><h3 id="Why-is-it-necessary-to-capitalize-component-names"><a href="#Why-is-it-necessary-to-capitalize-component-names" class="headerlink" title="Why is it necessary to capitalize component names?"></a>Why is it necessary to capitalize component names?</h3><h4 id="왜-Component-의-이름은-대문자로-표기해야하나요"><a href="#왜-Component-의-이름은-대문자로-표기해야하나요" class="headerlink" title="(왜 Component 의 이름은 대문자로 표기해야하나요?)"></a>(왜 Component 의 이름은 대문자로 표기해야하나요?)</h4></li>
+</ol>
+<p>Component 들은 DOM element가 아니기 때문에 대문자 표기가 필요합니다. component들은 constructors입니다. 또한 JSX 에서의 소문자 태그 이름은 component가 아닌 HTML 요소를 나타내기 때문입니다.</p>
+<ol start="45">
+<li><h3 id="Why-React-uses-className-over-class-attribute"><a href="#Why-React-uses-className-over-class-attribute" class="headerlink" title="Why React uses className over class attribute?"></a>Why React uses className over class attribute?</h3><h4 id="왜-React-는-class를-사용하지-않고-className-속성을-사용하나요"><a href="#왜-React-는-class를-사용하지-않고-className-속성을-사용하나요" class="headerlink" title="(왜 React 는 class를 사용하지 않고 className 속성을 사용하나요?)"></a>(왜 React 는 class를 사용하지 않고 className 속성을 사용하나요?)</h4>class는 Javascript 의 키워드입니다. JSX는 Javascript 의 확장입니다. 그것이 React가 class 대신 className을 사용하는 이유입니다. classNames prop 로 문자열을 전달하세요</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;span className=&#123;'menu navigation-menu'&#125;&gt;&#123;'Menu'&#125;&lt;/span&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="46">
+<li><h3 id="What-are-fragments"><a href="#What-are-fragments" class="headerlink" title="What are fragments?"></a>What are fragments?</h3><h4 id="fragments는-무엇인가요"><a href="#fragments는-무엇인가요" class="headerlink" title="(fragments는 무엇인가요 ?)"></a>(fragments는 무엇인가요 ?)</h4>fragments는 여러 Component 들을 반환하는데 사용되는 React의 일반적인 패턴입니다. fragments를 사용하면 DOM에 node 들을 추가하지 않고 하위 목록을 그룹화 할 수 있습니다. </li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;React.Fragment&gt;</span><br><span class="line">      &lt;ChildA /&gt;</span><br><span class="line">      &lt;ChildB /&gt;</span><br><span class="line">      &lt;ChildC /&gt;</span><br><span class="line">    &lt;<span class="regexp">/React.Fragment&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>더 짧은 구문도 있지만, 많은 tool 들에서 지원되지 않습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;ChildA /&gt;</span><br><span class="line">      &lt;ChildB /&gt;</span><br><span class="line">      &lt;ChildC /&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="47">
+<li><h3 id="Why-fragments-are-better-than-container-divs"><a href="#Why-fragments-are-better-than-container-divs" class="headerlink" title="Why fragments are better than container divs?"></a>Why fragments are better than container divs?</h3><h4 id="왜-fragments-가-div-보다-좋나요"><a href="#왜-fragments-가-div-보다-좋나요" class="headerlink" title="(왜 fragments 가 div 보다 좋나요 ?)"></a>(왜 fragments 가 div 보다 좋나요 ?)</h4></li>
+<li>Fragments 는 빠르고 DOM node를 만들지 않기 때문에 메모리를 적게 사용합니다. 이것은 매우 크고 깊은 트리에서 이익을 가집니다.  </li>
+<li>Flexbox 나 CSS Grid과 같은 CSS 메커니즘에는 특별한 부모 - 자식 관계를 가지고 있습니다. 중간에 div 들을 추가하게 된다면 layout을 유지하기 어려워집니다. </li>
+<li><p>DOM Inspector은 덜 복잡합니다.</p>
+</li>
+<li><h3 id="What-are-portals-in-React"><a href="#What-are-portals-in-React" class="headerlink" title="What are portals in React?"></a>What are portals in React?</h3><h4 id="React-에서-portals은-무엇입니까"><a href="#React-에서-portals은-무엇입니까" class="headerlink" title="(React 에서 portals은 무엇입니까 ?)"></a>(React 에서 portals은 무엇입니까 ?)</h4><p>portals 은 상위 Component 의 DOM 계층 구조 외부에 존재하는 DOM 노드로 자식을 render 하는데 권장되는 방법입니다. </p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.createPortal(child, container)</span><br></pre></td></tr></table></figure>
+<p>첫 번째 인자는 렌더링 가능한 React 하위요소 (element, string, fragment) 입니다. 두 번째 인자는 DOM element 입니다.</p>
+<ol start="49">
+<li><h3 id="What-are-stateless-components"><a href="#What-are-stateless-components" class="headerlink" title="What are stateless components?"></a>What are stateless components?</h3><h4 id="stateless-컴포넌트는-무엇인가요"><a href="#stateless-컴포넌트는-무엇인가요" class="headerlink" title="(stateless 컴포넌트는 무엇인가요?)"></a>(stateless 컴포넌트는 무엇인가요?)</h4><p>Component의 동작과 상태가 독립적이라면 stateless component 를 구성할 수 있습니다. stateless component 는 class나 function 을 이용하여 만들 수 있습니다.<br>lifecycle hook을 사용해야하는 경우가 아니라면 function component를 사용할 수 있습니다. function component를 사용한다면 많은 이점이 있습니다.<br>쓰기, 이해 그리고 테스트가 빠르고 쉽습니다. </p>
+</li>
+<li><h3 id="What-are-stateful-components"><a href="#What-are-stateful-components" class="headerlink" title="What are stateful components?"></a>What are stateful components?</h3><h4 id="stateful-components-는-무엇인가요"><a href="#stateful-components-는-무엇인가요" class="headerlink" title="(stateful components 는 무엇인가요?)"></a>(stateful components 는 무엇인가요?)</h4><p>Component 의 동작이 component의 state에 의존한다면 stateful component라고 부를 수 있습니다. stateful component 는 항상 class components 이고, constructor에서 초기화합니다. </p>
+</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>영어 원본: <a href="https://github.com/sudheerj/reactjs-interview-questions#what-is-reactjs" target="_blank" rel="noopener">Git Hub</a><br>블로그 번역: <a href="https://github.com/appear/reactjs-interview-questions-ko" target="_blank" rel="noopener">Git Hub</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/02/REACT/react-translate-04/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [31 ~ 40]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/03/REACT/react-translate-06/">
+        
+          React Interview (리액트 면접 질문) [51 ~ 60]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/02/REACT/react-translate-05/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [41 ~ 50]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/02/REACT/react-translate-05/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

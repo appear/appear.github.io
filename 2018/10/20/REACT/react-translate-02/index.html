@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [11 ~ 20] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [11 ~ 20]</h2>
+  <p class="post-date">2018-10-20</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview-리액트-면접질문"><a href="#React-Interview-리액트-면접질문" class="headerlink" title="React Interview (리액트 면접질문)"></a>React Interview (리액트 면접질문)</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="#why-should-not-we-update-the-state-directly">Why should not we update the state directly?</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="#what-is-the-purpose-of-callback-function-as-an-argument-of-setstate">What is the purpose of callback function as an argument of setState?</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="#what-is-the-difference-of-event-handling-between-html-and-react">What is the difference of event handling between HTML and React?</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="#how-to-bind-methods-or-event-handlers-in-jsx-callbacks">How to bind methods or event handlers in JSX callbacks?</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="#how-to-pass-a-parameter-to-an-event-handler-or-callback">How to pass a parameter to an event handler or callback?</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="#what-are-synthetic-events-in-reactjs">What are synthetic events in ReactJS?</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="#what-is-inline-conditional-expressions">What is inline conditional expressions?</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="#what-is-key-and-benefit-of-using-it-in-lists">What is Key and benefit of using it in lists?</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="#what-is-the-use-of-create-refs">What is the use of create refs?</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="#how-to-create-refs">How to create refs?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="11">
+<li><h3 id="Why-should-not-we-update-the-state-directly"><a href="#Why-should-not-we-update-the-state-directly" class="headerlink" title="Why should not we update the state directly?"></a>Why should not we update the state directly?</h3><h4 id="state를-직접-업데이트-하면-안되는-이유는-무엇인가요"><a href="#state를-직접-업데이트-하면-안되는-이유는-무엇인가요" class="headerlink" title="(state를 직접 업데이트 하면 안되는 이유는 무엇인가요?)"></a>(state를 직접 업데이트 하면 안되는 이유는 무엇인가요?)</h4>state를 직접 업데이트 하려고 한다면 component 는 re-render 되지 않습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Wrong</span></span><br><span class="line"><span class="keyword">this</span>.state.message =”Hello world”;</span><br></pre></td></tr></table></figure>
+<p>그 대신 setState 메서드를 사용해야합니다. setState는 component state 업데이트에 대한 예약을합니다. state 가 변경되면 component는 re-rendering 할 것 입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Correct</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">message</span>: ‘Hello World’&#125;);</span><br></pre></td></tr></table></figure>
+<p>Note: 상태를 할당할 수 있는 곳은 constructor 가 유일합니다. (외부에서 다이렉트로 state를 할당하지 말라는 뜻 같습니다.)</p>
+<ol start="12">
+<li><h3 id="What-is-the-purpose-of-callback-function-as-an-argument-of-setState"><a href="#What-is-the-purpose-of-callback-function-as-an-argument-of-setState" class="headerlink" title="What is the purpose of callback function as an argument of setState?"></a>What is the purpose of callback function as an argument of setState?</h3><h4 id="setState에서-callback의-역할은-무엇인가요"><a href="#setState에서-callback의-역할은-무엇인가요" class="headerlink" title="(setState에서 callback의 역할은 무엇인가요?)"></a>(setState에서 callback의 역할은 무엇인가요?)</h4>callback 함수는 setState가 끝난 후 그리고 component 가 re-rendering 된 후 호출됩니다. setState는 비동기적으로 동작합니다. callback 함수는 모든 작업이 마무리된 후 사용됩니다. </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState(&#123;<span class="attr">name</span>: <span class="string">'sudheer'</span>&#125;, () =&gt; <span class="built_in">console</span>.log(<span class="string">'The name has updated and component re-rendered'</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="Note-callback-함수를-이용하는-것보단-lifecycle-메서드를-이용하는-것이-좋습니다"><a href="#Note-callback-함수를-이용하는-것보단-lifecycle-메서드를-이용하는-것이-좋습니다" class="headerlink" title="Note: callback 함수를 이용하는 것보단 lifecycle 메서드를 이용하는 것이 좋습니다."></a>Note: callback 함수를 이용하는 것보단 lifecycle 메서드를 이용하는 것이 좋습니다.</h4><ol start="13">
+<li><h3 id="What-is-the-difference-of-event-handling-between-HTML-and-React"><a href="#What-is-the-difference-of-event-handling-between-HTML-and-React" class="headerlink" title="What is the difference of event handling between HTML and React?"></a>What is the difference of event handling between HTML and React?</h3><h4 id="HTML과-React의-이벤트-처리-차이점은-무엇인가요"><a href="#HTML과-React의-이벤트-처리-차이점은-무엇인가요" class="headerlink" title="(HTML과 React의 이벤트 처리 차이점은 무엇인가요?)"></a>(HTML과 React의 이벤트 처리 차이점은 무엇인가요?)</h4><p>아래는 HTML과 React 의 이벤트처리의 몇 가지 차이점입니다.</p>
+</li>
+<li><p>HTML 에서는 이벤트 이름이 소문자여야 합니다.</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"activateLasers()"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>반면 React는 camelCase 를 사용합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;activateLasers&#125;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>HTML 에서는 기본 이벤트 동작을 막기위해 false 를 반환할 수 있습니다.</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">onclick</span>=<span class="string">"console.log('The link was clicked.'); return false"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>반면 React는 preventDefault 메서드를 호출해야합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'The link was clicked.'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="14">
+<li><h3 id="How-to-bind-methods-or-event-handlers-in-JSX-callbacks-Or-How-to-use-this-keyword-in-JSX-callbacks"><a href="#How-to-bind-methods-or-event-handlers-in-JSX-callbacks-Or-How-to-use-this-keyword-in-JSX-callbacks" class="headerlink" title="How to bind methods or event handlers in JSX callbacks? (Or) How to use this keyword in JSX callbacks?"></a>How to bind methods or event handlers in JSX callbacks? (Or) How to use this keyword in JSX callbacks?</h3><h4 id="This를-바인딩하는-방법은-어떤-것들이-있나요"><a href="#This를-바인딩하는-방법은-어떤-것들이-있나요" class="headerlink" title="(This를 바인딩하는 방법은 어떤 것들이 있나요?)"></a>(This를 바인딩하는 방법은 어떤 것들이 있나요?)</h4><p>3가지의 방법이 있습니다.</p>
+</li>
+<li><p>생성자에서의 바인딩: JS 의 Class 에서 메서드는 기본적으로 바인딩 되지 않습니다. 클래스 메서드로 지정된 React의 event handlers 에서도 마찬가지 입니다.<br>일반적으로 다음과같이 constructor 바인딩합니다.</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">handleClick() &#123;</span><br><span class="line">  <span class="comment">// Perform some logic</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>공통 클래스 필드 구문: 생성자에서의 바인딩 방법을 원하지 않는다면, 공용 클래스 필드 구문을 이용하여 callback 을 올바르게 바인딩할 수 있습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">handleClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123; </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this is:'</span>, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;button onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt; Click me &lt;<span class="regexp">/button&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98" target="_blank" rel="noopener">arrow function</a>을 이용한 바인딩<br>아래와 같이 바로 arrow function 을 이용하여 바인딩 해줄 수 있습니다.</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> this.handleClick(e)&#125;&gt;</span><br><span class="line">  Click me</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Note: 만약 callback 이 하위 component 에 props 로 전달되면 component는 re-rendering 될 수 있습니다. 이럴 경우 성능을 고려하였을때 1번 또는 2번의 방식을 사용하는 것이 좋습니다.</p>
+<ol start="15">
+<li><h3 id="How-to-pass-a-parameter-to-an-event-handler-or-callback"><a href="#How-to-pass-a-parameter-to-an-event-handler-or-callback" class="headerlink" title="How to pass a parameter to an event handler or callback?"></a>How to pass a parameter to an event handler or callback?</h3><h4 id="이벤트-핸들러-또는-콜백에-매개변수를-어떻게-전달하나요"><a href="#이벤트-핸들러-또는-콜백에-매개변수를-어떻게-전달하나요" class="headerlink" title="(이벤트 핸들러 또는 콜백에 매개변수를 어떻게 전달하나요?)"></a>(이벤트 핸들러 또는 콜백에 매개변수를 어떻게 전달하나요?)</h4>arrow function 으로 감싸서 event handler 에게 매개변수를 전달할 수 있습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; <span class="keyword">this</span>.handleClick(id)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>위의 방법은 아래와 같이 method 를 사용하는 것과 같습니다</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick.bind(this,</span> <span class="attr">id</span>)&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="16">
+<li><h3 id="What-are-synthetic-events-in-ReactJS"><a href="#What-are-synthetic-events-in-ReactJS" class="headerlink" title="What are synthetic events in ReactJS?"></a>What are synthetic events in ReactJS?</h3><h4 id="React에서의-합성-이벤트는-무엇인가요"><a href="#React에서의-합성-이벤트는-무엇인가요" class="headerlink" title="(React에서의 합성 이벤트는 무엇인가요?)"></a>(React에서의 합성 이벤트는 무엇인가요?)</h4><p><a href="https://reactjs.org/docs/events.html" target="_blank" rel="noopener">synthetic event</a> 는 브라우저의 기본 이벤트를 감싼 cross-browser wrapper 입니다. API는 모든 브라우저에서 동작한다는 점을 제외하면, stopPropagation () 및 preventDefault () 를 포함해 브라우저 네이티브 이벤트와 같은 인터페이스를 가지고 있습니다.</p>
+</li>
+<li><h3 id="What-is-inline-conditional-expressions"><a href="#What-is-inline-conditional-expressions" class="headerlink" title="What is inline conditional expressions?"></a>What is inline conditional expressions?</h3><h4 id="인라인-조건식은-무엇인가요"><a href="#인라인-조건식은-무엇인가요" class="headerlink" title="(인라인 조건식은 무엇인가요?)"></a>(인라인 조건식은 무엇인가요?)</h4><p>조건부 표현식을 표현하기 위해 if 문 또는 삼항 연산자를 사용할 수 있습니다. 이런 표현법 외에도 중괄호로 묶은 다음 JS의 논리 연산자 (&amp;&amp;) 를 붙여 JSX 표현식에 포함시킬 수 있습니다.</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"> &#123;messages.length &gt; 0 &amp;&amp;</span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">  You have &#123;messages.length&#125; unread messages.</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="18">
+<li><h3 id="What-is-Key-and-benefit-of-using-it-in-lists"><a href="#What-is-Key-and-benefit-of-using-it-in-lists" class="headerlink" title="What is Key and benefit of using it in lists?"></a>What is Key and benefit of using it in lists?</h3><h4 id="list-에서-key를-사용했을-때의-이점은-무엇인가요"><a href="#list-에서-key를-사용했을-때의-이점은-무엇인가요" class="headerlink" title="(list 에서 key를 사용했을 때의 이점은 무엇인가요?)"></a>(list 에서 key를 사용했을 때의 이점은 무엇인가요?)</h4><a href="https://reactjs.org/docs/lists-and-keys.html" target="_blank" rel="noopener">“Key”</a>는 목록을 만들때 포함시켜야하는 특수한 속성입니다. “Key”는 목록의 변경사항, 추가 또는 제거된 항목을 분별할 수 있도록 도와줍니다.  </li>
+</ol>
+<p>예를 들어, 데이터의 키를 자주 목록의 “Key”로 사용합니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todoItems = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span></span><br><span class="line">  &lt;li key=&#123;todo.id&#125;&gt;</span><br><span class="line">    &#123;todo.text&#125;</span><br><span class="line">  &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<p>What is ReactJS? (React란 무엇인가요?)<br>렌더링 된 목록에 안정적인 ID가 없을 경우 마지막 수단으로 index 값을 이용할 수 있습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todoItems = todos.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span></span><br><span class="line">  &lt;li key=&#123;index&#125;&gt;</span><br><span class="line">    &#123;todo.text&#125;</span><br><span class="line">  &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<p>Note: </p>
+<ol>
+<li>항목 순서가 변경 될 가능성이 있는 경우 index를 이용하는 것은 좋지 않습니다. 성능에 부정적인 영향을 미치고 component state에 문제가 발생할 수 있습니다.</li>
+<li>list를 별도의 component로 뽑아 사용하는 경우 li 태그 대신 list component 요소에 key를 적용하세요</li>
+</ol>
+<p>list 에 key 가 없으면 콘솔에 경고가 표시됩니다.</p>
+<ol start="19">
+<li><h3 id="What-is-the-use-of-create-refs"><a href="#What-is-the-use-of-create-refs" class="headerlink" title="What is the use of create refs?"></a>What is the use of create refs?</h3><h4 id="ref의-용도는-무엇인가요"><a href="#ref의-용도는-무엇인가요" class="headerlink" title="(ref의 용도는 무엇인가요?)"></a>(ref의 용도는 무엇인가요?)</h4>두 가지의 접근법이 있습니다.</li>
+</ol>
+<p>최근에 추가된 접근 방식입니다. <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank" rel="noopener">create ref</a>는 element 요소에 대한 참조를 반환하는데 사용할 수 있습니다. DOM의 요소나 compoennt 에 직접 접근해야 될 경우 유용할 수 있습니다.</p>
+<ol start="20">
+<li><h3 id="How-to-create-refs"><a href="#How-to-create-refs" class="headerlink" title="How to create refs?"></a>How to create refs?</h3><h4 id="create-refs를-어떻게-만드나요"><a href="#create-refs를-어떻게-만드나요" class="headerlink" title="(create refs를 어떻게 만드나요?)"></a>(create refs를 어떻게 만드나요?)</h4>Ref는 React.createRef() 메서드를 사용하여 생성합니다. ref attribute 을 통해 React elements 에 첨부됩니다. component 전체에서 사용하고 싶다면 constructor에서 instance property 로 ref를 할당하면 됩니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>React의 버전과 관계없이 ref callback 을 사용할 수 있습니다. 예를들어 serach bar component의 input element는 다음과 같이 접근합니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchBar</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">      <span class="keyword">super</span>(props);</span><br><span class="line">      <span class="keyword">this</span>.txtSearch = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">this</span>.state = &#123; <span class="attr">term</span>: <span class="string">''</span> &#125;;</span><br><span class="line">      <span class="keyword">this</span>.setInputSearchRef = <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="keyword">this</span>.txtSearch = e;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   onInputChange(event) &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123; <span class="attr">term</span>: <span class="keyword">this</span>.txtSearch.value &#125;);</span><br><span class="line">   &#125;</span><br><span class="line">   render() &#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">         &lt;input</span><br><span class="line">            value=&#123;<span class="keyword">this</span>.state.term&#125;</span><br><span class="line">            onChange=&#123;<span class="keyword">this</span>.onInputChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">            ref=&#123;<span class="keyword">this</span>.setInputSearchRef&#125; /&gt;</span><br><span class="line">      );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>영어 원본: <a href="https://github.com/sudheerj/reactjs-interview-questions#what-is-reactjs" target="_blank" rel="noopener">Git Hub</a><br>블로그 번역: <a href="https://github.com/appear/reactjs-interview-questions-ko" target="_blank" rel="noopener">Git Hub</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/20/REACT/react-translate-01/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [1 ~ 10]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/20/REACT/react-translate-03/">
+        
+          React Interview (리액트 면접 질문) [21 ~ 30]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/20/REACT/react-translate-02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [11 ~ 20]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/20/REACT/react-translate-02/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

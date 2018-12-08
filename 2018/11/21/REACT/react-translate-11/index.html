@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [101 ~ 110] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [101 ~ 110]</h2>
+  <p class="post-date">2018-11-21</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td><a href="#what-is-the-difference-between-setstate-and-replacestate-methods">What is the difference between setState and replaceState methods?</a></td>
+</tr>
+<tr>
+<td>102</td>
+<td><a href="#how-to-listen-to-state-changes">How to listen to state changes?</a></td>
+</tr>
+<tr>
+<td>103</td>
+<td><a href="#what-is-the-recommended-approach-of-removing-an-array-element-in-react-state">What is the recommended approach of removing an array element in react state?</a></td>
+</tr>
+<tr>
+<td>104</td>
+<td><a href="#is-it-possible-to-use-react-without-rendering-html">Is it possible to use React without rendering HTML?</a></td>
+</tr>
+<tr>
+<td>105</td>
+<td><a href="#how-to-pretty-print-json-with-react">How to pretty print JSON with React?</a></td>
+</tr>
+<tr>
+<td>106</td>
+<td><a href="#why-you-cant-update-props-in-react">Why you can’t update props in React?</a></td>
+</tr>
+<tr>
+<td>107</td>
+<td><a href="#how-to-focus-an-input-element-on-page-load">How to focus an input element on page load?</a></td>
+</tr>
+<tr>
+<td>108</td>
+<td><a href="#what-are-the-possible-ways-of-updating-objects-in-state">What are the possible ways of updating objects in state?</a></td>
+</tr>
+<tr>
+<td>109</td>
+<td><a href="#why-function-is-preferred-over-object-for-setstate">Why function is preferred over object for setState?</a></td>
+</tr>
+<tr>
+<td>110</td>
+<td><a href="#how-can-we-find-the-version-of-react-at-runtime-in-the-browser">How can we find the version of React at runtime in the browser?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="101">
+<li><h3 id="What-is-the-difference-between-setState-and-replaceState-methods"><a href="#What-is-the-difference-between-setState-and-replaceState-methods" class="headerlink" title="What is the difference between setState() and replaceState() methods?"></a>What is the difference between setState() and replaceState() methods?</h3><h4 id="setState-와-replaceState-의-차이점은-무엇인가요"><a href="#setState-와-replaceState-의-차이점은-무엇인가요" class="headerlink" title="(setState() 와 replaceState() 의 차이점은 무엇인가요?)"></a>(setState() 와 replaceState() 의 차이점은 무엇인가요?)</h4><p>setState() 를 사용하면 이전 state 와 다음 state 가 병합됩니다. replaceState()는 현재 state 를 버리고 당신이 제공한 state 로 바꿉니다.<br>이전의 key 들을 모두 제거해야되는 경우가 아니라면 보통 setState() 가 사용됩니다.<br>replaceState()를 사용하는 대신 setState()에서 state 를 flase/null 로 설정할 수 있습니다.</p>
+</li>
+<li><h3 id="How-to-listen-to-state-changes"><a href="#How-to-listen-to-state-changes" class="headerlink" title="How to listen to state changes?"></a>How to listen to state changes?</h3><h4 id="어떻게-state-의-변경을-listen-하나요"><a href="#어떻게-state-의-변경을-listen-하나요" class="headerlink" title="(어떻게 state 의 변경을 listen 하나요?)"></a>(어떻게 state 의 변경을 listen 하나요?)</h4><p>state 가 변경될때 다음의 lifecycle 메서드들이 호출됩니다.<br>이전에 제공된 state 와 props 의 값을 현재의 state와 props와 비교하여 의미있는 변화가 있는지 확인할 수 있습니다.</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">componentWillUpdate(object nextProps, object nextState)</span><br><span class="line">componentDidUpdate(object prevProps, object prevState)</span><br></pre></td></tr></table></figure>
+<ol start="103">
+<li><h3 id="What-is-the-recommended-approach-of-removing-an-array-element-in-React-state"><a href="#What-is-the-recommended-approach-of-removing-an-array-element-in-React-state" class="headerlink" title="What is the recommended approach of removing an array element in React state?"></a>What is the recommended approach of removing an array element in React state?</h3><h4 id="React-state-에서-배열요소를-제거하는-추천방법은-무엇인가요"><a href="#React-state-에서-배열요소를-제거하는-추천방법은-무엇인가요" class="headerlink" title="(React state 에서 배열요소를 제거하는 추천방법은 무엇인가요?)"></a>(React state 에서 배열요소를 제거하는 추천방법은 무엇인가요?)</h4>좋은 방법은 Array.prototype.filter() 메서드를 사용하는 것입니다.</li>
+</ol>
+<p>예를 들어, state update를 위한 removeItem () 메서드를 만들겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeItem(index) &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    data: <span class="keyword">this</span>.state.data.filter(<span class="function">(<span class="params">item, i</span>) =&gt;</span> i !== index)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="104">
+<li><h3 id="Is-it-possible-to-use-React-without-rendering-HTML"><a href="#Is-it-possible-to-use-React-without-rendering-HTML" class="headerlink" title="Is it possible to use React without rendering HTML?"></a>Is it possible to use React without rendering HTML?</h3><h4 id="HTML-렌더링-없이-React를-사용할-수-있나요"><a href="#HTML-렌더링-없이-React를-사용할-수-있나요" class="headerlink" title="(HTML 렌더링 없이 React를 사용할 수 있나요?)"></a>(HTML 렌더링 없이 React를 사용할 수 있나요?)</h4>latest version (최신버전 &gt;= 16.2) 부터 가능합니다. 가능한 옵션은 다음과 같습니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;React.Fragment&gt;&lt;/React.Fragment&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;&gt;&lt;/&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="105">
+<li><h3 id="How-to-pretty-print-JSON-with-React"><a href="#How-to-pretty-print-JSON-with-React" class="headerlink" title="How to pretty print JSON with React?"></a>How to pretty print JSON with React?</h3><h4 id="React와-함께-어떻게-이쁘게-JSON-을-print-하나요"><a href="#React와-함께-어떻게-이쁘게-JSON-을-print-하나요" class="headerlink" title="(React와 함께 어떻게 이쁘게 JSON 을 print 하나요?)"></a>(React와 함께 어떻게 이쁘게 JSON 을 print 하나요?)</h4><code>&lt;pre&gt;</code> 태그를 사용하여 JSON.stringify() 형식이 유지되도록 할 수 있습니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123; <span class="attr">name</span>: <span class="string">'John'</span>, <span class="attr">age</span>: <span class="number">42</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;pre&gt;</span><br><span class="line">        &#123;<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>)&#125;</span><br><span class="line">      &lt;<span class="regexp">/pre&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">React.render(&lt;User /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>))</span><br></pre></td></tr></table></figure>
+<ol start="106">
+<li><h3 id="Why-you-can’t-update-props-in-React"><a href="#Why-you-can’t-update-props-in-React" class="headerlink" title="Why you can’t update props in React?"></a>Why you can’t update props in React?</h3><h4 id="왜-React에서-props-를-update-할-수-없나요"><a href="#왜-React에서-props-를-update-할-수-없나요" class="headerlink" title="(왜 React에서 props 를 update 할 수 없나요?)"></a>(왜 React에서 props 를 update 할 수 없나요?)</h4><p>React 의 철학은 props 는 immutable(불변) 이어야하고 top-down (부모 -&gt; 자식) 방식입니다.<br>부모는 모든 props 값을 자식에게 보낼 수 있지만, 자식은 받은 props 를 변경할 수 없습니다.</p>
+</li>
+<li><h3 id="How-to-focus-an-input-element-on-page-load"><a href="#How-to-focus-an-input-element-on-page-load" class="headerlink" title="How to focus an input element on page load?"></a>How to focus an input element on page load?</h3><h4 id="어떻게-페이지-로드시에-input-element-에-focus-하나요"><a href="#어떻게-페이지-로드시에-input-element-에-focus-하나요" class="headerlink" title="(어떻게 페이지 로드시에 input element 에 focus 하나요?)"></a>(어떻게 페이지 로드시에 input element 에 focus 하나요?)</h4><p>input element 를 위한 ref 를 생성하여 componentDidMount() 에서 사용하면 됩니다.</p>
+</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.nameInput.focus()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          defaultValue=&#123;<span class="string">'Won\'t focus'</span>&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          ref=&#123;(input) =&gt; <span class="keyword">this</span>.nameInput = input&#125;</span><br><span class="line">          defaultValue=&#123;<span class="string">'Will focus'</span>&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;App /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+<ol start="108">
+<li><h3 id="What-are-the-possible-ways-of-updating-objects-in-state"><a href="#What-are-the-possible-ways-of-updating-objects-in-state" class="headerlink" title="What are the possible ways of updating objects in state?"></a>What are the possible ways of updating objects in state?</h3><h4 id="state-의-object-를-update-할-수-있는-방법은-무엇인가요"><a href="#state-의-object-를-update-할-수-있는-방법은-무엇인가요" class="headerlink" title="(state 의 object 를 update 할 수 있는 방법은 무엇인가요?)"></a>(state 의 object 를 update 할 수 있는 방법은 무엇인가요?)</h4></li>
+<li><p>state 와 합쳐질 object 를 사용하여 setState() 호출  </p>
+</li>
+</ol>
+<ul>
+<li>Object.assign() 을 사용하여 object 의 복사본을 만듭니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.state.user, &#123; <span class="attr">age</span>: <span class="number">42</span> &#125;)</span><br><span class="line"><span class="keyword">this</span>.setState(&#123; user &#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>spread operator 를 사용:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123; ...this.state.user, <span class="attr">age</span>: <span class="number">42</span> &#125;</span><br><span class="line"><span class="keyword">this</span>.setState(&#123; user &#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>function 을 이용하여 setState() 호출:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    ...prevState.user,</span><br><span class="line">    age: <span class="number">42</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<ol start="109">
+<li><h3 id="Why-function-is-preferred-over-object-for-setState"><a href="#Why-function-is-preferred-over-object-for-setState" class="headerlink" title="Why function is preferred over object for setState()?"></a>Why function is preferred over object for setState()?</h3><h4 id="왜-setState-를-위한-function-이-object-보다-선호되나요"><a href="#왜-setState-를-위한-function-이-object-보다-선호되나요" class="headerlink" title="(왜 setState()를 위한 function 이 object 보다 선호되나요?)"></a>(왜 setState()를 위한 function 이 object 보다 선호되나요?)</h4>React 는 성능을 위해 여러 setState() 호출들을 일괄 처리 합니다.<br>이유는 this.props 와 this.state는 비동기로 update 될 수 있습니다. 다음 state 를 계산할 때 계산된 값을 신뢰하면 안됩니다.</li>
+</ol>
+<p>카운터 예제는 기대한대로 update 되지 않습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Wrong</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  counter: <span class="keyword">this</span>.state.counter + <span class="keyword">this</span>.props.increment,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>추천되는 접근방법은 object 가 아닌 function 으로 setState() 를 호출하는 것입니다.<br>function 은 첫번째 인자로 이전 state를 받고 두 번째 인자로 update가 적용될 때의 props 를 받습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState, props</span>) =&gt;</span> (&#123;</span><br><span class="line">  counter: prevState.counter + props.increment</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<ol start="110">
+<li><h3 id="How-can-we-find-the-version-of-React-at-runtime-in-the-browser"><a href="#How-can-we-find-the-version-of-React-at-runtime-in-the-browser" class="headerlink" title="How can we find the version of React at runtime in the browser?"></a>How can we find the version of React at runtime in the browser?</h3><h4 id="브라우저에서-React의-버전을-runtime-시-어떻게-찾을-수-있나요"><a href="#브라우저에서-React의-버전을-runtime-시-어떻게-찾을-수-있나요" class="headerlink" title="(브라우저에서 React의 버전을 runtime 시 어떻게 찾을 수 있나요?)"></a>(브라우저에서 React의 버전을 runtime 시 어떻게 찾을 수 있나요?)</h4></li>
+</ol>
+<p>React.version 을 사용하면 버전을 가져올 수 있습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> REACT_VERSION = React.version</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;div&gt;&#123;<span class="string">`React version: <span class="subst">$&#123;REACT_VERSION&#125;</span>`</span>&#125;&lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('app')</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure></section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/20/REACT/react-translate-10/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [91 ~ 100]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/22/REACT/react-translate-12/">
+        
+          React Interview (리액트 면접 질문) [111 ~ 120]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/21/REACT/react-translate-11/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [101 ~ 110]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/21/REACT/react-translate-11/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS - 05. 함수 (Function) | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>JS - 05. 함수 (Function)</h2>
+  <p class="post-date">2018-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="05-함수-Function"><a href="#05-함수-Function" class="headerlink" title="05. 함수 (Function)"></a>05. 함수 (Function)</h1><p><img src="https://raw.githubusercontent.com/appear/simpleJS/gh-pages/docs/body.png" alt=""></p>
+<h2 id="함수-Function"><a href="#함수-Function" class="headerlink" title="함수 (Function)"></a>함수 (Function)</h2><p>함수란 어떤 작업을 수행하기 위해 필요한 구문들을 <strong>그룹화</strong>해 놓은 것 입니다.</p>
+<p>예를 들어보겠습니다. 치킨집 사장님 혼자서 주문을 받고 닭을 튀기고 배달을 하신다면 생각만해도 복잡합니다.  </p>
+<p>사모님이 주문을 받아주시고 사장님은 닭을 튀기시고 아들이 배달을 한다고 했을때 각자 자신의 일만 신경쓰면 되기 때문에 조금 더 효율적이게 일을 할 수 있지 않을까요?  </p>
+<p>함수는 아래와 같이 생겼습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 첫번째 그룹이 할 일 &#125;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 두번째 그룹이 할 일 &#125;</span></span><br><span class="line">foo() <span class="comment">// 첫번째 함수 실행</span></span><br><span class="line">foo2() <span class="comment">// 두번째 함수 실행</span></span><br></pre></td></tr></table></figure>
+<p>위에서 들었던 간단한 예제를 코드로 표현해보겠습니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 위의 치킨집을 아래와같이 역할분배를 해줄 수 있습니다.   </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 주문받기(<span class="params">전화받은내용</span>)</span>&#123; <span class="comment">// 주문을 받아서 사장님께 전달&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 닭튀기기(<span class="params">사모님께전해받은내용</span>)</span>&#123; <span class="comment">// 전해받은 내용을 수행한다 &#125;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 배달(<span class="params">치킨</span>)</span>&#123; <span class="comment">// 전해받은 치킨을 배달한다&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> 치킨집(<span class="params"></span>)</span>&#123;</span><br><span class="line">  주문받기() <span class="comment">// 주문받아서 주문내용을 저장 </span></span><br><span class="line">  닭튀기기() <span class="comment">// 내용을 토대로 닭튀기기</span></span><br><span class="line">  배달() <span class="comment">// 치킨배달</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이처럼 자신이 맡은 일만 수행할 수 있도록 그룹화 시켜주는 것이 함수 (Function) 입니다.</p>
+<h3 id="함수를-쓰면-왜-좋을까요"><a href="#함수를-쓰면-왜-좋을까요" class="headerlink" title="함수를 쓰면 왜 좋을까요 ?"></a>함수를 쓰면 왜 좋을까요 ?</h3><p><strong>첫번째</strong>는 위에서 설명드린 <strong>그룹화</strong> 또는 <strong>모듈화</strong>가 가능해집니다. 관련된 함수끼리 묶어 놓을 수 있기 때문에 코드의 <strong>유지보수성</strong>, <strong>가독성</strong> 등이 올라갑니다.</p>
+<p><strong>두번째</strong>는 코드를  <strong>재사용</strong> 할 수 있습니다. 간단한 예를 들어보겠습니다.<br>우리는 두 수를 더해주는 함수를 만들고 싶습니다.<br>함수를 이용하지 않고 코드를 작성해보겠습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span> + <span class="number">5</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span> + <span class="number">10</span>)</span><br><span class="line"><span class="comment">// console.log(10 + 10) x 100</span></span><br></pre></td></tr></table></figure>
+<p>두 수를 더해주는 코드의 경우 위와 같이 쉽게 작성할 수 있습니다. 정말 간단한 코드라 위처럼 작성해도 무리는 없으나,  두 수를 더하는 코드가 많아지고 기존 코드에 새로운 조건이 늘어난다면 + 되있는 곳을 모두 찾아 수정해줘야되는 번거로움이 있습니다. </p>
+<p>그렇기 때문에 우리는 공통되는 역할을 하는 친구들을 함수로 만들어 둘 필요가 있습니다.</p>
+<blockquote>
+<p>잠깐 매개변수라는 것을 알아보겠습니다.<br>아래 코드의 foo (a, b) 라는 곳에서 a와 b가 매개변수라고 부르는 친구들입니다.<br>foo (a, b) 이때의 a와 b는 아무런 의미가 없습니다. 단순히 foo 라는 함수안에서 a와 b라는 이름으로 사용하기 위한 이름일 뿐입니다.  </p>
+<p>foo (10, 20) =&gt; a = 10, b =20 처럼 함수를 실행하며 값을 넣어줄때 a와 b는 의미를 가지게됩니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">&gt;     <span class="built_in">console</span>.log(a, b)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>매개변수에 대해서 알아봤으니 다시 내용으로 돌아가보겠습니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num1 + num2)</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">add(<span class="number">20</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<p>add라는 함수는 두가지의 매개변수를 받아 두 매개변수를 합쳐주는 역할을 합니다.<br>위처럼 함수를 만들어서 사용하게 된다면 수정사항이 생겨도 add 함수 하나만 수정을 하면되기 때문에 관리에 용이합니다.   </p>
+<p>또, 재사용에도 좋습니다. 지금은 두 수를 더해주는 함수로 이용했지만 String 을 합쳐주는 함수로도 이용할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="string">'Simple'</span>, <span class="string">'JS'</span>) <span class="comment">// SimpleJS</span></span><br></pre></td></tr></table></figure>
+<h3 id="일급-객체"><a href="#일급-객체" class="headerlink" title="일급 객체"></a>일급 객체</h3><p>자료형을 공부하면서 기본 자료형을 제외한 모든 것들은 객체 (Object) 라고 했습니다.<br>그러므로 함수도 객체입니다. 함수는 <strong>일급 객체</strong> 라고도 부르는데 몇가지 특징을 가진 객체를 <strong>일급객체</strong> 라고 부릅니다.  </p>
+<h4 id="함수를-매개변수로-전달-할-수-있습니다"><a href="#함수를-매개변수로-전달-할-수-있습니다" class="headerlink" title="함수를 매개변수로 전달 할 수 있습니다."></a>함수를 매개변수로 전달 할 수 있습니다.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// func 같은 것을 매개변수라고 부릅니다.</span></span><br><span class="line"><span class="comment">// foo 는 함수를 전달 받는 함수입니다. 전달 받은 함수를 실행시킵니다.  </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">func</span>) </span>&#123; func() &#125;;</span><br><span class="line"></span><br><span class="line">foo(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'함수안에 함수를 매개변수로 전달할 수 있습니다.'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="변수나-데이터-구조안에-담을-수-있습니다"><a href="#변수나-데이터-구조안에-담을-수-있습니다" class="headerlink" title="변수나 데이터 구조안에 담을 수 있습니다."></a>변수나 데이터 구조안에 담을 수 있습니다.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'변수안에 함수를 담을 수 있습니다.'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 아직 배우지 않았지만 객체 안에도 함수를 담을 수 있습니다.</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'객체안에 담긴 함수입니다. 메서드라고도 부릅니다.'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="반환값-return-value-으로-사용할-수-있다"><a href="#반환값-return-value-으로-사용할-수-있다" class="headerlink" title="반환값 (return value) 으로 사용할 수 있다."></a>반환값 (return value) 으로 사용할 수 있다.</h4><p>return 이라는 것으로 값을 밖으로 던져줄 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> num = foo() </span><br><span class="line"><span class="comment">// foo 가 return을 통해 밖으로 10을 던져줬고  </span></span><br><span class="line"><span class="comment">// num 이라는 변수가 foo가 던진 10을 받았습니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(num) <span class="comment">// 10 그러므로 num 에는 10이 들어있습니다.</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드가 기본적인 return의 동작입니다. return 을 통해 함수자체를 받을 수도 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'return 된 함수'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> func = foo() <span class="comment">// foo 를 실행하면 return 된 함수가 func 에 들어가게 됩니다.</span></span><br><span class="line">func() <span class="comment">// return 받은 함수를 실행시킵니다.</span></span><br></pre></td></tr></table></figure>
+<p>위와 같은 특징들을 가진 객체를 일급 객체라고 표현합니다 :)   </p>
+<h3 id="함수를-사용하는-방법"><a href="#함수를-사용하는-방법" class="headerlink" title="함수를 사용하는 방법"></a>함수를 사용하는 방법</h3><p>함수를 사용하는 방법에는 크게 세가지가 있습니다.</p>
+<ul>
+<li>함수선언식(Function declaration)</li>
+<li>함수표현식(Function expression)</li>
+<li>Function() 생성자 함수 ( 잘 사용하지 않기 때문에 다루지 않겠습니다 )</li>
+</ul>
+<h4 id="함수-선언식"><a href="#함수-선언식" class="headerlink" title="함수 선언식"></a>함수 선언식</h4><p>함수 선언식의 경우 함수는 이름을 가지고 있어야합니다.<br>이름을 가지고 있는 이유는 재귀적 호출을 하거나, 디버거가 함수를 구분할 수 있도록 식별자 역할을 해주기 때문입니다. ( 우리가 이름을 가지고 있는 것 처럼요 )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123; <span class="comment">// foo 는 함수의 이름 입니다.</span></span><br><span class="line">    foo() <span class="comment">// 자기 자신을 호출할 수 있습니다. 이를 재귀라고 표현합니다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="함수표현식"><a href="#함수표현식" class="headerlink" title="함수표현식"></a>함수표현식</h4><p>함수 표현식은 다른 방법으로 함수를 표현한다고 생각해주세요 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo 라는 변수를 통해서 함수를 표현했어요'</span>)</span><br><span class="line">&#125;</span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
+<p>위처럼 변수에 함수를 넣어서 함수를 표현할 수 있습니다. 이때 변수에 할당되는 함수들은 보통 <strong>이름을 생략합니다.</strong> 이처럼 이름이 없는 함수를 <strong>익명함수(anonymous function)</strong> 라고 부릅니다.<br>foo 라는 변수는 할당된 함수를 가리키는 <strong>참조 값</strong>을 저장하게됩니다. foo() 를 호출시 참조 값을 가지고 실제 함수를 실행시킵니다.</p>
+<blockquote>
+<p>간단한 예제 </p>
+<p>+, -, *, / 을 해주는 함수를 만들어 보세요<br>자신의 성과 이름을 받아 출력해주는 함수를 만들어보세요</p>
+</blockquote>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Javascript">
+    <span class="tag-code">Javascript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/13/JS/chap-04/">
+        <span class="nav-arrow">← </span>
+        
+          JS - 04. 반복문
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/JS/chap-06/">
+        
+          JS - 06. 객체 (Object)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/10/13/JS/chap-05/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "JS - 05. 함수 (Function)",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/10/13/JS/chap-05/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [111 ~ 120] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [111 ~ 120]</h2>
+  <p class="post-date">2018-11-22</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>111</td>
+<td><a href="#what-are-the-approaches-to-include-polyfills-in-your-create-react-app">What are the approaches to include polyfills in your create-react-app?</a></td>
+</tr>
+<tr>
+<td>112</td>
+<td><a href="#how-to-use-https-instead-of-http-in-create-react-app">How to use https instead of http in create-react-app?</a></td>
+</tr>
+<tr>
+<td>113</td>
+<td><a href="#how-to-avoid-using-relative-path-imports-in-create-react-app">How to avoid using relative path imports in create-react-app?</a></td>
+</tr>
+<tr>
+<td>114</td>
+<td><a href="#how-to-add-google-analytics-for-react-router">How to add Google Analytics for react-router?</a></td>
+</tr>
+<tr>
+<td>115</td>
+<td><a href="#how-to-update-a-component-every-second">How to update a component every second?</a></td>
+</tr>
+<tr>
+<td>116</td>
+<td><a href="#how-do-you-apply-vendor-prefixes-to-inline-styles-in-react">How do you apply vendor prefixes to inline styles in React?</a></td>
+</tr>
+<tr>
+<td>117</td>
+<td><a href="#how-to-import-and-export-components-using-react-and-es6">How to import and export components using react and ES6?</a></td>
+</tr>
+<tr>
+<td>118</td>
+<td><a href="#why-react-component-names-must-begin-with-a-capital-letter">Why React component names must begin with a capital letter?</a></td>
+</tr>
+<tr>
+<td>119</td>
+<td><a href="#why-is-a-component-constructor-called-only-once">Why is a component constructor called only once?</a></td>
+</tr>
+<tr>
+<td>120</td>
+<td><a href="#how-to-define-constants-in-react">How to define constants in React?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="111">
+<li><h3 id="What-are-the-approaches-to-include-polyfills-in-your-create-react-app"><a href="#What-are-the-approaches-to-include-polyfills-in-your-create-react-app" class="headerlink" title="What are the approaches to include polyfills in your create-react-app?"></a>What are the approaches to include polyfills in your create-react-app?</h3><h4 id="create-react-app-에-polyfills를-포함시키는-방법은-무엇인가요"><a href="#create-react-app-에-polyfills를-포함시키는-방법은-무엇인가요" class="headerlink" title="(create-react-app 에 polyfills를 포함시키는 방법은 무엇인가요?)"></a>(create-react-app 에 polyfills를 포함시키는 방법은 무엇인가요?)</h4></li>
+<li><p>core-js 에서 수동 import:</p>
+</li>
+</ol>
+<ul>
+<li>polyfills.js 파일을 만들어 root index.js 에서 import 합니다. <code>npm install core-js</code> 또는 <code>yarn add core-js</code> 를 추가하고 필요한 기능을 import 합니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'core-js/fn/array/find'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/fn/array/includes'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/fn/number/is-nan'</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Polyfill 서비스 사용:</li>
+</ol>
+<ul>
+<li>polyfill.io CDN 을 사용하여 다음의 줄을 index.html 에 추가하고, 사용자 지정 브라우저별 Polyfill을 검색합니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">'https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>위의 스크립트에서 Array.prototype.includes 는 기본 스펙에 포함되지 않았기 때문에 기능을 요청했습니다.</p>
+<ol start="112">
+<li><h3 id="How-to-use-https-instead-of-http-in-create-react-app"><a href="#How-to-use-https-instead-of-http-in-create-react-app" class="headerlink" title="How to use https instead of http in create-react-app?"></a>How to use https instead of http in create-react-app?</h3><h4 id="create-react-app-에서-http-대신-https-를-어떻게-사용하나요"><a href="#create-react-app-에서-http-대신-https-를-어떻게-사용하나요" class="headerlink" title="(create-react-app 에서 http 대신 https 를 어떻게 사용하나요?)"></a>(create-react-app 에서 http 대신 https 를 어떻게 사용하나요?)</h4><code>HTTPS = true</code> 설정이 필요합니다.  package.json 에 scripts 부분을 편집할 수 있습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"set HTTPS=true &amp;&amp; react-scripts start"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>또는 <code>set HTTPS=true &amp;&amp; npm start</code> 을 실행하세요</p>
+<ol start="113">
+<li><h3 id="How-to-avoid-using-relative-path-imports-in-create-react-app"><a href="#How-to-avoid-using-relative-path-imports-in-create-react-app" class="headerlink" title="How to avoid using relative path imports in create-react-app?"></a>How to avoid using relative path imports in create-react-app?</h3><h4 id="create-react-app-에서-상대경로-import-를-어떻게-피하나요"><a href="#create-react-app-에서-상대경로-import-를-어떻게-피하나요" class="headerlink" title="(create-react-app 에서 상대경로 import 를 어떻게 피하나요?)"></a>(create-react-app 에서 상대경로 import 를 어떻게 피하나요?)</h4>프로젝트의 root 에 <code>env</code> 파일을 만들고 import path 를 작성해주세요.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_PATH=src/app</span><br></pre></td></tr></table></figure>
+<p>설정후 개발서버를 재시작 해주세요. 상대 경로없이 src/app 안에 있는 모든것을 import 할 수 있습니다.</p>
+<ol start="114">
+<li><h3 id="How-to-add-Google-Analytics-for-React-Router"><a href="#How-to-add-Google-Analytics-for-React-Router" class="headerlink" title="How to add Google Analytics for React Router?"></a>How to add Google Analytics for React Router?</h3><h4 id="어떻게-React-Router-에-Google-Analytics-를-추가하나요"><a href="#어떻게-React-Router-에-Google-Analytics-를-추가하나요" class="headerlink" title="(어떻게 React Router 에 Google Analytics 를 추가하나요?)"></a>(어떻게 React Router 에 Google Analytics 를 추가하나요?)</h4>history 객체에 listener 를 추가하여 각 페이지 뷰를 기록하세요.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">history.listen(<span class="function"><span class="keyword">function</span> (<span class="params">location</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.ga(<span class="string">'set'</span>, <span class="string">'page'</span>, location.pathname + location.search)</span><br><span class="line">  <span class="built_in">window</span>.ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>, location.pathname + location.search)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="115">
+<li><h3 id="How-to-update-a-component-every-second"><a href="#How-to-update-a-component-every-second" class="headerlink" title="How to update a component every second?"></a>How to update a component every second?</h3><h4 id="어떻게-매-초-마다-component-를-업데이트-하나요"><a href="#어떻게-매-초-마다-component-를-업데이트-하나요" class="headerlink" title="(어떻게 매 초 마다 component 를 업데이트 하나요?)"></a>(어떻게 매 초 마다 component 를 업데이트 하나요?)</h4>setInterval() 를 사용하여 변경을 트리거해야합니다. 오류 및 메모리 누수를 방지하려면 component unmount 시 타이머를 제거해야합니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">  <span class="keyword">this</span>.interval = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.setState(&#123; <span class="attr">time</span>: <span class="built_in">Date</span>.now() &#125;), <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillUnmount() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.interval)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="116">
+<li><h3 id="How-do-you-apply-vendor-prefixes-to-inline-styles-in-React"><a href="#How-do-you-apply-vendor-prefixes-to-inline-styles-in-React" class="headerlink" title="How do you apply vendor prefixes to inline styles in React?"></a>How do you apply vendor prefixes to inline styles in React?</h3><h4 id="React-에서-어떻게-인라인-스타일에-vendor-prefixes-를-붙일수-있나요"><a href="#React-에서-어떻게-인라인-스타일에-vendor-prefixes-를-붙일수-있나요" class="headerlink" title="(React 에서 어떻게 인라인 스타일에 vendor prefixes 를 붙일수 있나요?)"></a>(React 에서 어떻게 인라인 스타일에 vendor prefixes 를 붙일수 있나요?)</h4>React 에서는 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener">vendor prefixes</a> 를 자동으로 적용해주지 않습니다. vendor prefixes 를 수동으로 추가해야합니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&#123;&#123;</span><br><span class="line">  transform: <span class="string">'rotate(90deg)'</span>,</span><br><span class="line">  WebkitTransform: <span class="string">'rotate(90deg)'</span>, <span class="comment">// note the capital 'W' here</span></span><br><span class="line">  msTransform: <span class="string">'rotate(90deg)'</span> <span class="comment">// 'ms' is the only lowercase vendor prefix</span></span><br><span class="line">&#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<ol start="117">
+<li><h3 id="How-to-import-and-export-components-using-React-and-ES6"><a href="#How-to-import-and-export-components-using-React-and-ES6" class="headerlink" title="How to import and export components using React and ES6?"></a>How to import and export components using React and ES6?</h3><h4 id="React와-ES6에서-어떻게-component-를-import-와-export-할-수-있나요"><a href="#React와-ES6에서-어떻게-component-를-import-와-export-할-수-있나요" class="headerlink" title="(React와 ES6에서 어떻게 component 를 import 와 export 할 수 있나요?)"></a>(React와 ES6에서 어떻게 component 를 import 와 export 할 수 있나요?)</h4>component 를 export 하려면 default 를 사용해야합니다.</li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> User <span class="keyword">from</span> <span class="string">'user'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MyProfile</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;User type=<span class="string">"customer"</span>&gt;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">      &lt;<span class="regexp">/User&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">``` </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export 를 사용하면 MyProfile 이 모듈로 내보내집니다. 다른 component 의 이름을 사용하지 않아도 동일한 파일을 import 할 수 있습니다.</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">118. ### Why React component names must begin with a capital letter?</span></span><br><span class="line"><span class="regexp">#### (왜 React compnent 의 이름은 대문자여야하나요?)</span></span><br><span class="line"><span class="regexp">JSX 에서 소문자 태그 이름은 HTML 태그로 간주됩니다. 그러나 점 ((property accessors) 이 있는 대문자, 소문자 태그 이름은 HTML 태그로 간주되지 않습니다.</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">- &lt;component /</span>&gt; compiles to React.createElement(<span class="string">'component'</span>) (i.e, HTML tag)</span><br><span class="line">- &lt;obj.component /&gt; compiles to React.createElement(obj.component)</span><br><span class="line">- &lt;Component /&gt; compiles to React.createElement(Component)</span><br><span class="line"></span><br><span class="line">119. ### Why is a component constructor called only once?</span><br><span class="line">#### (왜 component 생성자는 한번만 호출되나요?)</span><br><span class="line">React의 reconciliation  알고리즘에서는 custom component 가 다음 렌더링의 같은 위치에 나타나면 이전 component 와 동일하므로 인스턴스를 새로 만들지 않고 다시 사용한다고 가정합니다.</span><br><span class="line"></span><br><span class="line">120. ### How to define constants in React?</span><br><span class="line">##### (React 에서 어떻게 상수를 정의하나요?)</span><br><span class="line">ES7 의 static 필드를 사용하여 상수를 정의 할 수 있습니다.</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  static DEFAULT_PAGINATION = 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>static 필드는 statge 3 의 제안된 부분입니다.</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/21/REACT/react-translate-11/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [101 ~ 110]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/23/REACT/react-translate-13/">
+        
+          React Interview (리액트 면접 질문) [121 ~ 130]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/22/REACT/react-translate-12/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [111 ~ 120]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/22/REACT/react-translate-12/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

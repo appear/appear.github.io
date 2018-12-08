@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      React Interview (리액트 면접 질문) [31 ~ 40] | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#javascript/" class="item-link">Javascript</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/#react/" class="item-link">React</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/etc/" class="item-link">ETC</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#javascript/" class="menu-link">Javascript</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/#react/" class="menu-link">React</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/etc/" class="menu-link">ETC</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="article-banner">
+  <h2>React Interview (리액트 면접 질문) [31 ~ 40]</h2>
+  <p class="post-date">2018-11-02</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="React-Interview"><a href="#React-Interview" class="headerlink" title="React Interview"></a>React Interview</h1><p>원작자인 <a href="https://github.com/sudheerj" target="_blank" rel="noopener">sudheerj</a> 의 동의를 구하고 진행하는 번역본 입니다 :)     </p>
+<p>처음 해보는 번역이라 어색한 문맥이 많습니다 :) ..</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Core ReactJS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="#what-is-the-difference-between-createelement-and-cloneelement">What is the difference between createElement and cloneElement?</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="#what-is-lifting-state-up-in-reactjs">What is Lifting State Up in ReactJS?</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="#what-are-the-different-phases-of-reactjs-component-lifecycle">What are the different phases of ReactJS component lifecycle?</a></td>
+</tr>
+<tr>
+<td>34</td>
+<td><a href="#what-are-the-lifecycle-methods-of-reactjs">What are the lifecycle methods of ReactJS?</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="#what-are-higher-order-components">What are Higher-Order components?</a></td>
+</tr>
+<tr>
+<td>36</td>
+<td><a href="#how-to-create-props-proxy-for-hoc-component">How to create props proxy for HOC component?</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td><a href="#what-is-context">What is context?</a></td>
+</tr>
+<tr>
+<td>38</td>
+<td><a href="#what-is-children-prop">What is children prop?</a></td>
+</tr>
+<tr>
+<td>39</td>
+<td><a href="#how-to-write-comments-in-reactjs">How to write comments in ReactJS?</a></td>
+</tr>
+<tr>
+<td>40</td>
+<td><a href="#what-is-the-purpose-of-using-super-constructor-with-props-argument">What is the purpose of using super constructor with props argument?</a></td>
+</tr>
+</tbody>
+</table>
+<ol start="31">
+<li><h3 id="What-is-the-difference-between-createElement-and-cloneElement"><a href="#What-is-the-difference-between-createElement-and-cloneElement" class="headerlink" title="What is the difference between createElement and cloneElement?"></a>What is the difference between createElement and cloneElement?</h3><h4 id="createElement와-cloneElement의-차이점은-무엇인가요"><a href="#createElement와-cloneElement의-차이점은-무엇인가요" class="headerlink" title="(createElement와 cloneElement의 차이점은 무엇인가요?)"></a>(createElement와 cloneElement의 차이점은 무엇인가요?)</h4><p>UI 의 object representation으로 사용될 react element를 만들기 위해 JSX element 는 React.createElement() 함수로 변환됩니다. cloneElement는 element 를 복사하고 새로운 props 를 전달하는데 사용됩니다.</p>
+</li>
+<li><h3 id="What-is-Lifting-State-Up-in-React"><a href="#What-is-Lifting-State-Up-in-React" class="headerlink" title="What is Lifting State Up in React?"></a>What is Lifting State Up in React?</h3><h4 id="React-에서-Lifting-State-Up-은-무엇인가요"><a href="#React-에서-Lifting-State-Up-은-무엇인가요" class="headerlink" title="(React 에서 Lifting State Up 은 무엇인가요?)"></a>(React 에서 Lifting State Up 은 무엇인가요?)</h4><p>여러 component 들이 동일한 변경 데이터를 공유해야하는 경우 가까운 부모 component 로 state를 올리는 것이 좋습니다. 즉, 두개의 자식 component가 부모의 있는 동일한 데이터를 공유할 때 두개의 자식 component 들은 부모로 state를 올리는 대신 local state를 유지해야합니다.</p>
+</li>
+<li><h3 id="What-are-the-different-phases-of-component-lifecycle"><a href="#What-are-the-different-phases-of-component-lifecycle" class="headerlink" title="What are the different phases of component lifecycle?"></a>What are the different phases of component lifecycle?</h3><h4 id="component-라이프사이클-단계는-무엇이-다른가요"><a href="#component-라이프사이클-단계는-무엇이-다른가요" class="headerlink" title="(component 라이프사이클 단계는 무엇이 다른가요?)"></a>(component 라이프사이클 단계는 무엇이 다른가요?)</h4><p>라이프 사이클에는 4가지 단계가 있습니다.</p>
+</li>
+<li><p>Initialization: component 는 초기 state 및 props 를 세팅을 준비합니다.</p>
+</li>
+<li>Mounting: component 가 브라우저 DOM에 mount 될 준비가 되었습니다. 이 단계에서는 componentWillMount, componentDidMount 를 사용할 수 있습니다.</li>
+<li>Updating: 새로운 props를 보내거나 state를 업데이트하여 component 를 두가지 방법으로 update 할 수 있습니다. 이 단계에서는 shouldComponentUpdate (), componentWillUpdate () 및 componentDidUpdate 를 사용할 수 있습니다.</li>
+<li>Unmounting: 브라우저 DOM에서 component 가 필요하지 않을때 mount를 해제시킵니다. 이 단계에서는 componentWillUnmount 를 사용할 수 있습니다.</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/appear/appear.github.io/master/img/phases.png" alt="lifecycle"></p>
+<ol start="34">
+<li><h3 id="What-are-the-lifecycle-methods-of-React"><a href="#What-are-the-lifecycle-methods-of-React" class="headerlink" title="What are the lifecycle methods of React?"></a>What are the lifecycle methods of React?</h3><h4 id="React의-lifecycle-methods는-무엇인가요"><a href="#React의-lifecycle-methods는-무엇인가요" class="headerlink" title="(React의 lifecycle methods는 무엇인가요?)"></a>(React의 lifecycle methods는 무엇인가요?)</h4></li>
+</ol>
+<ul>
+<li>componentWillMount: rendering 전에 실행됩니다.</li>
+<li>componentDidMount: 첫 rendering 후에 실행됩니다. 이 단계에서 모든 AJAX 요청, DOM 또는 State의 update, event listener 가 설정되어야합니다.</li>
+<li>componentWillReceiveProps: 특정 props update가 state 변화를 트리거할 때 실행됩니다.</li>
+<li>shouldComponentUpdate: 컴포넌트의 업데이트 여부를 결정합니다. 기본적으로 return 값은 true 입니다. state 또는 props 가 업데이트 된 후 component 를 render 할 필요가 없을 경우 false를 return 할 수 있습니다. component가 새로운 props를 받으면서 생기는 rerender 을 막을 수 있습니다. 성능을 향상시키는데 좋습니다.</li>
+<li>componentWillUpdate: shouldComponentUpdate에서 true가 반환되었을 때 state &amp; props 의 변화를 확인하고 re-rendering 되기전에 실행합니다.</li>
+<li>componentDidUpdate: 주로 props 나 state 변경에 대한 response 로 DOM을 업데이트할 때 사용됩니다.</li>
+<li>componentWillUnmount: 네트워크 요청을 취소하거나, component와 관련된 모든 event listeners 를 제거하는데 사용됩니다.</li>
+</ul>
+<ol start="35">
+<li><h3 id="What-are-Higher-Order-components"><a href="#What-are-Higher-Order-components" class="headerlink" title="What are Higher-Order components?"></a>What are Higher-Order components?</h3><h4 id="Higher-Order-components-는-무엇인가요"><a href="#Higher-Order-components-는-무엇인가요" class="headerlink" title="(Higher-Order components 는 무엇인가요?)"></a>(Higher-Order components 는 무엇인가요?)</h4>Higher-Order component(HOC)는 component를 받아서 새로운 component를 return 하는 함수입니다. HOC는 React의 특성에서 파생된 패턴입니다.<br>동적으로 제공되는 하위 component들을 그대로 사용하지만 입력받은 component를 수정하거나 복사하지 않기 때문에 “순수 components” 라고 부릅니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> EnhancedComponent = higherOrderComponent(WrappedComponent);</span><br></pre></td></tr></table></figure>
+<p>HOC는 아래와 같은 많은 use cases 에 사용할 수 있습니다.</p>
+<ul>
+<li>Code reuse, logic and bootstrap abstraction</li>
+<li>Render High jacking</li>
+<li>State abstraction and manipulation</li>
+<li>Props manipulation</li>
+</ul>
+<ol start="36">
+<li><h3 id="How-to-create-props-proxy-for-HOC-component"><a href="#How-to-create-props-proxy-for-HOC-component" class="headerlink" title="How to create props proxy for HOC component?"></a>How to create props proxy for HOC component?</h3><h4 id="HOC-component-위한-props-proxy-만드는법"><a href="#HOC-component-위한-props-proxy-만드는법" class="headerlink" title="(HOC component 위한 props proxy 만드는법?)"></a>(HOC component 위한 props proxy 만드는법?)</h4>다음과 같이 component에 전달된 props를 props proxy로 추가 / 편집 할 수 있습니다. </li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HOC</span>(<span class="params">WrappedComponent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">const</span> newProps = &#123;</span><br><span class="line">        title: <span class="string">'New Header'</span>,</span><br><span class="line">        footer: <span class="literal">false</span>,</span><br><span class="line">        showFeatureX: <span class="literal">false</span>,</span><br><span class="line">        showFeatureY: <span class="literal">true</span></span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> &#123;<span class="attr">...this.props</span>&#125; &#123;<span class="attr">...newProps</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="37">
+<li><h3 id="What-is-context"><a href="#What-is-context" class="headerlink" title="What is context?"></a>What is context?</h3><h4 id="context가-뭔가요"><a href="#context가-뭔가요" class="headerlink" title="(context가 뭔가요?)"></a>(context가 뭔가요?)</h4>Context 는 모든 레벨에 수동으로 props를 전달하지 않고 component tree를 통해 데이터를 전달할 수 있도록 제공해줍니다.<br>예를 들어, 인증된 유저, locale 설정, UI 테마는 많은 application 들에서 접근해야합니다.  </li>
+</ol>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;Provider, Consumer&#125; = React.createContext(defaultValue);</span><br></pre></td></tr></table></figure>
+<ol start="38">
+<li><h3 id="What-is-children-prop"><a href="#What-is-children-prop" class="headerlink" title="What is children prop?"></a>What is children prop?</h3><h4 id="children-prop란-무엇인가요"><a href="#children-prop란-무엇인가요" class="headerlink" title="(children prop란 무엇인가요?)"></a>(children prop란 무엇인가요?)</h4>Children prop는 component를 data로 다른 component로 전달할 수 있도록 해주는 prop(this.prop.children)입니다.<br>당신이 사용하는 prop 처럼 사용할 수 있습니다. React API에는 이 props와 함께 사용할 수 있는  React.Children.map, React.Children.forEach, React.Children.count, React.Children.only, React.Children.toArray등 여러가지 방법이 있습니다.</li>
+</ol>
+<p>children prop의 간단한 사용법은 아래와 같습니다.</p>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyDiv = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyDiv&gt;</span><br><span class="line">    &lt;span&gt;Hello&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &lt;span&gt;World&lt;/</span>span&gt;</span><br><span class="line">  &lt;<span class="regexp">/MyDiv&gt;,</span></span><br><span class="line"><span class="regexp">  node</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<ol start="39">
+<li><h3 id="How-to-write-comments-in-ReactJS"><a href="#How-to-write-comments-in-ReactJS" class="headerlink" title="How to write comments in ReactJS?"></a>How to write comments in ReactJS?</h3><h4 id="React에서-주석은-어떻게-쓰나요"><a href="#React에서-주석은-어떻게-쓰나요" class="headerlink" title="(React에서 주석은 어떻게 쓰나요?)"></a>(React에서 주석은 어떻게 쓰나요?)</h4>ReactJS / JSX 에서의 주석은 JavaScript와 유사합니다. 한 줄 및 여러 줄 주석들은 모두 중괄호로 감쌉니다. </li>
+</ol>
+<h4 id="Single-line-comments"><a href="#Single-line-comments" class="headerlink" title="Single-line comments:"></a>Single-line comments:</h4><figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;<span class="comment">/* Single-line comments */</span>&#125;    <span class="comment">// In vanilla JavaScript, the single-line comments are represented by double slash(//)</span></span><br><span class="line">  Welcome &#123;user&#125;, Let<span class="string">'s play React</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Multi-line-comments"><a href="#Multi-line-comments" class="headerlink" title="Multi-line comments:"></a>Multi-line comments:</h4><figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;<span class="comment">/* Multi-line comments for more than</span></span><br><span class="line"><span class="comment">   one line */</span>&#125;</span><br><span class="line">  Welcome &#123;user&#125;, Let<span class="string">'s play React</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="40">
+<li><h3 id="What-is-the-purpose-of-using-super-constructor-with-props-argument"><a href="#What-is-the-purpose-of-using-super-constructor-with-props-argument" class="headerlink" title="What is the purpose of using super constructor with props argument?"></a>What is the purpose of using super constructor with props argument?</h3><h4 id="props-argument와-함께-super-constructor를-사용하는-목적은-무엇인가요"><a href="#props-argument와-함께-super-constructor를-사용하는-목적은-무엇인가요" class="headerlink" title="(props argument와 함께 super constructor를 사용하는 목적은 무엇인가요?)"></a>(props argument와 함께 super constructor를 사용하는 목적은 무엇인가요?)</h4>자식 클래스의 constructor 는 super() 메서드가 호출되기 전까지 this 참조 사용할 수 없습니다. es6 의 sub-classes 에서도 동일하게 적용됩니다.<br>super()에 props를 파라미터로 전달하는 이유는 child constructors에서 this.props로 접근하기 위해서입니다. </li>
+</ol>
+<h4 id="Passing-props"><a href="#Passing-props" class="headerlink" title="Passing props:"></a>Passing props:</h4><figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props);  <span class="comment">// Prints &#123; name: 'sudheer',age: 30 &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Not-passing-props"><a href="#Not-passing-props" class="headerlink" title="Not passing props:"></a>Not passing props:</h4><figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props); <span class="comment">// Prints undefined</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// But Props parameter is still available</span></span><br><span class="line">        <span class="built_in">console</span>.log(props); <span class="comment">// Prints &#123; name: 'sudheer',age: 30 &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="comment">// No difference outside constructor</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props) <span class="comment">// Prints &#123; name: 'sudheer',age: 30 &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 code snippets은 this.props의 동작이 constructor 만 다른 것을 보여줍니다. 생성자 밖에서의 동작은 동일합니다. </p>
+<p>영어 원본: <a href="https://github.com/sudheerj/reactjs-interview-questions#what-is-reactjs" target="_blank" rel="noopener">Git Hub</a><br>블로그 번역: <a href="https://github.com/appear/reactjs-interview-questions-ko" target="_blank" rel="noopener">Git Hub</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#React">
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/20/REACT/react-translate-03/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [21 ~ 30]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/02/REACT/react-translate-05/">
+        
+          React Interview (리액트 면접 질문) [41 ~ 50]
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/11/02/REACT/react-translate-04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "React Interview (리액트 면접 질문) [31 ~ 40]",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/11/02/REACT/react-translate-04/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
