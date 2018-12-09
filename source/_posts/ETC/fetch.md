@@ -1,10 +1,10 @@
 ---
-title: Issue. fetch polyfill
+title: issue. fetch polyfill
 date: 2018-12-09 12:24:32
 tags: Etc
 ---
 
-# Issue
+# issue
 
 모바일 대상 프로모션 페이지를 만들면서 간단한 api call 을 위해 fetch 를 사용했습니다.  
 모바일 대상이었기 때문에 polyfill에 크게 신경쓰지 않았었습니다.    

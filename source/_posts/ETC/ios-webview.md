@@ -4,7 +4,7 @@ date: 2018-12-09 11:59:45
 tags: Etc
 ---
 
-# Issue 
+# issue 
 
 ios 에서는 input 에 focus 가 되면 키보드가 올라옵니다.   
 키보드 영역이 올라오면서 사용자 편의를 위해 element 영역울 일정 높이만큼 같이 올려줍니다.         
