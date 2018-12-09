@@ -11,7 +11,7 @@
   
   <title>
     
-      Issue. fetch polyfill | Olaf&#39;s blog
+      issue. fetch polyfill | Olaf&#39;s blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -115,7 +115,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>Issue. fetch polyfill</h2>
+  <h2>issue. fetch polyfill</h2>
   <p class="post-date">2018-12-09</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -130,7 +130,7 @@
 </script>
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h1><p>모바일 대상 프로모션 페이지를 만들면서 간단한 api call 을 위해 fetch 를 사용했습니다.<br>모바일 대상이었기 때문에 polyfill에 크게 신경쓰지 않았었습니다.<br>오픈후 Sentry 를 확인해보니 생각보다 하위 버전의 모바일 기기가 많아 fetch 를 찾지 못하는 에러가 많았습니다.<br>polyfill 를 추가하여 에러 발생을 막을 수 있었습니다.    </p>
+    <section class="markdown-content"><h1 id="issue"><a href="#issue" class="headerlink" title="issue"></a>issue</h1><p>모바일 대상 프로모션 페이지를 만들면서 간단한 api call 을 위해 fetch 를 사용했습니다.<br>모바일 대상이었기 때문에 polyfill에 크게 신경쓰지 않았었습니다.<br>오픈후 Sentry 를 확인해보니 생각보다 하위 버전의 모바일 기기가 많아 fetch 를 찾지 못하는 에러가 많았습니다.<br>polyfill 를 추가하여 에러 발생을 막을 수 있었습니다.    </p>
 <p><img src="/img/etc/fetch-issue.png" alt="issue"><br><a href="https://caniuse.com/#search=fetch" target="_blank" rel="noopener">Can I use</a> 에서 확인 가능합니다.</p>
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>whatwg-fetch 를 설치하고 import 해주면 됩니다. </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install whatwg-fetch --save</span><br><span class="line"><span class="keyword">import</span> <span class="string">'whatwg-fetch'</span></span><br></pre></td></tr></table></figure>
@@ -244,7 +244,7 @@
     var gitmentConfig = "";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "Issue. fetch polyfill",
+        id: "issue. fetch polyfill",
         owner: "",
         repo: "",
         oauth: {
