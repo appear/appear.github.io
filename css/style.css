@@ -781,8 +781,7 @@ h2.article-head {
   height: 100%;
   content: '';
   opacity: 0.25;
-  background: url("images/escheres.png");
-  background-color: rgba(0,0,0,0.05);
+  background-color: #f22;
 }
 @media screen and (max-width: 480px) {
   #about-banner {
@@ -792,7 +791,6 @@ h2.article-head {
 .author {
   margin-top: -50px;
   width: 100%;
-  background: #f8f8f8;
   text-align: center;
   padding: 0 1em 30px 1em;
   box-sizing: border-box;

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  <link rel="canonical" href="http://appear.github.io/2018/12/09/etc/ios-webview/">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      issue. ios 웹뷰 키보드영역 문제 | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Post</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Post</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>issue. ios 웹뷰 키보드영역 문제</h2>
+  <p class="post-date">2018-12-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h1><p>ios 에서는 input 에 focus 가 되면 키보드가 올라옵니다.<br>키보드 영역이 올라오면서 사용자 편의를 위해 element 영역울 일정 높이만큼 같이 올려줍니다.<br>키보드가 내려가면 올라간만큼 element 영역을 같이 내려주는 것이 기본 동작입니다.  </p>
+<p>이 동작은 ios 웹뷰에서 아래와 같은 문제를 발생시킵니다. (사파리, 크롬의 경우는 발생하지 않습니다.)<br>키보드가 올라가면서 element 영역이 올라가게 되는데 키보드가 내려간 후에도 올라간 element 영역이 내려오지 않습니다.      </p>
+<p><img src="/img/etc/webview01.png" alt="hexo"></p>
+<p>왼쪽부터 1, 2, 3 번 화면으로 부르겠습니다.<br><br> </p>
+<h5 id="1번-화면"><a href="#1번-화면" class="headerlink" title="1번 화면:"></a>1번 화면:</h5><p>1번 화면은 버튼까지가 전체 영역입니다. 영역이 넘치지 않기 때문에 스크롤이 생기지 않습니다. 화면 끝쪽에 버튼과 input이 배치되어 있습니다. </p>
+<h5 id="2번-화면"><a href="#2번-화면" class="headerlink" title="2번 화면:"></a>2번 화면:</h5><p>input에 포커스가 되는 순간 ios 의 키보드가 올라오게 되는데 키보드가 input 을 가리지 않게 하기 위한 기본 동작에 의해서 element 영역이 끌어 올려지게 됩니다.<br>그러면서 존재하지 않는 버튼 아래의 영역이 노출되게됩니다. 우리가 의도하지 않는 영역이 생기는 것 입니다.   </p>
+<h5 id="3번-화면"><a href="#3번-화면" class="headerlink" title="3번 화면:"></a>3번 화면:</h5><p>키보드가 내려간 후에도 영역이 돌아오지 않게 됩니다. 이때 버튼의 영역을 제대로 잡지 못해 버튼이 우리가 기대한대로 동작하지 않을 수 도 있습니다.<br>화면을 한번 스크롤을 해주면 원래 영역으로 돌아오게됩니다.  </p>
+<p><img src="/img/etc/webview02.png" alt="hexo"></p>
+<p>문제는 이 화면에서 발생하게됩니다. 해당 모달영역을 fixed 입니다.<br>ios 웹뷰에서 키보드와 관련된 fixed 문제가 많은데 그 중 하나가 fixed element 의 영역을 제대로 잡지 못하는 문제가 있습니다.  </p>
+<p>위의 3 번 화면에서 스크롤을해서 제대로 영역을 돌려놓지 않고 알 수 없는 영역이 올라온 상태로 fixed 된 모달을 띄우게 된다면 모달안의 있는 element 들의 영역은 이미 우리가 의도한 것과는 다른 상황이 됩니다.<br>즉 모달의 버튼을 눌렀을때 동작하지 않습니다.    </p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>웹뷰 자체의 동작을 제어할 수는 없습니다. 그래서 정확한 해결책이다 라고는 할 수 없으나 생각해봤을때 몇가지 방법이 있었습니다.</p>
+<h5 id="미노출-영역이-올라오는-것이-아니라-존재하는-영역이-노출-될-수-있도록-한다"><a href="#미노출-영역이-올라오는-것이-아니라-존재하는-영역이-노출-될-수-있도록-한다" class="headerlink" title="미노출 영역이 올라오는 것이 아니라 존재하는 영역이 노출 될 수 있도록 한다."></a>미노출 영역이 올라오는 것이 아니라 존재하는 영역이 노출 될 수 있도록 한다.</h5><p>-&gt; 위의 사진의 버튼 아래에 일부러 margin 이나 padding 으로 스크롤을 만드는 영역을 주는 것입니다. 그렇게 되면 없는 영역이 올라는 것이 아니기 때문에 영역을 잃지 않습니다.  </p>
+<h5 id="사용자의-스크롤을-유도한다"><a href="#사용자의-스크롤을-유도한다" class="headerlink" title="사용자의 스크롤을 유도한다."></a>사용자의 스크롤을 유도한다.</h5><p>-&gt; 위의 버그는 스크롤을 하면 영역을 제대로 잡는다는 해결방법이..? 있습니다. input 과 버튼이 한 화면에 들어오지 않도록 디자인을 변경하여 input 을 입력하고 스크롤을 내려 버튼을 클릭하게 한다던지 여러 방법으로 사용자의 스크롤을 유도하는 것으로 해결할 수 있습니다.</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Etc">
+    <span class="tag-code">Etc</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/09/ETC/hexo-blog/">
+        <span class="nav-arrow">← </span>
+        
+          Hexo Blog 로 블로그 만들기
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/09/ETC/fetch/">
+        
+          Issue. fetch polyfill
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/12/09/ETC/ios-webview/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "issue. ios 웹뷰 키보드영역 문제",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/12/09/ETC/ios-webview/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

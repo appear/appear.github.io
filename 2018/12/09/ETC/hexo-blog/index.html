@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  <link rel="canonical" href="http://appear.github.io/2018/12/09/etc/hexo-blog/">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hexo Blog 로 블로그 만들기 | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Post</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Post</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Hexo Blog 로 블로그 만들기</h2>
+  <p class="post-date">2018-12-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h1><h2 id="블로그-만들어보기"><a href="#블로그-만들어보기" class="headerlink" title="블로그 만들어보기"></a>블로그 만들어보기</h2><h3 id="Github-repo-만들기"><a href="#Github-repo-만들기" class="headerlink" title="Github repo 만들기"></a>Github repo 만들기</h3><p>repo 의 이름은 [github 이름].github.io 로 만들어야합니다.<br>이름만 지정해주면 됩니다. 다른 사항들은 체크하지 말아주세요 :)  </p>
+<p><img src="/img/hexo/hexo01.png" alt="hexo"></p>
+<p><img src="/img/hexo/hexo03.png" alt="hexo"></p>
+<h3 id="Hexo-설치하기"><a href="#Hexo-설치하기" class="headerlink" title="Hexo 설치하기"></a>Hexo 설치하기</h3><p><a href="https://hexo.io/ko/index.html" target="_blank" rel="noopener">Hexo</a> 는 node 기반의 static generator 입니다. 작성한 md 파일을 html 파일로 변환해줍니다.</p>
+<p><img src="/img/hexo/hexo02.png" alt="hexo"></p>
+<p>먼저 Hexo cli 를 설치해야 합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>blog 를 설치할 경로로 이동하여 hexo init 을 실행하여 hexo 프로젝트를 생성해야 합니다. 프로젝트 이름은 위에서 만든 github repo 의 이름과 같으면 좋습니다.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [github 이름].github.io</span><br></pre></td></tr></table></figure>
+<p>아래와 같이 프로젝트가 생성된 것을 볼 수 있습니다. </p>
+<p><img src="/img/hexo/hexo04.png" alt="hexo"></p>
+<p>IDE 로 프로젝트를 열어주세요. 프로젝트로 이동한 후 모듈을 설치해 주기 위해 아래 명령어를 입력해주세요   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo/hexo05.png" alt="hexo"></p>
+<p>모듈이 설치 된 후 local 환경에 블로그를 띄워보겠습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+<p>localhost:4000 으로 접속해주세요</p>
+<p><img src="/img/hexo/hexo06.png" alt="hexo"></p>
+<h4 id="테마-변경하기"><a href="#테마-변경하기" class="headerlink" title="테마 변경하기"></a>테마 변경하기</h4><p>기본 테마가 너무 이쁘지 않기 때문에 … <a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank" rel="noopener">Vue 테마</a>로 변경해보려고 합니다.</p>
+<p><img src="/img/hexo/hexo07.png" alt="hexo"></p>
+<p>프로젝트 폴더안에서 vexo 테마를 git 에서 pull 해야합니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/yanm1ng/hexo-theme-vexo.git themes/vexo</span><br></pre></td></tr></table></figure>
+<p>받은 후에는 아래와 같은 구조가 됩니다.   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 프로젝트 폴더</span><br><span class="line">  - themes</span><br><span class="line">    - vexo</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo/hexo08.png" alt="hexo"></p>
+<p>기존의 landscape 테마는 필요가 없기 때문에 삭제해주시면 됩니다.<br>그 후 프로젝트 폴더의 <code>_config.yml</code> 파일을 수정해줘야 합니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: vexo</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo/hexo09.png" alt="hexo"></p>
+<p>다시 hexo 를 실행해보면 테마가 변경된 것을 확인할 수 있습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo/hexo10.png" alt="hexo"></p>
+<p>vexo/_source 안에있는 about, project, tags 폴더를 우리 프로젝트의 source 안으로 복사해서 붙여넣기 해주세요 :) </p>
+<p><img src="/img/hexo/hexo18.png" alt="hexo"></p>
+<h4 id="글-써보기"><a href="#글-써보기" class="headerlink" title="글 써보기"></a>글 써보기</h4><p>블로그를 만들었으니 글을 작성해보도록 하겠습니다. 아래 명령어를 통해 글 작성이 가능합니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 파일이름</span><br></pre></td></tr></table></figure>
+<p>작성한 글은 프로젝트 폴더 <code>/source/_posts</code> 폴더에 생성됩니다. md 파일의 구조는 아래와 같습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: javascript  </span><br><span class="line">date: 2018-12-06 21:06:57</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+<p>작성한 글을 다음처럼 보여집니다.</p>
+<h4 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h4><p><img src="/img/hexo/hexo16.png" alt="hexo"></p>
+<h4 id="detail"><a href="#detail" class="headerlink" title="detail"></a>detail</h4><p><img src="/img/hexo/hexo17.png" alt="hexo"></p>
+<h4 id="블로그-정보-변경하기"><a href="#블로그-정보-변경하기" class="headerlink" title="블로그 정보 변경하기"></a>블로그 정보 변경하기</h4><p>프로젝트의 <code>_config.yml</code> 파일에서 사이트에 대한 여러정보를 수정할 수 있어요 </p>
+<p><img src="/img/hexo/hexo12.png" alt="hexo"></p>
+<p>정보를 변경하면 아래 사진처럼 정보가 바뀝니다. </p>
+<p><img src="/img/hexo/hexo13.png" alt="hexo"></p>
+<p>프로젝트의 <code>_config.yml</code> 은 밖에서 보여지는 페이지에 대한 정보입니다.<br><code>themes/vexo/_config.yml</code> 은 블로그 동작에 대한 설정 정보를 다룹니다.</p>
+<p>블로그의 폴더 구조와 카테고리 분류 댓글 플러그인 추가 등등 .. 여러 설정을 이곳에서 하게됩니다.</p>
+<p><img src="/img/hexo/hexo14.png" alt="hexo"></p>
+<p>지금 About 페이지를 들어가게되면 테마를 만드신분의 얼굴이 보여집니다. config 파일을 수정해서 사진을 변경해보겠습니다. </p>
+<p><img src="/img/hexo/hexo19.png" alt="hexo"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/vexo/_config.yml</span><br><span class="line"></span><br><span class="line">about: </span><br><span class="line">  banner: https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory&amp;fname=http%3A%2F%2Fcfile6.uf.tistory.com%2Fimage%2F99FF384F5A4CCB0133669D</span><br><span class="line">  avatar: http://image.news1.kr/system/photos/2014/2/7/752089/article.jpg</span><br><span class="line">  description: &quot;안녕하세요 olaf 입니다.&quot;</span><br><span class="line">  weibo_username:</span><br><span class="line">  twitter_username:</span><br><span class="line">  github_username:</span><br><span class="line">  zhihu_username:</span><br><span class="line">  douban_username:</span><br><span class="line">  linkedin_username:</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo/hexo20.png" alt="hexo"></p>
+<p>이번에는 카테고리 링크 이동을 변경해보겠습니다. </p>
+<p>지금은 Home, Tags, Archives, Projects, About 등이 있지만 제가 필요한것은 Home, Javascript, About 뿐입니다.<br><code>/vexo/_config.yml</code> 파일에서 path 를 설정할 수 있습니다.   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line"> Home: /</span><br><span class="line"> Javascript: /tags/#javascript/</span><br><span class="line"> About: /about/</span><br></pre></td></tr></table></figure>
+<p>위 처럼 메뉴구성을 변경해주면 메뉴가 아래와 같이 변경됩니다.</p>
+<p><img src="/img/hexo/hexo21.png" alt="hexo"></p>
+<p>path 를 설정한 후 위에서 생성한 md 파일의 tags 를 javascript 로 변경해주세요</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: javascript</span><br><span class="line">date: 2018-12-06 21:06:57</span><br><span class="line">tags: javascript</span><br></pre></td></tr></table></figure>
+<p>변경 후 Javascript 탭을 클릭해보시면 태그들을 모아놓은 페이지로 이동되고 #javascript 로 포커싱이 됩니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_posts</span><br><span class="line">  JAVASCRIPT </span><br><span class="line">    자바스크립트 관련 포스트</span><br><span class="line">  REACT</span><br><span class="line">    리액트 관련 포스트</span><br></pre></td></tr></table></figure>
+<p>저는 포스트들을 모아놓고 보기 위해 아래와 같은 폴더 구조를 사용합니다. _posts 안에 모두 넣어도 괜찮지만 나중에 글이 많아지면 보기 힘들어져서<br>카테고리별로 폴더를 모아놓습니다.</p>
+<p><img src="/img/hexo/hexo23.png" alt="hexo"></p>
+<h4 id="ETC"><a href="#ETC" class="headerlink" title="ETC"></a>ETC</h4><p>이미 기본으로 세팅되어있는 중국어들과 … 사용하지 않을 댓글 플러그인 등등<br>우리가 필요하지 않은 것들이 여기 저기 사용되어져 있어 제거해보고자 합니다.</p>
+<p>예시로 tags 페이지의 标签检索 중국어를 제거해보겠습니다.  </p>
+<p><img src="/img/hexo/hexo23.png" alt="hexo"></p>
+<p>vexo 테마는 vexo/layout 안에 있는 ejs 를 바탕으로 md 파일과 결합되어 빌드 되어집니다.<br>그래서 우리는 ejs 파일을 수정하므로써 이런 문제를 해결할 수 있습니다.</p>
+<p><img src="/img/hexo/hexo24.png" alt="hexo"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"post-date"</span>&gt;</span>标签检索<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>이 부분을 삭제하거나 원하는 텍스트로 변경하면 됩니다. 이처럼 중국어로 되어 있는 부분들을 ejs 파일에서 수정하여 처리할 수 있습니다.</p>
+<p>아래 사진에 보이는 사용하지 않을 플러그인들은 어떻게 제거할까요 ?  이 또한 마찬가지 입니다. ejs 파일에서 해당 부분을 제거해주면 됩니다.  </p>
+<p><img src="/img/hexo/hexo25.png" alt="hexo"></p>
+<p>직접 html 을 제거하는 방법도 있고  <code>_config.yml</code> 에서 설정을 변경하여 활성화 시키지 않는 방법도 있습니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># catalog</span><br><span class="line">catalog: false</span><br><span class="line"># donate</span><br><span class="line">donate: false</span><br><span class="line"># qrcode</span><br><span class="line">qrcode: false</span><br><span class="line"># comment</span><br><span class="line"># you can set gitment, uyan or disqus</span><br><span class="line">comment: gitment</span><br></pre></td></tr></table></figure>
+<h4 id="Github-배포하기"><a href="#Github-배포하기" class="headerlink" title="Github 배포하기"></a>Github 배포하기</h4><p>마지막으로 완성된 블로그를 배포할 일만 남았습니다.<br>일단 만든 프로젝트 폴더를 우리의 github 과 연결해주어야합니다.</p>
+<p>프로젝트 폴더에서 아래 명령어를 입력해주세요 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git inti </span><br><span class="line">git add .</span><br><span class="line">git remote add origin https://github.com/olafjs/olafjs.github.io.git</span><br><span class="line">git checkout -b build </span><br><span class="line">git commit -m &quot;feat: setup build project&quot;</span><br><span class="line">git push origin build</span><br></pre></td></tr></table></figure>
+<p>master 로 올리지 않고 build branch 올린 이유는 md 파일과 이미지 파일들을 백업해두기 위해서입니다.<br>hexo 를 이용해서 build 를 하게되면 md 파일들이 html 파일로 변경되어져 올라가게 되는데 이 과정에서 md 파일들이 손실되기 때문입니다.<br>물론 우리의 로컬 컴퓨터에는 md 파일이 남겨져 있습니다.<br>하지만 실수로 로컬 컴퓨터에서 md 파일들을 지워버리면 복구할 길이 없습니다. (제가 이래서 글을 한번 다 날려먹어서 ..)<br>백업용 branch 를 두고 여기서 블로그 포스팅에 대한 작업을 합니다.  </p>
+<p>build 를 하게되면 자동으로 html 로 변환된 파일들은 master branch 로 올라가게됩니다.<br>우리는 master branch 에서 어떤일이 일어나든 신경쓰지 않아도됩니다.<br>build branch 만 관리해주면 됩니다. </p>
+<p>push 를 하시고 github 페이지에서 잘 올라갔는지 확인해주세요 :) </p>
+<p><img src="/img/hexo/hexo26.png" alt="hexo"> </p>
+<p>백업용 파일들은 올려두었으니 블로그를 배포해보도록 하겠습니다. </p>
+<p>github 으로 배포를 하기 위해서는 <code>hexo-deployer-git</code> 모듈이 필요합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>설치 후 프로젝트 폴더의 <code>_config.yml</code> 파일의 deploy 를 수정해주세요</p>
+<p><img src="/img/hexo/hexo11.png" alt="hexo"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/olafjs/olafjs.github.io.git</span><br></pre></td></tr></table></figure>
+<p>배포 명령어는 아래와 같습니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Etc">
+    <span class="tag-code">Etc</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/01/REACT/react-translate-14/">
+        <span class="nav-arrow">← </span>
+        
+          React Interview (리액트 면접 질문) [130 ~ 139]
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/09/ETC/ios-webview/">
+        
+          issue. ios 웹뷰 키보드영역 문제
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2018/12/09/ETC/hexo-blog/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "Hexo Blog 로 블로그 만들기",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2018/12/09/ETC/hexo-blog/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
