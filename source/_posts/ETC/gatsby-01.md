@@ -1,6 +1,6 @@
 ---
 title: Gatsby + Netlify 를 이용하여 static page 배포하기
-date: 2019-02-16 20:55:50
+date: 2019-03-10 13:55:50
 tags: Gatsby
 ---
 
