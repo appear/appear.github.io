@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://appear.github.io/2019/03/17/NODE/my-cli-01/</loc>
+    
+    <lastmod>2019-03-17T07:50:28.955Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://appear.github.io/2019/03/17/REACT/typescript-styled-component-01/</loc>
     
     <lastmod>2019-03-17T05:48:00.798Z</lastmod>
