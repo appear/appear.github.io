@@ -97,7 +97,7 @@ const Container = styled.div<IContainer>`
 
 위와 같이 정의한 컴포넌트를 사용하였을때 아래의 에러를 볼 수 있습니다.
 
-![gatsby](/img/etc/react/ts-styled-component01.png)
+![gatsby](/img/react/ts-styled-component01.png)
 
 위의 container component 의 props 들은 고정적으로 들어올 수 도 아닐 수도 있는 값이기 때문에 interface 에 다음과 같은 처리를 해줘야합니다.
 
