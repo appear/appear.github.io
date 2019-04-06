@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="JS에 대한 전반적인 이야기를 나눠요 :)">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  <link rel="canonical" href="http://appear.github.io/2019/04/06/etc/gatsby-02/">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Gatsby 를 이용하여 Blog 만들기 (1) | Olaf&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Olaf's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Post</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Post</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Gatsby 를 이용하여 Blog 만들기 (1)</h2>
+  <p class="post-date">2019-04-06</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Gatsby-를-이용하여-Blog-만들기-1"><a href="#Gatsby-를-이용하여-Blog-만들기-1" class="headerlink" title="Gatsby 를 이용하여 Blog 만들기 (1)"></a>Gatsby 를 이용하여 Blog 만들기 (1)</h1><p>gatsby 에 대한 기본적인 예제는 <a href="https://appear.github.io/2019/03/10/ETC/gatsby-01/">여기</a> 에서 확인해주세요</p>
+<h2 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성"></a>프로젝트 생성</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npx gatsby new resume https://github.com/gatsbyjs/gatsby-starter-default</span><br><span class="line">$ <span class="built_in">cd</span> resume</span><br><span class="line">&amp; npm run develop</span><br></pre></td></tr></table></figure>
+<p><img src="/img/etc/resume01.png" alt="gatsby"></p>
+<h2 id="이력서-컨셉"><a href="#이력서-컨셉" class="headerlink" title="이력서 컨셉"></a>이력서 컨셉</h2><p>이력서는 아래와 같은 구조와 컨셉으로 구성해보려고합니다.</p>
+<p><img src="/img/etc/resume03.png" alt="gatsby"></p>
+<h2 id="styled-components"><a href="#styled-components" class="headerlink" title="styled-components"></a>styled-components</h2><p>style 제어는 <code>styled-component</code> 를 이용하겠습니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save styled-components</span><br></pre></td></tr></table></figure>
+<h2 id="Gatsby-transformer-json"><a href="#Gatsby-transformer-json" class="headerlink" title="Gatsby-transformer-json"></a>Gatsby-transformer-json</h2><p>페이지의 필요한 데이터들을 <a href="https://graphql.org/learn/" target="_blank" rel="noopener">GraphQL</a> 을 이용하여 다루고자 합니다.<br>Json 파일을 GraphQl Query 와 같이 이용하기 위해서는 <code>gatsby-transformer-json</code> plugin 이 필요합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save gatsby-transformer-json</span><br></pre></td></tr></table></figure>
+<p><code>gastby-config</code> 의 plugins 에 아래 설정을 추가해주세요</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="string">`gatsby-transformer-json`</span>,</span><br><span class="line">  &#123;</span><br><span class="line">    resolve: <span class="string">`gatsby-source-filesystem`</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">      path: <span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/src/data/`</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h2 id="Json-Data-추가"><a href="#Json-Data-추가" class="headerlink" title="Json Data 추가"></a>Json Data 추가</h2><p><code>src/data/resume/item.json</code> 이라는 파일을 만들어주겠습니다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"work_experience"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"title"</span>: <span class="string">"트리플"</span>,</span><br><span class="line">      <span class="attr">"date"</span>: <span class="string">"2018.07 - ing"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 데이터를 호출하는 query 는 아래와 같습니다. Query name 은 자유롭게 정할 수 있습니다.<br>저는 <code>ResumeItemsQuery</code> 라는 이름을 사용합니다.<br><code>allResumeJson</code> 의 경우 <code>all[폴더이름]Query</code> 와 같은 <code>gatsby-transformer-json</code> 의 규칙을 따릅니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">query ResumeItemsQuery &#123;</span><br><span class="line">  allResumeJson &#123;</span><br><span class="line">    edges&#123;</span><br><span class="line">      node &#123;</span><br><span class="line">        work_experience &#123;</span><br><span class="line">          title,</span><br><span class="line">          date</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>파일을 추가한 후 <a href="http://localhost:8000/___graphql" target="_blank" rel="noopener">http://localhost:8000/___graphql</a> 에서 query 가 정상 작동하는지 테스트해보겠습니다.</p>
+<p><img src="/img/etc/resume04.png" alt="gatsby"></p>
+<p>나머지 데이터들을 추가하겠습니다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"intro"</span>: &#123;</span><br><span class="line">    <span class="attr">"header"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"content"</span>: <span class="string">""</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"work_experience"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"title"</span>: <span class="string">"트리플"</span>,</span><br><span class="line">      <span class="attr">"date"</span>: <span class="string">"2018.07 - ing"</span>,</span><br><span class="line">      <span class="attr">"experiences"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"title"</span>: <span class="string">""</span>,</span><br><span class="line">          <span class="attr">"date"</span>: <span class="string">""</span>,</span><br><span class="line">          <span class="attr">"description"</span>: <span class="string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"personal_experience"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"title"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"date"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"contact"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"link"</span>: <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="StaticQuery"><a href="#StaticQuery" class="headerlink" title="StaticQuery"></a>StaticQuery</h2><p>stateless component 를 감싸는 StaticQuery 를 이용하여 query 를 실행하고 결과를 component 의 props 로 전달해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;StaticQuery query=&#123;graphql<span class="string">``</span>&#125; render=&#123;(data) =&gt; &#123; <span class="comment">// ...data &#125;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>pages/index.js</code> 에 적용해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; StaticQuery, graphql &#125; <span class="keyword">from</span> <span class="string">"gatsby"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> IndexPage = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;StaticQuery</span><br><span class="line">    query=&#123;graphql<span class="string">`</span></span><br><span class="line"><span class="string">      query ResumeItemsQuery &#123;</span></span><br><span class="line"><span class="string">        allResumeJson &#123;</span></span><br><span class="line"><span class="string">          edges &#123;</span></span><br><span class="line"><span class="string">            node &#123;</span></span><br><span class="line"><span class="string">              intro &#123;</span></span><br><span class="line"><span class="string">                header</span></span><br><span class="line"><span class="string">                content</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">              work_experience &#123;</span></span><br><span class="line"><span class="string">                title</span></span><br><span class="line"><span class="string">                date</span></span><br><span class="line"><span class="string">                experiences &#123;</span></span><br><span class="line"><span class="string">                  title</span></span><br><span class="line"><span class="string">                  date</span></span><br><span class="line"><span class="string">                  description</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">              personal_experience &#123;</span></span><br><span class="line"><span class="string">                title</span></span><br><span class="line"><span class="string">                date</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">              contact &#123;</span></span><br><span class="line"><span class="string">                name</span></span><br><span class="line"><span class="string">                link</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    `</span>&#125;</span><br><span class="line">    render=&#123;item =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123;</span><br><span class="line">        work_experience,</span><br><span class="line">        personal_experience,</span><br><span class="line">        contact,</span><br><span class="line">        intro</span><br><span class="line">      &#125; = item.allResumeJson.edges[<span class="number">0</span>].node;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;Layout&gt;</span><br><span class="line">          &lt;SEO title=<span class="string">"Home"</span> keywords=&#123;[<span class="string">`gatsby`</span>, <span class="string">`application`</span>, <span class="string">`react`</span>]&#125; /&gt;</span><br><span class="line">          &lt;h1&gt;Hi people&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">          &lt;p&gt;Welcome to your new Gatsby site.&lt;/</span>p&gt;</span><br><span class="line">          &lt;p&gt;Now go build something great.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">          &lt;div style=&#123;&#123; maxWidth: `300px`, marginBottom: `1.45rem` &#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Image /</span>&gt;</span><br><span class="line">          &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Link to="/</span>page<span class="number">-2</span>/<span class="string">"&gt;Go to page 2&lt;/Link&gt;</span></span><br><span class="line"><span class="string">        &lt;/Layout&gt;</span></span><br><span class="line"><span class="string">      );</span></span><br><span class="line"><span class="string">    &#125;&#125;</span></span><br><span class="line"><span class="string">  /&gt;</span></span><br><span class="line"><span class="string">);</span></span><br></pre></td></tr></table></figure>
+<p><img src="/img/etc/resume05.png" alt="gatsby"></p>
+<h2 id="Component-를-추가하기전에"><a href="#Component-를-추가하기전에" class="headerlink" title="Component 를 추가하기전에"></a>Component 를 추가하기전에</h2><p>불필요한 컴포넌트들을 제거하고 시작하겠습니다.</p>
+<ol>
+<li><code>pages/index.js</code> 을 아래부분을 제외하고 다 제거하겠습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line">&lt;Layout&gt;</span><br><span class="line">  &lt;SEO title=<span class="string">"Home"</span> keywords=&#123;[<span class="string">`gatsby`</span>, <span class="string">`application`</span>, <span class="string">`react`</span>]&#125; /&gt;</span><br><span class="line">  &lt;h1&gt;Hi people&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt;Welcome to your new Gatsby site.&lt;/</span>p&gt;</span><br><span class="line">  &lt;p&gt;Now go build something great.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div style=&#123;&#123; maxWidth: `300px`, marginBottom: `1.45rem` &#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">    &lt;Image /</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;Link to="/</span>page<span class="number">-2</span>/<span class="string">"&gt;Go to page 2&lt;/Link&gt;</span></span><br><span class="line"><span class="string">&lt;/Layout&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// after</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">  &lt;SEO keywords=&#123;[`gatsby`, `resume`, `react`]&#125; /&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>SEO 컴포넌트에서 title 을 graphQL 의 값을 이용하도록 변경하겠습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/seo.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">"prop-types"</span>;</span><br><span class="line"><span class="keyword">import</span> Helmet <span class="keyword">from</span> <span class="string">"react-helmet"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useStaticQuery, graphql &#125; <span class="keyword">from</span> <span class="string">"gatsby"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SEO</span>(<span class="params">&#123; description, lang, meta, keywords &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; site &#125; = useStaticQuery(</span><br><span class="line">    graphql<span class="string">`</span></span><br><span class="line"><span class="string">      query &#123;</span></span><br><span class="line"><span class="string">        site &#123;</span></span><br><span class="line"><span class="string">          siteMetadata &#123;</span></span><br><span class="line"><span class="string">            title</span></span><br><span class="line"><span class="string">            description</span></span><br><span class="line"><span class="string">            author</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> metaDescription = description || site.siteMetadata.description;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Helmet</span><br><span class="line">      htmlAttributes=&#123;&#123;</span><br><span class="line">        lang</span><br><span class="line">      &#125;&#125;</span><br><span class="line">      title=&#123;site.siteMetadata.title&#125;</span><br><span class="line">      titleTemplate=&#123;<span class="string">`%s | <span class="subst">$&#123;site.siteMetadata.title&#125;</span>`</span>&#125;</span><br><span class="line">      meta=&#123;[</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">`description`</span>,</span><br><span class="line">          content: metaDescription</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          property: <span class="string">`og:title`</span>,</span><br><span class="line">          content: site.siteMetadata.title</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          property: <span class="string">`og:description`</span>,</span><br><span class="line">          content: metaDescription</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          property: <span class="string">`og:type`</span>,</span><br><span class="line">          content: <span class="string">`website`</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">`twitter:card`</span>,</span><br><span class="line">          content: <span class="string">`summary`</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">`twitter:creator`</span>,</span><br><span class="line">          content: site.siteMetadata.author</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">`twitter:title`</span>,</span><br><span class="line">          content: site.siteMetadata.title</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">`twitter:description`</span>,</span><br><span class="line">          content: metaDescription</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">        .concat(</span><br><span class="line">          keywords.length &gt; <span class="number">0</span></span><br><span class="line">            ? &#123;</span><br><span class="line">                name: <span class="string">`keywords`</span>,</span><br><span class="line">                content: keywords.join(<span class="string">`, `</span>)</span><br><span class="line">              &#125;</span><br><span class="line">            : []</span><br><span class="line">        )</span><br><span class="line">        .concat(meta)&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SEO.defaultProps = &#123;</span><br><span class="line">  lang: <span class="string">`en`</span>,</span><br><span class="line">  meta: [],</span><br><span class="line">  keywords: [],</span><br><span class="line">  description: <span class="string">``</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">SEO.propTypes = &#123;</span><br><span class="line">  description: PropTypes.string,</span><br><span class="line">  lang: PropTypes.string,</span><br><span class="line">  meta: PropTypes.arrayOf(PropTypes.object),</span><br><span class="line">  keywords: PropTypes.arrayOf(PropTypes.string)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> SEO;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>404 page component 수정</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/pages/404.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> NotFoundPage = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;NOT FOUND&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;You just hit a route that doesn&amp;#39;t exist... the sadness.&lt;/</span>p&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default NotFoundPage;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>불필요한 component 들을 제거합니다.</li>
+</ol>
+<ul>
+<li>src/pages/page-2.js</li>
+<li>src/components/seo 를 제외한 모든 component 들</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Gatsby">
+    <span class="tag-code">Gatsby</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/06/ETC/gatsby-03/">
+        <span class="nav-arrow">← </span>
+        
+          Gatsby 를 이용하여 Blog 만들기 (2)
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 티스토리 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1354272559014284" data-ad-slot="1591472714" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://appear.github.io/2019/04/06/ETC/gatsby-02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "Gatsby 를 이용하여 Blog 만들기 (1)",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://appear.github.io/2019/04/06/ETC/gatsby-02/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
