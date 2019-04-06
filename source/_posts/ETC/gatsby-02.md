@@ -100,18 +100,19 @@ query ResumeItemsQuery {
 ```json
 {
   "intro": {
-    "header": "",
-    "content": ""
+    "header": "안녕하세요 프론트엔드 개발자 고석진입니다.",
+    "content": "2년차를 향해 달려가고 있는 프론트 개발자입니다. 새로운 기술들을 학습하는 것을 좋아하며 틀에 박힌 것보다는 다양한 경험을 할 수 있는 환경을 좋아합니다."
   },
   "work_experience": [
     {
       "title": "트리플",
       "date": "2018.07 - ing",
+      "role": "UI Developer",
       "experiences": [
         {
-          "title": "",
-          "date": "",
-          "description": ""
+          "title": "Design System 개발",
+          "description": "",
+          "skill": ""
         }
       ]
     }
@@ -159,10 +160,11 @@ const IndexPage = () => (
               work_experience {
                 title
                 date
+                role
                 experiences {
                   title
-                  date
                   description
+                  skill
                 }
               }
               personal_experience {
