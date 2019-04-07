@@ -1,10 +1,10 @@
 ---
-title: Gatsby 를 이용하여 Blog 만들기 (1)
+title: Gatsby 를 이용하여 Resume Page 만들기 (1)
 date: 2019-04-06 13:55:50
 tags: Gatsby
 ---
 
-# Gatsby 를 이용하여 Blog 만들기 (1)
+# Gatsby 를 이용하여 Resume Page 만들기 (1)
 
 gatsby 에 대한 기본적인 예제는 [여기](https://appear.github.io/2019/03/10/ETC/gatsby-01/) 에서 확인해주세요
 
