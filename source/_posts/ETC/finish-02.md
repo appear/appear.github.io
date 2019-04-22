@@ -19,27 +19,28 @@ tags: Etc
 
 오프라인 정모도 환영 :)
 
-## 목표
+## 진행하며
 
 저번 글또 1기의 목표는 기본을 다지자였고, 이번 2기의 목표는 1기의 내용을 바탕으로 시리즈물을 만들어보자였다.
+그렇게 진행 한 것이 아래의 JS -> Vue, React 시리즈다. <br/>
 
-그렇게 진행 한 것이 아래의 JS -> Vue, React 시리즈다.
-
-[Simple JS 입문](https://simplejs.gitbook.io/olaf/)
+1.[Simple JS 입문](https://simplejs.gitbook.io/olaf/)
 
 ![simplejs](/img/etc/simple01.png)
 
-[Simple Vue 입문](https://simplevue.gitbook.io/intro/)
+2.[Simple Vue 입문](https://simplevue.gitbook.io/intro/)
 
 ![simplejs](/img/etc/simple02.png)
 
-[React Interview 번역](https://github.com/appear/reactjs-interview-questions-ko)
+3.[React Interview 번역](https://github.com/appear/reactjs-interview-questions-ko)
 
 ![simplejs](/img/etc/simple04.png)
 
-[업무에서 배운 것들](https://appear.github.io/)
+4.[업무에서 배운 것들](https://appear.github.io/)
 
 ![simplejs](/img/etc/simple03.png)
+
+<br/>
 
 모든 시리즈를 시작하여 글을 작성한 것은 좋으나 여러 가지 상황들 (핑계일 수도 있지만 많이 바빴다..) 에 휩쓸려 마무리를 전부 마무리를 짓지 못했다 ㅠㅠ ..
 
@@ -50,9 +51,9 @@ tags: Etc
 ## 마무리
 
 글을 쓰는 것은 자주 까먹는 나에게 아주 좋은 습관이 되고 외부로 나에 대한 정보를 알리는데 가장 좋은 방법이라고 생각한다.
-이러한 관점에서 글또는 정말 많은 도움이 되는 모임이다. 3기의 기회가 온다면 당연히 참여하고 싶다.
-
-만약 3기를 진행한다면 backend 영역에 도전해고싶다.
-
+이러한 관점에서 글또는 정말 많은 도움이 되는 모임이다. 3기의 기회가 온다면 당연히 참여하고 싶다.  
+.
+만약 3기를 진행한다면 backend 영역에 도전해고싶다.  
+.
 모두에게 시간은 똑같이 흐른다. 그 시간을 잘 사용하기 위해서는 많은 노력과 구체적인 활동 계획이 필요하다.
 앞으로의 시간을 어떻게 활용할지에 대한 고민을 좀 더 하고 여러 가지 환경에 뛰어들어야 할 것 같다.
